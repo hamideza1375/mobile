@@ -1,16 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Img, ScrollHorizontal, Span, M_icon, Press } from '../Html'
 
 var count = 1,
-  interval,
   width,
   plus,
   minus
 
 function Slider(p) {
 
+
+  const [interval, setinterval] = useState(true)
+
   const open = () => {
-    { p.$ && p.$.id('scroll').scrollTo({ x: p.width * count, y: 0, animated: true }); }
+    { p.$ && p.$.id(p.id).scrollTo({ x: p.width * count, y: 0, animated: true }); }
     if (count === 1) { plus = true; minus = false }
     if (count === 7) { minus = true; plus = false }
     if (minus) { count = count - 1 }
@@ -19,31 +21,38 @@ function Slider(p) {
 
   const right = () => {
     if (count !== 0) count = count - 1
-    p.$ && p.$.id('scroll').scrollTo({ x: p.width * count, y: 0, animated: true });
+    p.$ && p.$.id(p.id).scrollTo({ x: p.width * count, y: 0, animated: true });
   };
 
   const left = () => {
     if (count !== 7) count += 1
-    p.$ && p.$.id('scroll').scrollTo({ x: p.width * count, y: 0, animated: true });
+    p.$ && p.$.id(p.id).scrollTo({ x: p.width * count, y: 0, animated: true });
   };
 
 
   if (p.width !== width) {
-    p.$ && p.$.id('scroll').scrollTo({ x: 0, y: 0, animated: true });
+    p.$ && p.$.id(p.id).scrollTo({ x: 0, y: 0, animated: true });
     count = 1
     interval && clearInterval(interval)
   }
+
+  p.useEffect(() => {
+    return () => (
+      clearInterval(interval)
+    )
+  }, [])
 
 
   return (
 
     <Span>
-      <ScrollHorizontal dir='ltr' id='scroll' onLayout={() => {
+      <ScrollHorizontal dir='ltr' id={p.id} onLayout={() => {
         width = p.width
-        interval = setInterval(sum, 6000);
+        let int = setInterval(sum, 6000);
         function sum() {
           open()
         }
+        setinterval(int)
       }} onClick={() => alert(7)} style={{ height: 260, width: p.width - 4, marginTop: 2, alignSelf: 'center', borderRadius: 5, overflow: 'hidden', flexWrap: 'wrap' }} >
         <Press onClick={p.onClick} w={p.width} ><Img w='100%' h={300} src={p.img1} /></Press>
         <Press onClick={p.onClick} w={p.width} ><Img w='100%' h={300} src={p.img2} /></Press>
