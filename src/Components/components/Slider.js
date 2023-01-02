@@ -11,10 +11,10 @@ function Slider(p) {
 
   const open = () => {
     { p.$ && p.$.id('scroll').scrollTo({ x: p.width * count, y: 0, animated: true }); }
-    if (count === 0) { plus = true; minus = false }
+    if (count === 1) { plus = true; minus = false }
     if (count === 7) { minus = true; plus = false }
     if (minus) { count = count - 1 }
-    if (plus) { count += + 1 }
+    if (plus) { count += 1 }
   };
 
   const right = () => {
@@ -28,9 +28,6 @@ function Slider(p) {
   };
 
 
-  if (interval && p.width !== width) {
-    clearInterval(interval)
-  }
   return (
 
       <Span>

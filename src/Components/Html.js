@@ -17,6 +17,7 @@ export { default as Pagination } from './components/Pagination'
 export { default as Swiper } from './components/Swiper'
 export { default as Switch } from './components/Switch'
 export { default as Table } from './components/Table'
+export { default as Slider } from './components/Slider'
 export { Textarea, Input, CheckBox } from './formComponent/FormComponent'
 import setStyleRef from './classToStyle/setClassToStyle';
 
