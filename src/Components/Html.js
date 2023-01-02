@@ -18,6 +18,7 @@ export { default as Swiper } from './components/Swiper'
 export { default as Switch } from './components/Switch'
 export { default as Table } from './components/Table'
 export { default as Slider } from './components/Slider'
+export { default as ScrollSlider } from './components/ScrollSlider'
 export { Textarea, Input, CheckBox } from './formComponent/FormComponent'
 import setStyleRef from './classToStyle/setClassToStyle';
 
@@ -73,7 +74,8 @@ export const Component = React.forwardRef((props, ref) => {
       },
       stl, stl2, col, orientation
     ]}
-    onStartShouldSetResponder={props.onClick} ref={(e) => { setStyleRef(props, e, ref, setinnerHTML, flatlist, seturi); }}
+    onStartShouldSetResponder={props.onClick}
+     ref={(e) => { setStyleRef(props, e, ref, setinnerHTML, flatlist, seturi); }}
   >{innerHTML ? ((typeof innerHTML === 'string') ? <Text onPress={props.onClick}>{innerHTML}</Text> : innerHTML) : (typeof props.children === 'string') ? <Text onPress={props.onClick}>{props.children}</Text> : props.children}</Component>;
 });
 

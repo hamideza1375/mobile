@@ -1,5 +1,5 @@
 import React from 'react'
-import { Img, ScrollHorizontal, Span, M_icon, Press } from '../../Components/Html'
+import { Img, ScrollHorizontal, Span, M_icon, Press } from '../Html'
 
 var count = 1,
   interval,
