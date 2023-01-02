@@ -10,6 +10,7 @@ var count = 150,
 function ScrollSlider(p) {
 
   const [scroll, setscroll] = useState(0)
+  const [scrollWidth, setscrollWidth] = useState(0)
 
   const open = () => {
     if (scroll2) {
@@ -18,10 +19,14 @@ function ScrollSlider(p) {
     }
   };
 
+  if(scrollWidth && scroll >= scrollWidth){clearInterval(interval)} 
+  // console.log(scroll ,scrollWidth)
+
+
   return (
     <>
       <ScrollHorizontal
-        onLayout={() => { width = p.width; interval = setInterval(sum, 4000); function sum() { open(); } }}
+        onLayout={(e) => { setscrollWidth(e.nativeEvent.layout.width);width = p.width; interval = setInterval(sum, 4000); function sum() { open(); } }}
         scrollEventThrottle={0}
         alwaysBounceHorizontal={false}
         alwaysBounceVertical={false}

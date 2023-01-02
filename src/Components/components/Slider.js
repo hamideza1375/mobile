@@ -28,31 +28,35 @@ function Slider(p) {
   };
 
 
+  if (p.width !== width) {
+    p.$ && p.$.id('scroll').scrollTo({ x: 0, y: 0, animated: true });
+    count = 1
+    interval && clearInterval(interval)
+  }
+
+
   return (
 
-      <Span>
-        <ScrollHorizontal dir='ltr' id='scroll' onLayout={() => {
-          width = p.width
-          interval = setInterval(sum, 6000);
-          function sum() {
-            open()
-            if (p.width !== width) {
-              clearInterval(interval)
-            }
-          }
-        }} onClick={() => alert(7)} style={{ height: 260, width: p.width - 4, marginTop: 2, alignSelf: 'center', borderRadius: 5, overflow: 'hidden', flexWrap: 'wrap' }} >
-          <Press onClick={p.onClick} w={p.width} ><Img w='100%' h={300} src={p.img1} /></Press>
-          <Press onClick={p.onClick} w={p.width} ><Img w='100%' h={300} src={p.img2} /></Press>
-          <Press onClick={p.onClick} w={p.width} ><Img w='100%' h={300} src={p.img3} /></Press>
-          <Press onClick={p.onClick} w={p.width} ><Img w='100%' h={300} src={p.img4} /></Press>
-          <Press onClick={p.onClick} w={p.width} ><Img w='100%' h={300} src={p.img5} /></Press>
-          <Press onClick={p.onClick} w={p.width} ><Img w='100%' h={300} src={p.img6} /></Press>
-          <Press onClick={p.onClick} w={p.width} ><Img w='100%' h={300} src={p.img7} /></Press>
-          <Press onClick={p.onClick} w={p.width} ><Img w='100%' h={300} src={p.img8} /></Press>
-        </ScrollHorizontal>
-        <M_icon onClick={left} size={30} name="arrow-back-ios" style={{ position: 'absolute', zIndex: 10, left: 10, top: 130, color: '#222' }} />
-        <M_icon onClick={right} size={30} name="arrow-forward-ios" style={{ position: 'absolute', zIndex: 10, right: 10, top: 130, color: '#222' }} />
-      </Span>
+    <Span>
+      <ScrollHorizontal dir='ltr' id='scroll' onLayout={() => {
+        width = p.width
+        interval = setInterval(sum, 6000);
+        function sum() {
+          open()
+        }
+      }} onClick={() => alert(7)} style={{ height: 260, width: p.width - 4, marginTop: 2, alignSelf: 'center', borderRadius: 5, overflow: 'hidden', flexWrap: 'wrap' }} >
+        <Press onClick={p.onClick} w={p.width} ><Img w='100%' h={300} src={p.img1} /></Press>
+        <Press onClick={p.onClick} w={p.width} ><Img w='100%' h={300} src={p.img2} /></Press>
+        <Press onClick={p.onClick} w={p.width} ><Img w='100%' h={300} src={p.img3} /></Press>
+        <Press onClick={p.onClick} w={p.width} ><Img w='100%' h={300} src={p.img4} /></Press>
+        <Press onClick={p.onClick} w={p.width} ><Img w='100%' h={300} src={p.img5} /></Press>
+        <Press onClick={p.onClick} w={p.width} ><Img w='100%' h={300} src={p.img6} /></Press>
+        <Press onClick={p.onClick} w={p.width} ><Img w='100%' h={300} src={p.img7} /></Press>
+        <Press onClick={p.onClick} w={p.width} ><Img w='100%' h={300} src={p.img8} /></Press>
+      </ScrollHorizontal>
+      <M_icon onClick={left} size={30} name="arrow-back-ios" style={{ position: 'absolute', zIndex: 10, left: 10, top: 130, color: '#222' }} />
+      <M_icon onClick={right} size={30} name="arrow-forward-ios" style={{ position: 'absolute', zIndex: 10, right: 10, top: 130, color: '#222' }} />
+    </Span>
   )
 }
 
