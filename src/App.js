@@ -2,7 +2,7 @@
     import { createNativeStackNavigator } from "@react-navigation/native-stack";
     import React from "react";
     import { View, Platform } from "react-native";
-    import { Button, Div, Form, Icon, Init, P, Span } from "./Components/Html";
+    import { Button, Div, Form, Icon, Init, P, SearchBar, Span } from "./Components/Html";
     import _404 from "./other/404";
     import { adminState } from "./state/adminState";
     import { foodState, home } from "./state/foodState";
@@ -40,7 +40,7 @@
           <ToastProvider {...p} />
           <Tab.Navigator screenOptions={() => { return { headerTitleStyle: { color: 'transparent' }, headerTitleAlign: 'center' ,...icon } }} >
             <Tab.Group>
-              <Tab.Screen initialParams={{ key: '' }} name="Home" options={{ title: 'home' }} {..._children(Home)} />
+              <Tab.Screen initialParams={{ key: '' }} name="Home" options={{ title: 'home',headerShown:false, header:()=><SearchBar src={require('./assets/images/logo.png')} Register /> }} {..._children(Home)} />
             </Tab.Group>
             <Tab.Screen name="NotFound" options={{ title: '404', headerShown: false }} {..._children(_404)} />
           </Tab.Navigator >

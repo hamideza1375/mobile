@@ -41,19 +41,21 @@ function ScrollSlider(p) {
 
 
   return (
-    <View onMouseLeave={() => { if (Platform.OS === 'web') p.$.id(p.id).setNativeProps({ style: { overflow: 'hidden' } }); }}
-      
+    <View onMouseLeave={() => { if (Platform.OS === 'web') if (navigator.userAgent?.split('(')[1]?.slice(0, 7) === 'Windows') p.$.id(p.id).setNativeProps({ style: { overflow: 'hidden' } }); }}
+
       onMouseUp={() => { setscroll2(false); setTimeout(() => { das = [] }, 10) }} >
       <View
-      // onStartShouldSetResponder={()=>{ if (Platform.OS === 'web') p.$.id(p.id).setNativeProps({ style: { overflow: 'auto' } });}}
+        // onStartShouldSetResponder={()=>{ if (Platform.OS === 'web') p.$.id(p.id).setNativeProps({ style: { overflow: 'auto' } });}}
         onMoveShouldSetResponderCapture={(e) => {
           setscroll2(false)
           if (Platform.OS === 'web') {
-            p.$.id(p.id).setNativeProps({ style: { overflow: 'auto' } });
-            console.log(scroll + das[0] - das[das.length - 1]);
-            das.push(e.nativeEvent.pageX)
-            p.$.id(p.id).scrollTo({ x: scroll + das[0] - das[das.length - 1], y: 0 })
-            setscroll(scroll + das[0] - das[das.length - 1])
+            if (navigator.userAgent?.split('(')[1]?.slice(0, 7) === 'Windows') {
+              p.$.id(p.id).setNativeProps({ style: { overflowX: 'auto' } });
+              console.log(scroll + das[0] - das[das.length - 1]);
+              das.push(e.nativeEvent.pageX)
+              p.$.id(p.id).scrollTo({ x: scroll + das[0] - das[das.length - 1], y: 0 })
+              setscroll(scroll + das[0] - das[das.length - 1])
+            }
           }
           setscroll2(false)
 
@@ -70,7 +72,7 @@ function ScrollSlider(p) {
           contentInset={{ top: 0 }}
           onScroll={(e) => { setscroll(e.nativeEvent.contentOffset.x) }}
           dir='ltr' id={p.id}
-          webStyle={{overflow:'hidden'}}
+          webStyle={(navigator.userAgent?.split('(')[1]?.slice(0, 7) === 'Windows') && { overflow: 'hidden' }}
           style={[{ height: p.h ? p.h : 150, width: p.width - 4, marginTop: 2, alignSelf: 'center', borderRadius: 5, flexWrap: 'wrap' }, p.style]} >
           {p.children}
         </ScrollHorizontal>

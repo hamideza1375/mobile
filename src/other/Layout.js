@@ -4,7 +4,7 @@ import { Platform, SafeAreaView, Pressable, View } from 'react-native';
 import TopTab from '../Components/tabNavigation/TopTab';
 import BottomTab from '../Components/tabNavigation/BottomTab';
 import Drawer from '../Components/tabNavigation/Drawer';
-import { Icon } from '../Components/Html';
+import { Icon, SearchBar, Span } from '../Components/Html';
 
 export const Layout = (p) => {
 
@@ -81,9 +81,10 @@ export const Layout = (p) => {
           </BottomTab>:<View onLayout={()=> Platform.OS === 'web' && p.navigation.navigate('Home')} ></View>)
           ||
           p.route.name === 'Home' &&
-          <BottomTab name={'Home'} group={bottom} bgcolor='#103' color='#fff' activeColor='#3bf' style={{boxShadow:'1px 1px 8px #a80'}} >
+          <Drawer header={<SearchBar Register src={require('../assets/images/logo.png')} />}
+          name={'Home'} group={bottom} bgcolor='#fff' color='#000' activeColor='#3bf' style={{boxShadow:'1px 1px 8px #a80'}} >
             {p.children}
-          </BottomTab>
+          </Drawer>
 
     ||
 

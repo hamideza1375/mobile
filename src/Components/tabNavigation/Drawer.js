@@ -4,7 +4,7 @@ import { Dimensions, View, Text, StyleSheet, Animated, Pressable, Platform, Scro
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 const width = Dimensions.get('window').width;
 
-const Drawer = ({ color='#222',group, children, name, title, bgcolor = '#fff', style, icon ,iconRight}) => {
+const Drawer = ({ color='#222',group, children, name, title, bgcolor = '#fff', style, icon ,iconRight, header}) => {
   const fadeAnim = useRef(new Animated.Value(-width * 2)).current;
   const shadowRef=useRef()
   const navigation = useNavigation()
@@ -39,8 +39,13 @@ const Drawer = ({ color='#222',group, children, name, title, bgcolor = '#fff', s
   return (
     <View style={[styles.container,{height:Platform.OS !== 'web'?'99.7%':'99.7vh',overflow:'hidden'}]} >
       <View style={[styles.sidebar, { backgroundColor: bgcolor }, style]} >
-        <View style={styles.TextHeader}>{iconRight && <Icon name={iconRight.name} onPress={iconRight.onClick} size={25} color={color} /> }</View>
+        {!header?
+        <><View style={styles.TextHeader}>{iconRight && <Icon name={iconRight.name} onPress={iconRight.onClick} size={25} color={color} /> }</View>
         <Text style={[styles.TextHeader,{color}]}>{title}</Text>
+        </>
+        :
+        <View style={{flexGrow:1,marginLeft:6, transform:[{scaleY:.8}]}} >{header}</View>
+        }
         <Icon onPress={open} name={'bars'} color={color} size={25} style={{padding:2}} />
       </View>
 

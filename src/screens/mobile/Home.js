@@ -18,7 +18,109 @@ function Home(p) {
       />
 
 
-<ScrollSlider bgcolor='#d29' {...p} id='scrollCard1' h={200} style={{marginTop:12, borderRadius:40, width:'98%'}} ccStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', height: 150 }} >
+
+
+      <ScrollSlider {...p} id='scrollGradient' h={180} mb={10} pb={77} ccStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', height: 180 }} >
+     
+        <Span w={160} h={140} as='center'>
+          <Span w={150} h={140} as='center'>
+            <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['blue', 'red', 'green']} style={{ borderRadius: 100, width: 150, height: 150 }} >
+            </LinearGradient>
+            <Span style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, width: 140, height: 140, right: 5, top: 5, zIndex: 10, backgroundColor: 'white', position: 'absolute' }} >
+              <Img w={137} h={137} br={80} src={require('../../assets/images/a1.jpg')} />
+
+            </Span>
+          </Span>
+        </Span>
+
+        <Span w={160} h={140} as='center'>
+          <Span w={150} h={140} as='center'>
+            <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['blue', 'red', 'green']} style={{ borderRadius: 100, width: 150, height: 150 }} >
+            </LinearGradient>
+            <Span style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, width: 140, height: 140, right: 5, top: 5, zIndex: 10, backgroundColor: 'white', position: 'absolute' }} >
+              <Img w={137} h={137} br={80} src={require('../../assets/images/a2.jpg')} />
+
+            </Span>
+          </Span>
+        </Span>
+
+        <Span w={160} h={140} as='center'>
+          <Span w={150} h={140} as='center'>
+            <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['blue', 'red', 'green']} style={{ borderRadius: 100, width: 150, height: 150 }} >
+            </LinearGradient>
+            <Span style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, width: 140, height: 140, right: 5, top: 5, zIndex: 10, backgroundColor: 'white', position: 'absolute' }} >
+              <Img w={137} h={137} br={80} src={require('../../assets/images/a3.jpg')} />
+
+            </Span>
+          </Span>
+        </Span>
+
+        <Span w={160} h={140} as='center'>
+          <Span w={150} h={140} as='center'>
+            <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['blue', 'red', 'green']} style={{ borderRadius: 100, width: 150, height: 150 }} >
+            </LinearGradient>
+            <Span style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, width: 140, height: 140, right: 5, top: 5, zIndex: 10, backgroundColor: 'white', position: 'absolute' }} >
+              <Img style={{ objectFit: 'contain' }} w={137} h={137} br={80} src={require('../../assets/images/a7.jpg')} />
+              {/* <p style={{objectFit}}></p> */}
+            </Span>
+          </Span>
+        </Span>
+
+
+        <Span w={160} h={140} as='center'>
+          <Span w={150} h={140} as='center'>
+            <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['blue', 'red', 'green']} style={{ borderRadius: 100, width: 150, height: 150 }} >
+            </LinearGradient>
+            <Span style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, width: 140, height: 140, right: 5, top: 5, zIndex: 10, backgroundColor: 'white', position: 'absolute' }} >
+              <Img w={137} h={137} br={80} src={require('../../assets/images/a1.jpg')} />
+
+            </Span>
+          </Span>
+        </Span>
+
+        <Span w={160} h={140} as='center'>
+          <Span w={150} h={140} as='center'>
+            <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['blue', 'red', 'green']} style={{ borderRadius: 100, width: 150, height: 150 }} >
+            </LinearGradient>
+            <Span style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, width: 140, height: 140, right: 5, top: 5, zIndex: 10, backgroundColor: 'white', position: 'absolute' }} >
+              <Img w={137} h={137} br={80} src={require('../../assets/images/a2.jpg')} />
+
+            </Span>
+          </Span>
+        </Span>
+
+        <Span w={160} h={140} as='center'>
+          <Span w={150} h={140} as='center'>
+            <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['blue', 'red', 'green']} style={{ borderRadius: 100, width: 150, height: 150 }} >
+            </LinearGradient>
+            <Span style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, width: 140, height: 140, right: 5, top: 5, zIndex: 10, backgroundColor: 'white', position: 'absolute' }} >
+              <Img w={137} h={137} br={80} src={require('../../assets/images/a3.jpg')} />
+
+            </Span>
+          </Span>
+        </Span>
+
+        <Span w={160} h={140} as='center'>
+          <Span w={150} h={140} as='center'>
+            <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['blue', 'red', 'green']} style={{ borderRadius: 100, width: 150, height: 150 }} >
+            </LinearGradient>
+            <Span style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, width: 140, height: 140, right: 5, top: 5, zIndex: 10, backgroundColor: 'white', position: 'absolute' }} >
+              <Img style={{ objectFit: 'contain' }} w={137} h={137} br={80} src={require('../../assets/images/a7.jpg')} />
+              {/* <p style={{objectFit}}></p> */}
+            </Span>
+          </Span>
+        </Span>
+
+
+
+      </ScrollSlider>
+
+
+
+
+      <Span bgcolor='#d29' br={10} w='99%' as='center' mt={10} >
+
+<ScrollSlider  {...p} id='scrollCard1' h={207} style={{width:'95%', alignSelf:'center' }} ccStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', height: 150 }} >
 
 <Span w={155} ai='center' jc='center' >
   <Card2 h={150} w={150} style={{ borderColor: 'silver', backgroundColor:'white' }} src={require('../../assets/images/a1.jpg')}
@@ -91,103 +193,10 @@ function Home(p) {
 </Span>
 
 </ScrollSlider>
+</Span>
 
 
 
-      <ScrollSlider {...p} id='scrollGradient' h={190} mb={10} pb={77} ccStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', height: 180 }} >
-     
-        <Span w={180} h={150} as='center'>
-          <Span w={150} h={150} as='center'>
-            <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['blue', 'red', 'green']} style={{ borderRadius: 100, width: 150, height: 150 }} >
-            </LinearGradient>
-            <Span style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, width: 140, height: 140, right: 5, top: 5, zIndex: 10, backgroundColor: 'white', position: 'absolute' }} >
-              <Img w={137} h={137} br={80} src={require('../../assets/images/a1.jpg')} />
-
-            </Span>
-          </Span>
-        </Span>
-
-        <Span w={180} h={150} as='center'>
-          <Span w={150} h={150} as='center'>
-            <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['blue', 'red', 'green']} style={{ borderRadius: 100, width: 150, height: 150 }} >
-            </LinearGradient>
-            <Span style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, width: 140, height: 140, right: 5, top: 5, zIndex: 10, backgroundColor: 'white', position: 'absolute' }} >
-              <Img w={137} h={137} br={80} src={require('../../assets/images/a2.jpg')} />
-
-            </Span>
-          </Span>
-        </Span>
-
-        <Span w={180} h={150} as='center'>
-          <Span w={150} h={150} as='center'>
-            <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['blue', 'red', 'green']} style={{ borderRadius: 100, width: 150, height: 150 }} >
-            </LinearGradient>
-            <Span style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, width: 140, height: 140, right: 5, top: 5, zIndex: 10, backgroundColor: 'white', position: 'absolute' }} >
-              <Img w={137} h={137} br={80} src={require('../../assets/images/a3.jpg')} />
-
-            </Span>
-          </Span>
-        </Span>
-
-        <Span w={180} h={150} as='center'>
-          <Span w={150} h={150} as='center'>
-            <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['blue', 'red', 'green']} style={{ borderRadius: 100, width: 150, height: 150 }} >
-            </LinearGradient>
-            <Span style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, width: 140, height: 140, right: 5, top: 5, zIndex: 10, backgroundColor: 'white', position: 'absolute' }} >
-              <Img style={{ objectFit: 'contain' }} w={137} h={137} br={80} src={require('../../assets/images/a7.jpg')} />
-              {/* <p style={{objectFit}}></p> */}
-            </Span>
-          </Span>
-        </Span>
-
-
-        <Span w={180} h={150} as='center'>
-          <Span w={150} h={150} as='center'>
-            <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['blue', 'red', 'green']} style={{ borderRadius: 100, width: 150, height: 150 }} >
-            </LinearGradient>
-            <Span style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, width: 140, height: 140, right: 5, top: 5, zIndex: 10, backgroundColor: 'white', position: 'absolute' }} >
-              <Img w={137} h={137} br={80} src={require('../../assets/images/a1.jpg')} />
-
-            </Span>
-          </Span>
-        </Span>
-
-        <Span w={180} h={150} as='center'>
-          <Span w={150} h={150} as='center'>
-            <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['blue', 'red', 'green']} style={{ borderRadius: 100, width: 150, height: 150 }} >
-            </LinearGradient>
-            <Span style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, width: 140, height: 140, right: 5, top: 5, zIndex: 10, backgroundColor: 'white', position: 'absolute' }} >
-              <Img w={137} h={137} br={80} src={require('../../assets/images/a2.jpg')} />
-
-            </Span>
-          </Span>
-        </Span>
-
-        <Span w={180} h={150} as='center'>
-          <Span w={150} h={150} as='center'>
-            <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['blue', 'red', 'green']} style={{ borderRadius: 100, width: 150, height: 150 }} >
-            </LinearGradient>
-            <Span style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, width: 140, height: 140, right: 5, top: 5, zIndex: 10, backgroundColor: 'white', position: 'absolute' }} >
-              <Img w={137} h={137} br={80} src={require('../../assets/images/a3.jpg')} />
-
-            </Span>
-          </Span>
-        </Span>
-
-        <Span w={180} h={150} as='center'>
-          <Span w={150} h={150} as='center'>
-            <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['blue', 'red', 'green']} style={{ borderRadius: 100, width: 150, height: 150 }} >
-            </LinearGradient>
-            <Span style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, width: 140, height: 140, right: 5, top: 5, zIndex: 10, backgroundColor: 'white', position: 'absolute' }} >
-              <Img style={{ objectFit: 'contain' }} w={137} h={137} br={80} src={require('../../assets/images/a7.jpg')} />
-              {/* <p style={{objectFit}}></p> */}
-            </Span>
-          </Span>
-        </Span>
-
-
-
-      </ScrollSlider>
 
 
       {/* <ScrollView indicatorStyle='default' showsHorizontalScrollIndicator showsVerticalScrollIndicator></ScrollView> */}
@@ -267,44 +276,44 @@ function Home(p) {
 
       <ScrollSlider {...p} id='scrollIcon' h={180} mb={10} pb={77} ccStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', height: 180 }} >
 
-      <Span w={180} h={150} ai='center' jc='center'>
-          <B_icon scale={1.9} iconSize={32} color="white" bgcolor="red" icon='mobile' />
+      <Span w={150} h={140} ai='center' jc='center'>
+          <B_icon scale={7.9} iconSize={32} color="white" bgcolor="red" icon='mobile' />
         </Span>
 
-        <Span w={180} h={150} ai='center' jc='center'>
-          <B_icon scale={1.9} color="white" bgcolor="green" m_icon='phonelink-setup' />
+        <Span w={150} h={140} ai='center' jc='center'>
+          <B_icon scale={1.7} color="white" bgcolor="green" m_icon='phonelink-setup' />
         </Span>
 
-        <Span w={180} h={150} ai='center' jc='center'>
-          <B_icon scale={1.9} color="white" bgcolor="blue" icon='headphones' />
+        <Span w={150} h={140} ai='center' jc='center'>
+          <B_icon scale={1.7} color="white" bgcolor="blue" icon='headphones' />
         </Span>
 
-        <Span w={180} h={150} ai='center' jc='center'>
-          <B_icon scale={1.9} color="white" bgcolor="yellow" icon='tablet' />
+        <Span w={150} h={140} ai='center' jc='center'>
+          <B_icon scale={1.7} color="white" bgcolor="yellow" icon='tablet' />
         </Span>
 
-        <Span w={180} h={150} ai='center' jc='center'>
-          <B_icon scale={1.9} color="white" bgcolor="silver" icon='shopping-cart' />
+        <Span w={150} h={140} ai='center' jc='center'>
+          <B_icon scale={1.7} color="white" bgcolor="silver" icon='shopping-cart' />
         </Span>
 
-        <Span w={180} h={150} ai='center' jc='center'>
-          <B_icon scale={1.9} iconSize={32} color="white" bgcolor="red" icon='mobile' />
+        <Span w={150} h={140} ai='center' jc='center'>
+          <B_icon scale={1.7} iconSize={32} color="white" bgcolor="red" icon='mobile' />
         </Span>
 
-        <Span w={180} h={150} ai='center' jc='center'>
-          <B_icon scale={1.9} color="white" bgcolor="green" m_icon='phonelink-setup' />
+        <Span w={150} h={140} ai='center' jc='center'>
+          <B_icon scale={1.7} color="white" bgcolor="green" m_icon='phonelink-setup' />
         </Span>
 
-        <Span w={180} h={150} ai='center' jc='center'>
-          <B_icon scale={1.9} color="white" bgcolor="blue" icon='headphones' />
+        <Span w={150} h={140} ai='center' jc='center'>
+          <B_icon scale={1.7} color="white" bgcolor="blue" icon='headphones' />
         </Span>
 
-        <Span w={180} h={150} ai='center' jc='center'>
-          <B_icon scale={1.9} color="white" bgcolor="yellow" icon='tablet' />
+        <Span w={150} h={140} ai='center' jc='center'>
+          <B_icon scale={1.7} color="white" bgcolor="yellow" icon='tablet' />
         </Span>
 
-        <Span w={180} h={150} ai='center' jc='center'>
-          <B_icon scale={1.9} color="white" bgcolor="silver" icon='shopping-cart' />
+        <Span w={150} h={140} ai='center' jc='center'>
+          <B_icon scale={1.7} color="white" bgcolor="silver" icon='shopping-cart' />
         </Span>
 
       </ScrollSlider>
