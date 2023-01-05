@@ -18,40 +18,79 @@ function Home(p) {
       />
 
 
-      <ScrollSlider {...p} id='scroll' >
-        <Press w={150} h={130} bgcolor='silver' ><Press bgcolor='red' w={'95%'} h={'100%'}></Press></Press>
-        <Press w={150} h={130} bgcolor='silver' ><Press bgcolor='red' w={'95%'} h={'100%'}></Press></Press>
-        <Press w={150} h={130} bgcolor='silver' ><Press bgcolor='red' w={'95%'} h={'100%'}></Press></Press>
-        <Press w={150} h={130} bgcolor='silver' ><Press bgcolor='red' w={'95%'} h={'100%'}></Press></Press>
-        <Press w={150} h={130} bgcolor='silver' ><Press bgcolor='red' w={'95%'} h={'100%'}></Press></Press>
-        <Press w={150} h={130} bgcolor='silver' ><Press bgcolor='red' w={'95%'} h={'100%'}></Press></Press>
-        <Press w={150} h={130} bgcolor='silver' ><Press bgcolor='red' w={'95%'} h={'100%'}></Press></Press>
-        <Press w={150} h={130} bgcolor='silver' ><Press bgcolor='red' w={'95%'} h={'100%'}></Press></Press>
-        <Press w={150} h={130} bgcolor='silver' ><Press bgcolor='red' w={'95%'} h={'100%'}></Press></Press>
-        <Press w={150} h={130} bgcolor='silver' ><Press bgcolor='red' w={'95%'} h={'100%'}></Press></Press>
-        <Press w={150} h={130} bgcolor='silver' ><Press bgcolor='red' w={'95%'} h={'100%'}></Press></Press>
-        <Press w={150} h={130} bgcolor='silver' ><Press bgcolor='red' w={'95%'} h={'100%'}></Press></Press>
-        <Press w={150} h={130} bgcolor='silver' ><Press bgcolor='red' w={'95%'} h={'100%'}></Press></Press>
-        <Press w={150} h={130} bgcolor='silver' ><Press bgcolor='red' w={'95%'} h={'100%'}></Press></Press>
-        <Press w={150} h={130} bgcolor='silver' ><Press bgcolor='red' w={'95%'} h={'100%'}></Press></Press>
-        <Press w={150} h={130} bgcolor='silver' ><Press bgcolor='red' w={'95%'} h={'100%'}></Press></Press>
-        <Press w={150} h={130} bgcolor='silver' ><Press bgcolor='red' w={'95%'} h={'100%'}></Press></Press>
-        <Press w={150} h={130} bgcolor='silver' ><Press bgcolor='red' w={'95%'} h={'100%'}></Press></Press>
-        <Press w={150} h={130} bgcolor='silver' ><Press bgcolor='red' w={'95%'} h={'100%'}></Press></Press>
-        <Press w={150} h={130} bgcolor='silver' ><Press bgcolor='red' w={'95%'} h={'100%'}></Press></Press>
-        <Press w={150} h={130} bgcolor='silver' ><Press bgcolor='red' w={'95%'} h={'100%'}></Press></Press>
-        <Press w={150} h={130} bgcolor='silver' ><Press bgcolor='red' w={'95%'} h={'100%'}></Press></Press>
-        <Press w={150} h={130} bgcolor='silver' ><Press bgcolor='red' w={'95%'} h={'100%'}></Press></Press>
-        <Press w={150} h={130} bgcolor='silver' ><Press bgcolor='red' w={'95%'} h={'100%'}></Press></Press>
-        <Press w={150} h={130} bgcolor='silver' ><Press bgcolor='red' w={'95%'} h={'100%'}></Press></Press>
-        <Press w={150} h={130} bgcolor='silver' ><Press bgcolor='red' w={'95%'} h={'100%'}></Press></Press>
-        <Press w={150} h={130} bgcolor='silver' ><Press bgcolor='red' w={'95%'} h={'100%'}></Press></Press>
-        <Press w={150} h={130} bgcolor='silver' ><Press bgcolor='red' w={'95%'} h={'100%'}></Press></Press>
-        <Press w={150} h={130} bgcolor='silver' ><Press bgcolor='red' w={'95%'} h={'100%'}></Press></Press>
-        <Press w={150} h={130} bgcolor='silver' ><Press bgcolor='red' w={'95%'} h={'100%'}></Press></Press>
-        <Press w={150} h={130} bgcolor='silver' ><Press bgcolor='red' w={'95%'} h={'100%'}></Press></Press>
-        <Press w={150} h={130} bgcolor='silver' ><Press bgcolor='red' w={'95%'} h={'100%'}></Press></Press>
-      </ScrollSlider>
+<ScrollSlider bgcolor='#d29' {...p} id='scrollCard1' h={200} style={{marginTop:12, borderRadius:40, width:'98%'}} ccStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', height: 150 }} >
+
+<Span w={155} ai='center' jc='center' >
+  <Card2 h={150} w={150} style={{ borderColor: 'silver', backgroundColor:'white' }} src={require('../../assets/images/a1.jpg')}
+    coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
+    coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
+  />
+</Span>
+
+<Span w={155} ai='center' jc='center' >
+  <Card2 h={150} w={150} style={{ borderColor: 'silver', backgroundColor:'white' }} src={require('../../assets/images/a1.jpg')}
+    coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
+    coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
+  />
+</Span>
+
+<Span w={155} ai='center' jc='center' >
+  <Card2 h={150} w={150} style={{ borderColor: 'silver', backgroundColor:'white' }} src={require('../../assets/images/a1.jpg')}
+    coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
+    coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
+  />
+</Span>
+
+<Span w={155} ai='center' jc='center' >
+  <Card2 h={150} w={150} style={{ borderColor: 'silver', backgroundColor:'white' }} src={require('../../assets/images/a1.jpg')}
+    coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
+    coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
+  />
+</Span>
+
+<Span w={155} ai='center' jc='center' >
+  <Card2 h={150} w={150} style={{ borderColor: 'silver', backgroundColor:'white' }} src={require('../../assets/images/a1.jpg')}
+    coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
+    coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
+  />
+</Span>
+
+<Span w={155} ai='center' jc='center' >
+  <Card2 h={150} w={150} style={{ borderColor: 'silver', backgroundColor:'white' }} src={require('../../assets/images/a1.jpg')}
+    coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
+    coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
+  />
+</Span>
+
+<Span w={155} ai='center' jc='center' >
+  <Card2 h={150} w={150} style={{ borderColor: 'silver', backgroundColor:'white' }} src={require('../../assets/images/a1.jpg')}
+    coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
+    coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
+  />
+</Span>
+
+<Span w={155} ai='center' jc='center' >
+  <Card2 h={150} w={150} style={{ borderColor: 'silver', backgroundColor:'white' }} src={require('../../assets/images/a1.jpg')}
+    coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
+    coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
+  />
+</Span>
+
+<Span w={155} ai='center' jc='center' >
+  <Card2 h={150} w={150} style={{ borderColor: 'silver', backgroundColor:'white' }} src={require('../../assets/images/a1.jpg')}
+    coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
+    coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
+  />
+</Span>
+
+<Span w={155} ai='center' jc='center' >
+  <Card2 h={150} w={150} style={{ borderColor: 'silver', backgroundColor:'white' }} src={require('../../assets/images/a1.jpg')}
+    coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
+    coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
+  />
+</Span>
+
+</ScrollSlider>
 
 
 
@@ -158,7 +197,7 @@ function Home(p) {
 
       <ScrollSlider {...p} id='scrollCard' h={250} mb={10} pb={77} ccStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', height: 180 }} >
 
-        <Span w={250} ai='center' jc='center' >
+        <Span w={230} ai='center' jc='center' >
           <Card2 h={200} w={200} sh={{ r: 8, o: 1, c: 'blue', of: { width: 0, height: 1 } }} style={{ borderColor: 'red' }} src={require('../../assets/images/a1.jpg')}
             coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
             coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
@@ -167,7 +206,7 @@ function Home(p) {
           />
         </Span>
 
-        <Span w={250} ai='center' jc='center' >
+        <Span w={230} ai='center' jc='center' >
           <Card2 h={200} w={200} sh={{ r: 8, o: 1, c: 'blue', of: { width: 0, height: 1 } }} style={{ borderColor: 'red' }} src={require('../../assets/images/a1.jpg')}
             coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
             coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
@@ -176,7 +215,7 @@ function Home(p) {
           />
         </Span>
 
-        <Span w={250} ai='center' jc='center' >
+        <Span w={230} ai='center' jc='center' >
           <Card2 h={200} w={200} sh={{ r: 8, o: 1, c: 'blue', of: { width: 0, height: 1 } }} style={{ borderColor: 'red' }} src={require('../../assets/images/a1.jpg')}
             coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
             coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
@@ -185,7 +224,7 @@ function Home(p) {
           />
         </Span>
 
-        <Span w={250} ai='center' jc='center' >
+        <Span w={230} ai='center' jc='center' >
           <Card2 h={200} w={200} sh={{ r: 8, o: 1, c: 'blue', of: { width: 0, height: 1 } }} style={{ borderColor: 'red' }} src={require('../../assets/images/a1.jpg')}
             coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
             coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
@@ -194,7 +233,7 @@ function Home(p) {
           />
         </Span>
 
-        <Span w={250} ai='center' jc='center' >
+        <Span w={230} ai='center' jc='center' >
           <Card2 h={200} w={200} sh={{ r: 8, o: 1, c: 'blue', of: { width: 0, height: 1 } }} style={{ borderColor: 'red' }} src={require('../../assets/images/a1.jpg')}
             coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
             coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
@@ -203,7 +242,7 @@ function Home(p) {
           />
         </Span>
 
-        <Span w={250} ai='center' jc='center' >
+        <Span w={230} ai='center' jc='center' >
           <Card2 h={200} w={200} sh={{ r: 8, o: 1, c: 'blue', of: { width: 0, height: 1 } }} style={{ borderColor: 'red' }} src={require('../../assets/images/a1.jpg')}
             coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
             coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
@@ -212,7 +251,7 @@ function Home(p) {
           />
         </Span>
 
-        <Span w={250} ai='center' jc='center' >
+        <Span w={230} ai='center' jc='center' >
           <Card2 h={200} w={200} sh={{ r: 8, o: 1, c: 'blue', of: { width: 0, height: 1 } }} style={{ borderColor: 'red' }} src={require('../../assets/images/a1.jpg')}
             coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
             coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}

@@ -6,10 +6,10 @@ const card2 = (p) => {
   const {coulumn1,coulumn2,coulumn3,coulumn4,h} =p
 
   return (
-    <Span h={h?h:300} w={'90%'} as={'center'} br={7} mt={55} border={[1]} {...p} >
+    <Span h={h?h:300} w={'90%'} as={'center'} br={4} mt={55} border={[1]} {...p} >
 
       <Span h={'45%'} >
-        <Img style={{height:'100%', borderTopRightRadius:7, borderTopLeftRadius:7}}  src={p.src} />
+        <Img style={{height:'100%', borderTopRightRadius:4, borderTopLeftRadius:4}}  src={p.src} />
       </Span>
 
       <Span h={'54%'} mt={8}>

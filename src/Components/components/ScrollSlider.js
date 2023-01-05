@@ -45,6 +45,7 @@ function ScrollSlider(p) {
       
       onMouseUp={() => { setscroll2(false); setTimeout(() => { das = [] }, 10) }} >
       <View
+      // onStartShouldSetResponder={()=>{ if (Platform.OS === 'web') p.$.id(p.id).setNativeProps({ style: { overflow: 'auto' } });}}
         onMoveShouldSetResponderCapture={(e) => {
           setscroll2(false)
           if (Platform.OS === 'web') {
