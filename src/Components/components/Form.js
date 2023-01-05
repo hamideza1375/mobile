@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { KeyboardAvoidingView, Pressable, View, Text, TextInput, Image, StyleSheet, ScrollView, Dimensions, Animated, Platform } from 'react-native'
-import { Input, Button, CheckBox } from '../Html'
+import { Input, Button, CheckBox, Swiper } from '../Html'
 import yub from '../../utils/yub'
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 const newObj = new Proxy({}, yub);
@@ -22,10 +22,11 @@ let loginInterval = null
 /> */}
 
 let interval
-const Form = ({webStyle={}, nativeStyle={}, timer=false, refInput, rand, setRand, btn = true, contentContainerStyle, overflow, mAutoFocus, mt, bgcolor = '#f0f0f0', 
-f, e, p, cp, m, ch, c, t, pr, im, i, edit, s, ph, $code, code, setcode,
+const Form = ({ webStyle = {}, nativeStyle = {}, timer = false, refInput, rand, setRand, btn = true, contentContainerStyle, overflow, mAutoFocus, mt, bgcolor = '#f0f0f0',
+  f, e, p, cp, m, ch, c, t, pr, im, i, edit, s, ph, $code, code, setcode, v,
   title, settitle, price, setprice, phone, setphone,
-  imageUrl, setImageUrl, info, setinfo
+  imageUrl, setImageUrl, vIconLeft, vIconRight, videoUrl, setvideoUrl,
+  info, setinfo
   , style, fullname, setfullname,
   email, setemail, password, setPassword,
   confirmPassword, setconfirmPassword, onClick, message,
@@ -36,7 +37,7 @@ f, e, p, cp, m, ch, c, t, pr, im, i, edit, s, ph, $code, code, setcode,
   setorientation, setwidth, setheight,
   fIconLeft, fIconRight, eIconLeft, eIconRight, pIconLeft, pIconRight, cpIconLeft, cpIconRight,
   tIconLeft, tIconRight, prIconLeft, prIconRight, iIconLeft, iIconRight, imIconLeft, imIconRight, phIconLeft, phIconRight,
-  input, setinput, _input
+  input, setinput, _input,flexDirection
 }) => {
 
 
@@ -88,7 +89,7 @@ f, e, p, cp, m, ch, c, t, pr, im, i, edit, s, ph, $code, code, setcode,
 
   useFocusEffect(useCallback(() => {
     setRand && setRand(parseInt(Math.random() * 9000 + 1000))
-    return ()=> setcaptcha && setcaptcha('')
+    return () => setcaptcha && setcaptcha('')
   }, [show2]))
 
   const [_fullname, set_Fullname] = useState()
@@ -98,6 +99,8 @@ f, e, p, cp, m, ch, c, t, pr, im, i, edit, s, ph, $code, code, setcode,
   const [_title, set_Title] = useState()
   const [_price, set_Price] = useState()
   const [_imageUrl, set_ImageUrl] = useState()
+  const [_videoUrl, set_VideoUrl] = useState()
+
   const [_info, set_Info] = useState()
   const [_message, set_Message] = useState()
   const [_checkbox, set_Checkbox] = useState()
@@ -113,6 +116,7 @@ f, e, p, cp, m, ch, c, t, pr, im, i, edit, s, ph, $code, code, setcode,
   newObj.title = title
   newObj.price = price;
   newObj.imageUrl = imageUrl;
+  newObj.videoUrl = videoUrl;
   newObj.info = info;
   newObj.message = message;
   newObj.allstar = allstar;
@@ -127,14 +131,15 @@ f, e, p, cp, m, ch, c, t, pr, im, i, edit, s, ph, $code, code, setcode,
   var titl = t ? newObj.title === title : true
   var prc = pr ? newObj.price === price : true
   var img = im ? (!edit ? newObj.imageUrl === imageUrl : true) : true
+  var vdo = v ? (!edit ? newObj.videoUrl === videoUrl : true) : true
   var inf = i ? newObj.info === info : true
 
 
   return (
-    <ScrollView contentContainerStyle={[ {flexGrow:1},contentContainerStyle]} style={[{ backgroundColor: bgcolor, borderRadius: 3, marginTop: mt }, Platform.OS === 'web' ? webStyle : nativeStyle ]} >
+    <ScrollView contentContainerStyle={[{ flexGrow: 1 }, contentContainerStyle]} style={[{ backgroundColor: bgcolor, borderRadius: 3, marginTop: mt }, Platform.OS === 'web' ? webStyle : nativeStyle]} >
 
       <View style={[styles.viewContainer, { paddingTop: top }, style]} >
-        <View style={[{ transform: [{ scaleY: sizeY }], padding: 10, paddingBottom: 25 }]}>
+        <View style={[{ transform: [{ scaleY: sizeY }], padding: 10, paddingBottom: 25 },flexDirection === 'row' && Platform.OS !== 'web' ?{flexDirection: 'row', flexWrap: 'wrap'}:{}]}>
 
           {f &&
             <Frm
@@ -266,6 +271,7 @@ f, e, p, cp, m, ch, c, t, pr, im, i, edit, s, ph, $code, code, setcode,
 
           {i &&
             <Frm
+            multiline
               icon="info"
               p=" توضیحات "
               iconLeft={iIconLeft}
@@ -298,40 +304,52 @@ f, e, p, cp, m, ch, c, t, pr, im, i, edit, s, ph, $code, code, setcode,
           }
 
           {_input &&
-            <KeyboardAvoidingView behavior={"height"} style={{ height: 70, minHeight: 70, marginVertical: 30 }}>
-              <View style={[styles.viewInput, { minHeight: 90 }, { marginBottom: 5 }]} >
-                <Input
-                  textContentType="telephoneNumber"
-                  autoComplete="tel"
-                  icon="phone"
-                  keyboardType="phone-pad"
-                  value={input}
-                  p={'ادمین جدید'}
-                  onChangeText={(text) => setinput(text)}
-                  style={[styles.input, { paddingRight: 3 }]}
-                />
+            <KeyboardAvoidingView behavior={"height"} style={[{ height: 70, minHeight: 70, marginVertical: 10, marginHorizontal: 10,flexGrow:1  }]}>
+              <View style={[styles.viewInput, { minHeight: 90 }]} >
+                <Swiper>
+                  <Text style={[styles.textinput, { marginTop: 5 }]} ></Text>
+                  <Input
+                    textContentType="telephoneNumber"
+                    autoComplete="tel"
+                    icon="phone"
+                    keyboardType="phone-pad"
+                    value={input}
+                    placeholder={'ادمین جدید'}
+                    onChangeText={(text) => setinput(text)}
+                    style={[styles.input, { paddingRight: 3 }]}
+                  />
+                </Swiper>
               </View>
             </KeyboardAvoidingView>
 
           }
 
           {$code &&
-            <KeyboardAvoidingView behavior={"height"} style={{ height: 70, minHeight: 70, marginVertical: 30 }}>
-              <View style={[styles.viewInput, { minHeight: 90 }, { marginBottom: 5 }]} >
-                <Input
-                  m_icon="textsms"
-                  iconSize={30}
-                  keyboardType="phone-pad"
-                  value={code}
-                  p={'کد ورود'}
-                  onChangeText={(text) => setcode(text)}
-                  style={[styles.input, { paddingRight: 3 }]}
-                />
+            <KeyboardAvoidingView behavior={"height"} style={[{ height: 70, minHeight: 70, marginVertical: 10, marginHorizontal: 10, flexGrow:1  }]}>
+              <View style={[styles.viewInput, { minHeight: 90 }]} >
+
+                <Swiper>
+                  <Text style={[styles.textinput, { marginTop: 5 }]} ></Text>
+
+                  <Input
+                    m_icon="textsms"
+                    iconSize={30}
+                    keyboardType="phone-pad"
+                    value={code}
+                    placeholder={'کد ورود'}
+                    onChangeText={(text) => setcode(text)}
+                    style={[styles.input, { paddingRight: 3 }]}
+                  />
+                </Swiper>
               </View>
             </KeyboardAvoidingView>
           }
 
           {im && <InputImage
+            icon='image'
+            p='انتخاب عکس  '
+            accept='image'
+            mediaType='photo'
             imIconLeft={imIconLeft}
             imIconRight={imIconRight}
             imageUrl={imageUrl}
@@ -342,8 +360,23 @@ f, e, p, cp, m, ch, c, t, pr, im, i, edit, s, ph, $code, code, setcode,
             styles={styles}
           />}
 
+          {v && <InputImage
+            icon='video-library'
+            p='انتخاب ویدئو  '
+            accept='video'
+            mediaType='video'
+            imIconLeft={vIconLeft}
+            imIconRight={vIconRight}
+            imageUrl={videoUrl}
+            setImageUrl={setvideoUrl}
+            _imageUrl={_videoUrl}
+            newObj={newObj.videoUrl}
+            img={vdo}
+            styles={styles}
+          />}
+
           {ch &&
-            <View behavior={"height"} style={{ height: 35, minHeight: 35, marginTop:10, justifyContent: 'center', marginTop: 15 }}>
+            <View behavior={"height"} style={{ height: 35, minHeight: 35, justifyContent: 'center', marginTop: 30, marginHorizontal:10 }}>
               <View style={{ marginVertical: 10 }} >
                 <View style={[styles.viewCheckbox, { flexGrow: .4, maxHeight: 20 }]}>
                   <CheckBox show={!checkText ? show : changeremember} setshow={!checkText ? setshow : setchangeremember} />
@@ -356,7 +389,7 @@ f, e, p, cp, m, ch, c, t, pr, im, i, edit, s, ph, $code, code, setcode,
 
           {c &&
             <>
-              <KeyboardAvoidingView behavior={"height"} style={{ height: 50, minHeight: 50,marginVertical:8 }}>
+              <KeyboardAvoidingView behavior={"height"} style={{ height: 50, minHeight: 50, marginVertical: 8, marginHorizontal:10 }}>
                 <View style={[styles.viewCaptcha, { height: 28, alignItems: 'center' }]}>
 
                   <Image source={{ uri: `${host}/captcha.png/${rand}` }} style={styles.imageCaptcha} />
@@ -374,8 +407,8 @@ f, e, p, cp, m, ch, c, t, pr, im, i, edit, s, ph, $code, code, setcode,
                     placeholder="کد امنیتی" style={[styles.TextInput, { borderColor: '#666' }, rand != captcha && _captcha && { borderColor: '#a22' }]}
                     onChangeText={text => setcaptcha(text)} />
                 </View>
-                {((_captcha) && (!captcha) ? <Text style={{ color: 'red', width: captcha ? 280 : 260 }}>لطفا کادر را پر کنید</Text>:<></>)}
-                {((_captcha) && (captcha) && (rand != captcha) ? <Text style={{ color: 'red', width: captcha ? 280 : 260 }}> کد وارد شده اشتباه هست</Text>:<></>)}
+                {((_captcha) && (!captcha) ? <Text style={{ color: 'red', width: captcha ? 280 : 260 }}>لطفا کادر را پر کنید</Text> : <></>)}
+                {((_captcha) && (captcha) && (rand != captcha) ? <Text style={{ color: 'red', width: captcha ? 280 : 260 }}> کد وارد شده اشتباه هست</Text> : <></>)}
               </KeyboardAvoidingView>
             </>
           }
@@ -468,7 +501,7 @@ f, e, p, cp, m, ch, c, t, pr, im, i, edit, s, ph, $code, code, setcode,
             </View>
           }
 
-          <KeyboardAvoidingView behavior={"height"} style={{ height: 70, minHeight: 70, marginBottom: 15 }}>
+          <KeyboardAvoidingView behavior={"height"} style={{ height: 70, minHeight: 70, marginBottom: 15, width:'100%' }}>
             {btn && <Button
               onPressIn={() => {
                 setremember && setremember(changeremember ? (60000 * 60 * 24 * 365) : ('24h'))
@@ -482,21 +515,22 @@ f, e, p, cp, m, ch, c, t, pr, im, i, edit, s, ph, $code, code, setcode,
                 set_Title(true)
                 set_Price(true)
                 set_ImageUrl(true)
+                set_VideoUrl(true)
                 set_Info(true)
                 set_Allstar(true)
                 set_Phone(true)
               }}
-              onPress={async() => {
-                if (flm && eml && psd && cfpsd && msg && cap && show && titl && prc && img && inf && pon && star1) {
-               
-                if(!timer) {
-                  onClick()
-                } else {
-                  if(true){
+              onPress={async () => {
+                if (flm && eml && psd && cfpsd && msg && cap && show && titl && prc && img && vdo && inf && pon && star1) {
+
+                  if (!timer) {
+                    onClick()
+                  } else {
+                    if (true) {
                       loginInterval && clearInterval(loginInterval)
                       let d = new Date()
                       let locMinut = await AsyncStorage.getItem('getMinutes')
-                  
+
                       let svl = await AsyncStorage.getItem("several")
                       if ((locMinut - d.getMinutes()) <= 1) {
                         await AsyncStorage.removeItem("several")
@@ -504,11 +538,11 @@ f, e, p, cp, m, ch, c, t, pr, im, i, edit, s, ph, $code, code, setcode,
                       }
                       if (JSON.parse(svl) < 5 && JSON.parse(svl) > 0) {
                         loginInterval = setTimeout(async () => {
-                          if(JSON.parse(svl) > 0){
-                          AsyncStorage.getItem("several").then((several) => {AsyncStorage.setItem("several", JSON.stringify(JSON.parse(several) - 1)).then(() => { })})
-                          await AsyncStorage.setItem('getMinutes', JSON.stringify(d.getMinutes() - 5))
-                         }
-                      }, 60000);
+                          if (JSON.parse(svl) > 0) {
+                            AsyncStorage.getItem("several").then((several) => { AsyncStorage.setItem("several", JSON.stringify(JSON.parse(several) - 1)).then(() => { }) })
+                            await AsyncStorage.setItem('getMinutes', JSON.stringify(d.getMinutes() - 5))
+                          }
+                        }, 60000);
                       }
                       if (JSON.parse(svl) < 5 || (locMinut - d.getMinutes() <= 1)) {
                         await AsyncStorage.removeItem('getTime')
@@ -530,8 +564,8 @@ f, e, p, cp, m, ch, c, t, pr, im, i, edit, s, ph, $code, code, setcode,
                             alert(`تعداد دفعات وارد شده بیشتر از حد مجاز بود ${locMinut - d.getMinutes() > 0 ? locMinut - d.getMinutes() : 0} دقیقه دیگر دوباره امتحان کنید`)
                         })
                       }
+                    }
                   }
-                }
 
 
                 }

@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
+import { Platform, View } from 'react-native'
 import { ScrollHorizontal } from '../Html'
+// import s from './style.module.scss'
 
 var count = 150,
   width,
@@ -14,49 +16,65 @@ function ScrollSlider(p) {
   const [interval, setinterval] = useState(true)
 
   const open = () => {
-      { p.$ && p.$.id(p.id).scrollTo({ x: count, y: 0, animated: true }); }
+    if (scroll2) {
+      { p.$?.id(p.id) && p.$.id(p.id).scrollTo({ x: count, y: 0, animated: true }); }
       count += 150
+    }
   };
 
-  if(scrollWidth && (scroll + scrollWidth + 200) >= contentSize){clearInterval(interval)} 
-  if(!scroll2){clearInterval(interval)} 
+  if (scrollWidth && (scroll + scrollWidth + 200) >= contentSize) { clearInterval(interval) }
+  if (!scroll2) { clearInterval(interval) }
 
   if (p.width !== width) {
-    p.$ && p.$.id(p.id).scrollTo({ x: 0, y: 0, animated: true });
+    p.$?.id(p.id) && p.$.id(p.id).scrollTo({ x: 0, y: 0, animated: true });
     count = 1
     interval && clearInterval(interval)
   }
 
   p.useEffect(() => {
-    return()=>(
+    return () => (
       clearInterval(interval)
-      )
+    )
   }, [])
 
+  !scroll2 && clearInterval(interval)
+
+
   return (
-    <>
-      <ScrollHorizontal
-        onLayout={(e) => { setscrollWidth(e.nativeEvent.layout.width);width = p.width; let int = setInterval(sum, 4000); function sum() { if(scroll2)open(); setinterval(int) } }}
-        onContentSizeChange={(e)=>{setcontentSize(e);}}
-        scrollEventThrottle={0}
-        alwaysBounceHorizontal={false}
-        alwaysBounceVertical={false}
-        contentInset={{ top: 0 }}
-        onScroll={(e) => { setscroll(e.nativeEvent.contentOffset.x) }}
-        onMoveShouldSetResponder={(e) => {
+    <View onMouseLeave={() => { if (Platform.OS === 'web') p.$.id(p.id).setNativeProps({ style: { overflow: 'hidden' } }); }}
+      
+      onMouseUp={() => { setscroll2(false); setTimeout(() => { das = [] }, 10) }} >
+      <View
+        onMoveShouldSetResponderCapture={(e) => {
           setscroll2(false)
-          if (das.length > 2) das = []
-          das.push(e.nativeEvent.pageX)
-          if (das[0] > das[1]) p.$.id(p.id).scrollTo({ x: scroll + 100, y: 0 })
-          if (das[0] < das[1]) p.$.id(p.id).scrollTo({ x: scroll - 100, y: 0 })
+          if (Platform.OS === 'web') {
+            p.$.id(p.id).setNativeProps({ style: { overflow: 'auto' } });
+            console.log(scroll + das[0] - das[das.length - 1]);
+            das.push(e.nativeEvent.pageX)
+            p.$.id(p.id).scrollTo({ x: scroll + das[0] - das[das.length - 1], y: 0 })
+            setscroll(scroll + das[0] - das[das.length - 1])
+          }
           setscroll2(false)
 
-        }} dir='ltr' id={p.id}
-
-        style={{ overflow: 'auto', height: 150, width: p.width - 4, marginTop: 2, alignSelf: 'center', borderRadius: 5, }} >
-        {p.children}
-      </ScrollHorizontal>
-    </>
+        }}
+      >
+        <ScrollHorizontal
+          {...p}
+          contentContainerStyle={p.ccStyle}
+          onLayout={(e) => { setscrollWidth(e.nativeEvent.layout.width); width = p.width; let int = setInterval(sum, 4000); function sum() { if (scroll2) open() } setinterval(int) }}
+          onContentSizeChange={(e) => { setcontentSize(e); }}
+          scrollEventThrottle={0}
+          alwaysBounceHorizontal={false}
+          alwaysBounceVertical={false}
+          contentInset={{ top: 0 }}
+          onScroll={(e) => { setscroll(e.nativeEvent.contentOffset.x) }}
+          dir='ltr' id={p.id}
+          webStyle={{overflow:'hidden'}}
+          style={[{ height: p.h ? p.h : 150, width: p.width - 4, marginTop: 2, alignSelf: 'center', borderRadius: 5, flexWrap: 'wrap' }, p.style]} >
+          {p.children}
+        </ScrollHorizontal>
+      </View>
+    </View>
   )
 }
 

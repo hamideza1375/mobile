@@ -1,16 +1,16 @@
 import React from "react";
-import { Animated, Text, View } from "react-native";
-// import { launchImageLibrary } from "react-native-image-picker";
+import { Animated, KeyboardAvoidingView, Pressable, Text, View } from "react-native";
+import { launchImageLibrary } from "react-native-image-picker";
 import { Input } from "./FormComponent";
 import Swiper from '../components/Swiper'
 
-function InputImage({ imIconLeft,imIconRight,imageUrl,setImageUrl,_imageUrl,newObj,img,styles}) {
+function InputImage({ imIconLeft,imIconRight,imageUrl,setImageUrl,_imageUrl,newObj,img,styles, icon,p,mediaType='photo'}) {
    
     const pickImage = () => {
-      // launchImageLibrary({ mediaType: 'photo' }, (res) => {
-      //   if (!res.didCancel) setImageUrl({ name: res.assets[0].fileName, type: res.assets[0].type, uri: res.assets[0].uri })
-      //   else console.log('err');
-      // })
+      launchImageLibrary({ mediaType }, (res) => {
+        if (!res.didCancel) setImageUrl({ name: res.assets[0].fileName, type: res.assets[0].type, uri: res.assets[0].uri })
+        else console.log('err');
+      })
   }
 
   // const pickVideo = () => {
@@ -28,6 +28,7 @@ function InputImage({ imIconLeft,imIconRight,imageUrl,setImageUrl,_imageUrl,newO
   // }
  
     return (
+    <KeyboardAvoidingView behavior={"height"} style={[{ height: 70, minHeight: 70, marginVertical: 10,marginTop:7, marginHorizontal:10, flexGrow:1 }]}>
       <View style={{ minHeight: 70, height:70, marginVertical:12}}>
         <Animated.View style={[styles.viewInput, { minHeight: 90 }, { marginBottom: 5 }]} >
           <Swiper cansel={(imIconLeft || imIconRight) ? false : true} style={{ height: '100%', marginBottom: 20, paddingBottom: 20 }}
@@ -36,24 +37,25 @@ function InputImage({ imIconLeft,imIconRight,imageUrl,setImageUrl,_imageUrl,newO
             iconLeft={imIconLeft}
             iconRight={imIconRight}
           >
-            <Text style={[styles.textinput, { marginTop: 5 }]} >انتخاب عکس</Text>
-            <Animated.View onTouchStart={pickImage} style={[styles.animatedBorder,
+            <Text style={[styles.textinput, { marginTop: 5 }]} >{p}</Text>
+            <Pressable onPress={pickImage} style={[styles.animatedBorder,
             _imageUrl && !img &&
             {borderWidth: 1.2, borderColor:'red'}]} >
               <Input
                 editable={false}
-                p=" انتخاب از گالری "
-                icon={'image'}
+                placeholder={p}
+                m_icon={icon}
                 value={imageUrl.name}
                 style={styles.input}
               />
-            </Animated.View>
+            </Pressable>
             {_imageUrl && !img && <Text style={[styles.textinput, { color: 'red' }]} >
                 {newObj}
             </Text>}
           </Swiper>
         </Animated.View>
       </View>
+      </KeyboardAvoidingView>
     )
   }
   

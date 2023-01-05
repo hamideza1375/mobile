@@ -6,7 +6,10 @@ import Icon3 from 'react-native-vector-icons/dist/MaterialIcons';
 
 
 const B_icon = (prop) => {
-  const { color, bgcolor = "#02f", size = 1, chatRef, icon, a_icon,m_icon, border = "#01c", style, iconSize, iconPress, onClick } = prop
+  
+  const { 
+    as, p, pt, pb, pl, pr, pv, ph, m, mt, mb, ml, mr, mv, mh,
+    color, bgcolor = "#02f", scale = 1,w=75,h=75, icon, a_icon,m_icon, border = [7,"#01c"], style, iconSize, iconPress, onClick } = prop
 
   const bgClr = bgcolor ?
     (bgcolor == 'red') && '#e22a' ||
@@ -14,8 +17,8 @@ const B_icon = (prop) => {
     (bgcolor == 'green') && '#171a' ||
     (bgcolor == 'yellow') && '#f9c000aa' ||
     (bgcolor == 'silver') && '#666a' ||
-    (!border) && bgcolor ||
-    (border) && bgcolor ||
+    (!border[1]) && bgcolor ||
+    (border[1]) && bgcolor ||
     'rgba(240,240,240,.6)'
     :
     'rgba(150,200,240,.5)'
@@ -46,12 +49,11 @@ const B_icon = (prop) => {
 
   return (
     <Animated.View
-      ref={chatRef}
-      style={[styles.animation,
-      { transform: [{ scale: size }], backgroundColor: iterPlt }, style]}>
+      style={[styles.animation,{width:w,height:h,alignSelf:as, padding:p, paddingTop:pt, paddingBottom:pb, paddingLeft:pl, paddingRight:pr, paddingVertical:pv, paddingHorizontal:ph, margin:m, marginTop:mt, marginBottom:mb, marginLeft:ml, marginRight:mr, marginVertical:mv, marginHorizontal:mh} ,
+      { transform: [{ scale}], backgroundColor: iterPlt }, style]}>
       <Pressable
         onStartShouldSetResponder={prop.onPress}
-        style={[styles.pressable, !onClick && {cursor:null},{
+        style={[styles.pressable,{width:w,height:h, borderWidth:border[0]}, !onClick && {cursor:null},{
           borderColor:
             (bgcolor == 'red') && '#e22' ||
             (bgcolor == 'blue') && '#01c' ||
@@ -59,7 +61,7 @@ const B_icon = (prop) => {
             (bgcolor == 'yellow') && '#f9c000' ||
             (bgcolor == 'silver') && '#666' ||
             bgcolor ||
-            border,
+            border[1],
           backgroundColor:
             (bgcolor == 'red') && '#f22' ||
             (bgcolor == 'blue') && '#22f' ||
@@ -92,15 +94,12 @@ export default B_icon
 
 const styles = StyleSheet.create({
   animation: {
-    width: 75,
-    height: 75,
     borderRadius: 99,
     justifyContent: 'center',
     alignItems: 'center',
 
   },
   pressable: {
-    borderWidth: 7,
     width: 65,
     height: 65,
     borderRadius: 99,

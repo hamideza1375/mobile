@@ -3,16 +3,16 @@ import { View, Text, Image, Pressable, Platform } from 'react-native';
 
 function Card(prop) {
 
-  const { style, header, body, footer, bgcolor, color, alert, border, img, dr = 'rtl', imageStyle, headerRow } = prop
+  const { style, header, body, footer, bgcolor, color, alert, border=[1], img, dr = 'rtl', imageStyle, headerRow } = prop
 
   return !img ? ((
     !alert ?
       <Pressable
         {...prop}
         style={[{
-          borderWidth: 1, borderRadius: 5,
+          borderWidth:border[0], borderRadius: 5,
           borderColor:
-            !border && (
+            !border[1] && (
               !bgcolor && '#fbb' ||
               bgcolor == 'black' && '#999' ||
               bgcolor == 'silver' && 'silver' ||
@@ -22,7 +22,7 @@ function Card(prop) {
               bgcolor == 'yellow' && 'yellow' ||
               bgcolor == 'white' && '#ccc' ||
               bgcolor) ||
-            border
+            border[1]
           ,
           backgroundColor:
             !bgcolor && '#fbb' ||
@@ -92,9 +92,9 @@ function Card(prop) {
         <Pressable
           {...prop}
           style={[{
-            borderWidth: 1, borderRadius: 5,
+            borderWidth:border[0], borderRadius: 5,
             borderColor:
-              !border && (
+              !border[1] && (
                 !bgcolor && '#fdb' ||
                 bgcolor == 'blue' && '#bfd' ||
                 bgcolor == 'red' && '#fdb' ||
@@ -103,7 +103,7 @@ function Card(prop) {
                 bgcolor == 'silver' && '#ccc' ||
                 bgcolor == 'black' && 'silver' ||
                 bgcolor) ||
-              border
+              border[1]
             ,
             backgroundColor:
               !bgcolor && '#fdb' ||
@@ -170,9 +170,9 @@ function Card(prop) {
           <Pressable
             {...prop}
             style={[{
-              borderWidth: 1, borderRadius: 5, minHeight: 115, width: '100%', position: 'relative',
+              borderWidth:border[0], borderRadius: 5, minHeight: 115, width: '100%', position: 'relative',
               borderColor:
-                !border && (
+                !border[1] && (
                   !bgcolor && '#fbb' ||
                   bgcolor == 'black' && '#999' ||
                   bgcolor == 'silver' && 'silver' ||
@@ -182,7 +182,7 @@ function Card(prop) {
                   bgcolor == 'yellow' && 'yellow' ||
                   bgcolor == 'white' && '#ccc' ||
                   bgcolor) ||
-                border
+                border[1]
               ,
               backgroundColor:
                 !bgcolor && '#fbb' ||
@@ -202,7 +202,7 @@ function Card(prop) {
                 <View style={[{
                   paddingHorizontal: 5, paddingVertical: 12, width: '70%'
               //  !
-            }, dr === 'rtl' ? { alignSelf:Platform.OS !== 'web'?'flex-start': 'flex-end' } : { alignSelf:Platform.OS !== 'web'?'flex-end': 'flex-start' }]}               >
+            }, dr === 'rtl' ? { alignSelf: 'flex-end' } : { alignSelf: 'flex-start' }]}               >
                   <Text
                     style={[{
                       color:
@@ -221,7 +221,7 @@ function Card(prop) {
                       fontSize: 15,
                       width: '100%',
                       textAlign: 'left'
-                    }, dr === 'rtl' ? { textAlign: 'right' } : { textAlign: 'left' }]}>
+                    }, dr === 'rtl' ? { textAlign:Platform.OS !== 'web' ? 'right':'left' } : { textAlign:Platform.OS === 'web' ? 'right':'left' }]}>
                     {header}
                   </Text>
                 </View>
@@ -320,9 +320,9 @@ function Card(prop) {
             <Pressable
               {...prop}
               style={[{
-                borderWidth: 1, borderRadius: 5, minHeight: 115, width: '100%', position: 'relative',
+                borderWidth:border[0], borderRadius: 5, minHeight: 115, width: '100%', position: 'relative',
                 borderColor:
-                  !border && (
+                  !border[1] && (
                     !bgcolor && '#fdb' ||
                     bgcolor == 'blue' && '#bfd' ||
                     bgcolor == 'red' && '#fdb' ||
@@ -331,7 +331,7 @@ function Card(prop) {
                     bgcolor == 'black' && '#ccc' ||
                     bgcolor == 'silver' && 'silver' ||
                     bgcolor) ||
-                  border
+                  border[1]
                 ,
                 backgroundColor:
                   !bgcolor && '#fdb' ||

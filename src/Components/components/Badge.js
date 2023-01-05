@@ -1,21 +1,21 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 
-const Badge = ({ bgcolor, color, text, top, left, right, bottom, style, scale=1 }) => {
+const Badge = ({ bgcolor, color='#fff', text, top, left, right, bottom, style, scale=1 }) => {
     return (
         <View style={[styles.viewBadge, {
-            backgroundColor: color ?
-                (color == 'red') && '#f33' ||
-                (color == 'blue') && '#22f' ||
-                (color == 'green') && '#292' ||
-                (color == 'yellow') && '#fa3' ||
-                (color == 'black') && '#555' ||
+            backgroundColor: bgcolor ?
+                (bgcolor == 'red') && '#f33' ||
+                (bgcolor == 'blue') && '#22f' ||
+                (bgcolor == 'green') && '#292' ||
+                (bgcolor == 'yellow') && '#fa3' ||
+                (bgcolor == 'black') && '#555' ||
                 bgcolor
                 :
                 bgcolor ? bgcolor : "#f33",
         },
         { top: top ? top : -3, left, right, bottom, transform:[{scale}] }, style]} >
-            <Text style={styles.textBadge} >
+            <Text style={[styles.textBadge,{color}]} >
                 {text}
             </Text>
         </View>
