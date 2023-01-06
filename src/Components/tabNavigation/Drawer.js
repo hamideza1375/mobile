@@ -38,7 +38,7 @@ const Drawer = ({ color='#222',group, children, name, title, bgcolor = '#fff', s
 
   return (
     <View style={[styles.container,{height:Platform.OS !== 'web'?'99.7%':'99.7vh',overflow:'hidden'}]} >
-      <View style={[styles.sidebar, { backgroundColor: bgcolor }, style]} >
+      <View style={[styles.sidebar, { backgroundColor: bgcolor },header ?{paddingRight:0}:{}, style]} >
         {!header?
         <><View style={styles.TextHeader}>{iconRight && <Icon name={iconRight.name} onPress={iconRight.onClick} size={25} color={color} /> }</View>
         <Text style={[styles.TextHeader,{color}]}>{title}</Text>

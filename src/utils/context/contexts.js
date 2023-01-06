@@ -67,12 +67,51 @@ function State() {
   const [showActivityHome, setshowActivityHome] = useState(true)
   const [$, set$] = useState()
   const [host] = useState(localhost)
+
+  const [sdCardFilter,setsdCardFilter] = useState('')
+  const [ramFilter,setramFilter] = useState('')
+  const [cpuCoreFilter,setcpuCoreFilter] = useState('')
+  const [cameraFilter,setcameraFilter] = useState('')
+  const [priceFilter,setpriceFilter] = useState('')
+  
+  const [sdCardFilterTo,setsdCardFilterTo] = useState('')
+  const [ramFilterTo,setramFilterTo] = useState('')
+  const [cpuCoreFilterTo,setcpuCoreFilterTo] = useState('')
+  const [cameraFilterTo,setcameraFilterTo] = useState('')
+  const [priceFilterTo,setpriceFilterTo] = useState('')
+  
+  const [fourG,setfourG] = useState(false)
+  const [fiveG,setfiveG] = useState(false)
+
+
+
+
+
+  const [showFilterModal,setshowFilterModal] = useState(false)
+  
   const useEffect = (call, state) => { useFocusEffect(useCallback(() => call(), state)) }
   const refInput = useRef()
 
 
 
   return {
+  
+    sdCardFilter,setsdCardFilter,
+    ramFilter,setramFilter,
+    cpuCoreFilter,setcpuCoreFilter,
+    cameraFilter,setcameraFilter,
+    priceFilter,setpriceFilter,
+
+    sdCardFilterTo,setsdCardFilterTo,
+    ramFilterTo,setramFilterTo,
+    cpuCoreFilterTo,setcpuCoreFilterTo,
+    cameraFilterTo,setcameraFilterTo,
+    priceFilterTo,setpriceFilterTo,
+
+    fourG,setfourG,
+    fiveG,setfiveG,
+
+    showFilterModal,setshowFilterModal,
     replaceInput, setreplaceInput,
     several, setseveral,
     sendMessage, setsendMessage,

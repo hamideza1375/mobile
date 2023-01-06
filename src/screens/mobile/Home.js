@@ -1,11 +1,12 @@
 import React from 'react'
 import { ScrollView } from 'react-native'
-import { Span, Slider, Press, ScrollSlider, Icon, M_icon, Scroll, B_icon, Img, P, Card2 } from '../../Components/Html'
+import { Span, Slider, Press, ScrollSlider, Icon, M_icon, Scroll, B_icon, Img, P, Card2, Div } from '../../Components/Html'
 import LinearGradient from '../../Components/other/LinearGradient'
 
 function Home(p) {
   return (
-    <Scroll id='containScroll' onLayout={() => { if (p.$?.id('containScroll')) { p.$.id('containScroll').scrollTo({ x: 0, y: 20, animated: true }) } }}  >
+    <Scroll id='containScroll' onLayout={() => { /* if (p.$?.id('containScroll')) { p.$.id('containScroll').scrollTo({ x: 0, y: 20, animated: true }) }*/  }}  >
+     
       <Slider id='slider' {...p} onClick={() => { alert(8) }}
         img1={require('../../assets/images/a1.jpg')}
         img2={require('../../assets/images/a2.jpg')}
@@ -15,13 +16,13 @@ function Home(p) {
         img6={require('../../assets/images/a2.jpg')}
         img7={require('../../assets/images/a3.jpg')}
         img8={require('../../assets/images/a7.jpg')}
-      />
+        />
 
 
 
 
       <ScrollSlider {...p} id='scrollGradient' h={180} mb={10} pb={77} ccStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', height: 180 }} >
-     
+
         <Span w={160} h={140} as='center'>
           <Span w={150} h={140} as='center'>
             <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['blue', 'red', 'green']} style={{ borderRadius: 100, width: 150, height: 150 }} >
@@ -120,86 +121,136 @@ function Home(p) {
 
       <Span bgcolor='#d29' br={10} w='99%' as='center' mt={10} >
 
-<ScrollSlider  {...p} id='scrollCard1' h={207} style={{width:'95%', alignSelf:'center' }} ccStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', height: 150 }} >
+        <ScrollSlider  {...p} id='scrollCard1' h={207} style={{ width: '95%', alignSelf: 'center' }} ccStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', height: 150 }} >
 
-<Span w={155} ai='center' jc='center' >
-  <Card2 h={150} w={150} style={{ borderColor: 'silver', backgroundColor:'white' }} src={require('../../assets/images/a1.jpg')}
-    coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
-    coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
-  />
-</Span>
+          <Span w={155} ai='center' jc='center' >
+            <Card2 h={150} w={150} style={{ borderColor: 'silver', backgroundColor: 'white' }} src={require('../../assets/images/a1.jpg')}
+              coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
+              coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
+            />
+          </Span>
 
-<Span w={155} ai='center' jc='center' >
-  <Card2 h={150} w={150} style={{ borderColor: 'silver', backgroundColor:'white' }} src={require('../../assets/images/a1.jpg')}
-    coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
-    coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
-  />
-</Span>
+          <Span w={155} ai='center' jc='center' >
+            <Card2 h={150} w={150} style={{ borderColor: 'silver', backgroundColor: 'white' }} src={require('../../assets/images/a1.jpg')}
+              coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
+              coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
+            />
+          </Span>
 
-<Span w={155} ai='center' jc='center' >
-  <Card2 h={150} w={150} style={{ borderColor: 'silver', backgroundColor:'white' }} src={require('../../assets/images/a1.jpg')}
-    coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
-    coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
-  />
-</Span>
+          <Span w={155} ai='center' jc='center' >
+            <Card2 h={150} w={150} style={{ borderColor: 'silver', backgroundColor: 'white' }} src={require('../../assets/images/a1.jpg')}
+              coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
+              coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
+            />
+          </Span>
 
-<Span w={155} ai='center' jc='center' >
-  <Card2 h={150} w={150} style={{ borderColor: 'silver', backgroundColor:'white' }} src={require('../../assets/images/a1.jpg')}
-    coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
-    coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
-  />
-</Span>
+          <Span w={155} ai='center' jc='center' >
+            <Card2 h={150} w={150} style={{ borderColor: 'silver', backgroundColor: 'white' }} src={require('../../assets/images/a1.jpg')}
+              coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
+              coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
+            />
+          </Span>
 
-<Span w={155} ai='center' jc='center' >
-  <Card2 h={150} w={150} style={{ borderColor: 'silver', backgroundColor:'white' }} src={require('../../assets/images/a1.jpg')}
-    coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
-    coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
-  />
-</Span>
+          <Span w={155} ai='center' jc='center' >
+            <Card2 h={150} w={150} style={{ borderColor: 'silver', backgroundColor: 'white' }} src={require('../../assets/images/a1.jpg')}
+              coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
+              coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
+            />
+          </Span>
 
-<Span w={155} ai='center' jc='center' >
-  <Card2 h={150} w={150} style={{ borderColor: 'silver', backgroundColor:'white' }} src={require('../../assets/images/a1.jpg')}
-    coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
-    coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
-  />
-</Span>
+          <Span w={155} ai='center' jc='center' >
+            <Card2 h={150} w={150} style={{ borderColor: 'silver', backgroundColor: 'white' }} src={require('../../assets/images/a1.jpg')}
+              coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
+              coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
+            />
+          </Span>
 
-<Span w={155} ai='center' jc='center' >
-  <Card2 h={150} w={150} style={{ borderColor: 'silver', backgroundColor:'white' }} src={require('../../assets/images/a1.jpg')}
-    coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
-    coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
-  />
-</Span>
+          <Span w={155} ai='center' jc='center' >
+            <Card2 h={150} w={150} style={{ borderColor: 'silver', backgroundColor: 'white' }} src={require('../../assets/images/a1.jpg')}
+              coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
+              coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
+            />
+          </Span>
 
-<Span w={155} ai='center' jc='center' >
-  <Card2 h={150} w={150} style={{ borderColor: 'silver', backgroundColor:'white' }} src={require('../../assets/images/a1.jpg')}
-    coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
-    coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
-  />
-</Span>
+          <Span w={155} ai='center' jc='center' >
+            <Card2 h={150} w={150} style={{ borderColor: 'silver', backgroundColor: 'white' }} src={require('../../assets/images/a1.jpg')}
+              coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
+              coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
+            />
+          </Span>
 
-<Span w={155} ai='center' jc='center' >
-  <Card2 h={150} w={150} style={{ borderColor: 'silver', backgroundColor:'white' }} src={require('../../assets/images/a1.jpg')}
-    coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
-    coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
-  />
-</Span>
+          <Span w={155} ai='center' jc='center' >
+            <Card2 h={150} w={150} style={{ borderColor: 'silver', backgroundColor: 'white' }} src={require('../../assets/images/a1.jpg')}
+              coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
+              coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
+            />
+          </Span>
 
-<Span w={155} ai='center' jc='center' >
-  <Card2 h={150} w={150} style={{ borderColor: 'silver', backgroundColor:'white' }} src={require('../../assets/images/a1.jpg')}
-    coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
-    coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
-  />
-</Span>
+          <Span w={155} ai='center' jc='center' >
+            <Card2 h={150} w={150} style={{ borderColor: 'silver', backgroundColor: 'white' }} src={require('../../assets/images/a1.jpg')}
+              coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
+              coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
+            />
+          </Span>
 
-</ScrollSlider>
-</Span>
+        </ScrollSlider>
+      </Span>
 
 
 
 
 
       {/* <ScrollView indicatorStyle='default' showsHorizontalScrollIndicator showsVerticalScrollIndicator></ScrollView> */}
+
+
+
+
+      <ScrollSlider {...p} id='scrollIcon' h={180} mb={10} pb={77} ccStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', height: 180 }} >
+
+        <Span w={150} h={140} ai='center' jc='center'>
+          <B_icon scale={1.7} iconSize={32} color="white" bgcolor="red" icon='mobile' />
+        </Span>
+
+        <Span w={150} h={140} ai='center' jc='center'>
+          <B_icon scale={1.7} color="white" bgcolor="green" m_icon='phonelink-setup' />
+        </Span>
+
+        <Span w={150} h={140} ai='center' jc='center'>
+          <B_icon scale={1.7} color="white" bgcolor="blue" icon='headphones' />
+        </Span>
+
+        <Span w={150} h={140} ai='center' jc='center'>
+          <B_icon scale={1.7} color="white" bgcolor="yellow" icon='tablet' />
+        </Span>
+
+        <Span w={150} h={140} ai='center' jc='center'>
+          <B_icon scale={1.7} color="white" bgcolor="silver" icon='shopping-cart' />
+        </Span>
+
+        <Span w={150} h={140} ai='center' jc='center'>
+          <B_icon scale={1.7} iconSize={32} color="white" bgcolor="red" icon='mobile' />
+        </Span>
+
+        <Span w={150} h={140} ai='center' jc='center'>
+          <B_icon scale={1.7} color="white" bgcolor="green" m_icon='phonelink-setup' />
+        </Span>
+
+        <Span w={150} h={140} ai='center' jc='center'>
+          <B_icon scale={1.7} color="white" bgcolor="blue" icon='headphones' />
+        </Span>
+
+        <Span w={150} h={140} ai='center' jc='center'>
+          <B_icon scale={1.7} color="white" bgcolor="yellow" icon='tablet' />
+        </Span>
+
+        <Span w={150} h={140} ai='center' jc='center'>
+          <B_icon scale={1.7} color="white" bgcolor="silver" icon='shopping-cart' />
+        </Span>
+
+      </ScrollSlider>
+
+
+
 
 
 
@@ -272,51 +323,6 @@ function Home(p) {
       </ScrollSlider>
 
 
-
-
-      <ScrollSlider {...p} id='scrollIcon' h={180} mb={10} pb={77} ccStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', height: 180 }} >
-
-      <Span w={150} h={140} ai='center' jc='center'>
-          <B_icon scale={7.9} iconSize={32} color="white" bgcolor="red" icon='mobile' />
-        </Span>
-
-        <Span w={150} h={140} ai='center' jc='center'>
-          <B_icon scale={1.7} color="white" bgcolor="green" m_icon='phonelink-setup' />
-        </Span>
-
-        <Span w={150} h={140} ai='center' jc='center'>
-          <B_icon scale={1.7} color="white" bgcolor="blue" icon='headphones' />
-        </Span>
-
-        <Span w={150} h={140} ai='center' jc='center'>
-          <B_icon scale={1.7} color="white" bgcolor="yellow" icon='tablet' />
-        </Span>
-
-        <Span w={150} h={140} ai='center' jc='center'>
-          <B_icon scale={1.7} color="white" bgcolor="silver" icon='shopping-cart' />
-        </Span>
-
-        <Span w={150} h={140} ai='center' jc='center'>
-          <B_icon scale={1.7} iconSize={32} color="white" bgcolor="red" icon='mobile' />
-        </Span>
-
-        <Span w={150} h={140} ai='center' jc='center'>
-          <B_icon scale={1.7} color="white" bgcolor="green" m_icon='phonelink-setup' />
-        </Span>
-
-        <Span w={150} h={140} ai='center' jc='center'>
-          <B_icon scale={1.7} color="white" bgcolor="blue" icon='headphones' />
-        </Span>
-
-        <Span w={150} h={140} ai='center' jc='center'>
-          <B_icon scale={1.7} color="white" bgcolor="yellow" icon='tablet' />
-        </Span>
-
-        <Span w={150} h={140} ai='center' jc='center'>
-          <B_icon scale={1.7} color="white" bgcolor="silver" icon='shopping-cart' />
-        </Span>
-
-      </ScrollSlider>
 
 
 

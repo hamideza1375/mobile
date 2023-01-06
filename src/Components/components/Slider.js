@@ -45,7 +45,7 @@ function Slider(p) {
 
   return (
 
-    <Span>
+    <Span style={p.style} >
       <ScrollHorizontal dir='ltr' id={p.id} onLayout={() => {
         width = p.width
         let int = setInterval(sum, 6000);
@@ -53,7 +53,7 @@ function Slider(p) {
           open()
         }
         setinterval(int)
-      }} onClick={() => alert(7)} style={{ height: 260, width: p.width - 4, marginTop: 2, alignSelf: 'center', borderRadius: 5, overflow: 'hidden', flexWrap: 'wrap' }} >
+      }} onClick={() => alert(7)} style={{ height: 260, width: p.width - 20, marginTop: 2, alignSelf: 'center', borderRadius: 5, overflow: 'hidden', flexWrap: 'wrap' }} >
         <Press onClick={p.onClick} w={p.width} ><Img w='100%' h={300} src={p.img1} /></Press>
         <Press onClick={p.onClick} w={p.width} ><Img w='100%' h={300} src={p.img2} /></Press>
         <Press onClick={p.onClick} w={p.width} ><Img w='100%' h={300} src={p.img3} /></Press>
