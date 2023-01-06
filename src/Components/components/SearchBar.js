@@ -3,7 +3,20 @@ import { StyleSheet } from 'react-native';
 import { Button, Icon, Img, Input, Modal, P, Press, Scroll, Span } from '../Html'
 import { context } from '../../utils/context/contexts'
 
-function SearchInput({ array, Allarray, setarray, Register, icon, src, iconPress, sort, setshowFilterModal, showFilterModal }) {
+function SearchInput({ /* array, setarray, */ Allarray, Register, icon, src, iconPress, sort, setshowFilterModal, showFilterModal }) {
+
+
+  const [array, setarray] = useState([
+    { id: '1', price: 2000000, sdCard: 22, ram: 91, cpuCore: 11, camera: 7, network: '4G', },
+    { id: '2', sdCard: 22, price: 7000000, ram: 91, cpuCore: 11, camera: 7, network: '4G', },
+    { id: '3', ram: 91, price: 14000000, sdCard: 22, cpuCore: 11, camera: 7, network: '5G', },
+    { id: '4', cpuCore: 11, price: 900000, sdCard: 22, ram: 91, camera: 7, network: '5G', },
+    { id: '5', camera: 7, price: 5000000, sdCard: 22, ram: 91, cpuCore: 11, network: '4G', },
+    { id: '6', network: '4G', price: 11000000, sdCard: 22, ram: 91, cpuCore: 11, camera: 7, },
+    { id: '7', network: '5G', price: 110000, sdCard: 22, ram: 91, cpuCore: 11, camera: 7, }
+  ])
+
+
 
   const p = context()
   const [getValueSearch, setgetValueSearch] = useState([])
@@ -134,14 +147,26 @@ function SearchInput({ array, Allarray, setarray, Register, icon, src, iconPress
 
           <Span ai='flex-start' w={270} jc='center ai=' center>
             <Span fd='row' w={200} jc='center'>
-              <Button mt={10} w={100} >تایید</Button>
+              <Button mt={10} w={100}
+                onClick={() => {
+                  const filterArray = array.filter((f) =>
+                    ((f.price >= p.priceFilter) && (f.price <= p.priceFilterTo)) &&
+                    ((f.sdCard >= p.sdCardFilter) && (f.sdCard <= p.sdCardFilterTo)) &&
+                    ((f.ram >= p.ramFilter) && (f.ram <= p.ramFilterTo)) &&
+                    ((f.cpuCore >= p.cpuCoreFilter) && (f.cpuCore <= p.cpuCoreFilterTo)) &&
+                    ((f.camera >= p.cameraFilter) && (f.camera <= p.cameraFilterTo)) &&
+                    ((p.fourG && f.network === '4G') || (p.fiveG && f.network === '5G'))
+                  )
+                  console.log(filterArray);
+                }}
+              >تایید</Button>
             </Span>
           </Span>
 
 
-          {/* {const filterArray = p,array.filter((f)=>{return( (f.price >= priceFilter && f.price <=  priceFilterTo ) && (f.sdCard >= sdCardFilter && f.sdCard <=  sdCardFilterTo ))  })} 
-          p.setarray(filterArray)
-          */}
+          {/* p.setarray(filterArray) */}
+
+
         </Scroll>
       </Modal>
     </Span>);
