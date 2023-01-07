@@ -82,9 +82,23 @@ function State() {
   
   const [fourG,setfourG] = useState(false)
   const [fiveG,setfiveG] = useState(false)
+  const [showDropdownFilter,setshowDropdownFilter] = useState(false)
+  const [showDropdownFilter2,setshowDropdownFilter2] = useState(false)
+  const [$input] = useState(new Map())
 
 
-
+  const [array, setarray] = useState([
+    { id: '1', price: 2000000, sdCard: 16, ram: 3, cpuCore: 4, camera: 13, network: '4G', },
+    { id: '2', price: 4500000, sdCard: 64, ram: 6, cpuCore: 8, camera: 64, network: '5G', },
+    { id: '3', price: 4800000, sdCard: 128, ram: 4, cpuCore: 6, camera: 32, network: '5G', },
+    { id: '4', price: 3500000, sdCard: 64, ram: 3, cpuCore: 4, camera: 32, network: '4G', },
+    { id: '5', price: 2800000, sdCard: 32, ram: 3, cpuCore: 4, camera: 16, network: '4G', },
+    { id: '6', price: 4000000, sdCard: 128, ram: 4, cpuCore: 8, camera: 64, network: '5G', },
+    { id: '7', price: 900000, sdCard: 4, ram: 1, cpuCore: 2, camera: 5, network: '3G', },
+    { id: '8', price: 8500000, sdCard: 128, ram: 8, cpuCore: 8, camera: 108, network: '5G', },
+    { id: '9', price: 2000000, sdCard: 32, ram: 3, cpuCore: 4, camera: 32, network: '4G', },
+    { id: '10', price: 1000000, sdCard: 8, ram: 2, cpuCore: 2, camera: 8, network: '3G', },
+  ])
 
 
   const [showFilterModal,setshowFilterModal] = useState(false)
@@ -95,7 +109,11 @@ function State() {
 
 
   return {
-  
+    $input,
+    showDropdownFilter,setshowDropdownFilter,
+    showDropdownFilter2,setshowDropdownFilter2,
+    array, setarray,
+
     sdCardFilter,setsdCardFilter,
     ramFilter,setramFilter,
     cpuCoreFilter,setcpuCoreFilter,

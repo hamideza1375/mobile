@@ -6,7 +6,7 @@ import M_icon from 'react-native-vector-icons/dist/MaterialIcons';
 
 const Dropdown = (props) => {
 
-  const { child, border = [.5, 'silver'], show, setshow, children, icon, a_icon, m_icon, color = '#aaa', showBgcolor = '#fff', style, iconFalse, top, onPress } = props
+  const { child, border = [.5, 'silver'], show, setshow, children, icon, a_icon, m_icon, color = '#aaa', showBgcolor = '#fff', style, iconFalse, top, onClick } = props
 
   const ref = useRef()
 
@@ -18,7 +18,9 @@ const Dropdown = (props) => {
   return (
     <>
       <Pressable
-        onPressIn={() => { setshow(!show); setTimeout(() => { setshow(!show) }, 1) }}
+        onPressIn={() => { 
+          onClick()
+          setshow(!show); setTimeout(() => { setshow(!show) }, 1) }}
 
         onPress={() => {
           () => { setshow(!show); setTimeout(() => { setshow(!show) }, 2) };

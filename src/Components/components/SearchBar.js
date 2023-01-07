@@ -1,21 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { StyleSheet } from 'react-native';
-import { Button, Icon, Img, Input, Modal, P, Press, Scroll, Span } from '../Html'
+import { StyleSheet, TextInput, View } from 'react-native';
+import { Button, Div, Dropdown, Icon, Img, Input, Modal, P, Press, Scroll, Span } from '../Html'
 import { context } from '../../utils/context/contexts'
 
-function SearchInput({ /* array, setarray, */ Allarray, Register, icon, src, iconPress, sort, setshowFilterModal, showFilterModal }) {
-
-
-  const [array, setarray] = useState([
-    { id: '1', price: 2000000, sdCard: 22, ram: 91, cpuCore: 11, camera: 7, network: '4G', },
-    { id: '2', sdCard: 22, price: 7000000, ram: 91, cpuCore: 11, camera: 7, network: '4G', },
-    { id: '3', ram: 91, price: 14000000, sdCard: 22, cpuCore: 11, camera: 7, network: '5G', },
-    { id: '4', cpuCore: 11, price: 900000, sdCard: 22, ram: 91, camera: 7, network: '5G', },
-    { id: '5', camera: 7, price: 5000000, sdCard: 22, ram: 91, cpuCore: 11, network: '4G', },
-    { id: '6', network: '4G', price: 11000000, sdCard: 22, ram: 91, cpuCore: 11, camera: 7, },
-    { id: '7', network: '5G', price: 110000, sdCard: 22, ram: 91, cpuCore: 11, camera: 7, }
-  ])
-
+function SearchInput({ array, setarray, Allarray, Register, icon, src, iconPress, sort, setshowFilterModal, showFilterModal }) {
 
 
   const p = context()
@@ -84,60 +72,187 @@ function SearchInput({ /* array, setarray, */ Allarray, Register, icon, src, ico
         </Span>}
 
       </Span>
-      <Modal style={{ width: '100%', height: 'auto' }} setshow={p.setshowFilterModal} show={p.showFilterModal} >
-        {/* {value1 && <Input value={value1} onChangeText{(text)=>{setvalue1(text)}} /> }*/}
-        {/*{value1 && <Input value={value2} onChangeText{(text)=>{setvalue1(text)}} /> }*/}
+      <Modal 
+      onClick={() => { p.setshowDropdownFilter(!p.showDropdownFilter); /* setTimeout(() => {p.setshowDropdownFilter(false);}, 200);  */}} 
+      style={{ width: '100%', height: 'auto' }} setshow={p.setshowFilterModal} show={p.showFilterModal} >
         <Scroll w='100%' fd='row' ccStyle={{ alignItems: 'center', flexGrow: 1 }} >
 
+
+          <Span id='1'>
           <Span ai='flex-start' w={270}>
-            <Span f={1} mt={5}><P textAlign='right' >قیمت</P></Span>
-            <Span w='100%' fd='row' >
-              <Input fs={11} w={100} placeholder='از' value={p.priceFilter} onChangeText={(text) => { p.setpriceFilter(text) }} />
-              <Input fs={11} w={100} placeholder='تا' value={p.priceFilterTo} onChangeText={(text) => { p.setpriceFilterTo(text) }} />
-              <Span mr={3} ai='center' jc='center' >تومان</Span>
+              <Span f={1} mt={15}><P textAlign='right' >قیمت</P></Span>
+              <Span w='100%' fd='row'  >
+   
+
+          <Dropdown
+          onClick={()=>{let arrayId = ['1','2','3','4','5']; arrayId.map((id)=>p.$.id(id) && p.$.id(id).$({zIndex:1}) );p.$.id('1').$({zIndex:10})}}
+              show={p.showDropdownFilter}
+              setshow={p.setshowDropdownFilter}
+              style={{marginTop:'auto'}}
+            >
+              <Span ph={9}>
+
+              <Span style={{padding:5, borderBottomWidth:1,borderColor:'silver'}} >
+              {/* <P onClick={()=>{ p.$input.get('input1FromTextId').setNativeProps({text:'sddcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcs'}) }} fs={12}>زیر 1 ملیون</P > */}
+              <P onClick={()=>{ p.$input.get('input1FromTextId').setNativeProps({text:'sddcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcs'}) }} fs={12}>زیر 1 ملیون</P >
+              </Span>
+
+              <Span style={{padding:5, borderBottomWidth:1,borderColor:'silver'}} >
+              <P fs={12} >از 1 ملیون تا 2 ملیون</P >
+              </Span>
+
+              <Span style={{padding:5, borderBottomWidth:1,borderColor:'silver'}} >
+              <P fs={12} >از 2 ملیون تا 4 ملیون</P >
+              </Span>
+
+              <Span style={{padding:5, borderBottomWidth:1,borderColor:'silver'}} >
+              <P fs={12} >از 4 ملیون تا 8 ملیون</P >
+              </Span>
+
+              <Span style={{padding:5, borderBottomWidth:1,borderColor:'silver'}} >
+              <P fs={12} >از 8 ملیون تا 16 ملیون</P >
+              </Span>
+
+
+              <Span style={{padding:5, borderBottomWidth:1,borderColor:'silver'}} >
+              <P fs={12} >از 16 ملیون به بالا</P >
+              </Span>
+
+              <Span style={{padding:5}} >
+              <P fs={12} >وارد کردن به صورت دستی</P >
+              </Span>
+
+              </Span>
+            </Dropdown>
+
+{/* //! اگه غیر از عدد چیز دیگه ای وارد کرد به صورت قرمز بنویس فقط عدد وارد کنید */}
+
+                <Input  keyboardType='numeric' fs={11} w={100} placeholder='از' value={p.priceFilter} onChangeText={(text) => { p.setpriceFilter(text) }} />
+                <Input $input={p.$input} textId='input1FromTextId' keyboardType='numeric' fs={11} w={100} placeholder='تا' value={p.priceFilterTo} onChangeText={(text) => { p.setpriceFilterTo(text) }} />
+                <Span mr={3} ai='center' jc='center' >تومان</Span>
+              </Span>
             </Span>
           </Span>
 
+
+          <Span id='2'>
           <Span ai='flex-start' w={270}>
-            <Span f={1} mt={5}><P textAlign='right' >حافظه</P></Span>
-            <Span w='100%' fd='row' jc='flex-start' >
-              <Input fs={11} w={100} placeholder='از' value={p.sdCardFilter} onChangeText={(text) => { p.setsdCardFilter(text) }} />
-              <Input fs={11} w={100} placeholder='تا' value={p.sdCardFilterTo} onChangeText={(text) => { p.setsdCardFilterTo(text) }} />
+              <Span f={1} mt={15}><P textAlign='right' >حافظه</P></Span>
+              <Span w='100%' fd='row' jc='flex-start' >
+          <Dropdown
+          onClick={()=>{let arrayId = ['1','2','3','4','5']; arrayId.map((id)=>p.$.id(id) && p.$.id(id).$({zIndex:1}));p.$.id('2').$({zIndex:10})}}
+              show={p.showDropdownFilter}
+              setshow={p.setshowDropdownFilter}
+              style={{marginTop:'auto'}}
+            >
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+            </Dropdown>
+                <Input keyboardType='numeric' fs={11} w={100} placeholder='از' value={p.sdCardFilter} onChangeText={(text) => { p.setsdCardFilter(text) }} />
+                <Input keyboardType='numeric' fs={11} w={100} placeholder='تا' value={p.sdCardFilterTo} onChangeText={(text) => { p.setsdCardFilterTo(text) }} />
+                <Span mr={3} ai='center' jc='center' >گیگابایت</Span>
+              </Span>
+            </Span>
+          </Span>
+
+          <Span id='3'>
+          <Span ai='flex-start' w={270}>
+            <Span f={1} mt={15}><P textAlign='right' >رم</P></Span>
+            <Span w='100%' fd='row' >
+            <Dropdown
+          onClick={()=>{let arrayId = ['1','2','3','4','5']; arrayId.map((id)=>p.$.id(id) && p.$.id(id).$({zIndex:1}));p.$.id('3').$({zIndex:10})}}
+              show={p.showDropdownFilter}
+              setshow={p.setshowDropdownFilter}
+              style={{marginTop:'auto'}}
+            >
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+            </Dropdown>
+              <Input keyboardType='numeric' fs={11} w={100} placeholder='از' value={p.ramFilter} onChangeText={(text) => { p.setramFilter(text) }} />
+              <Input keyboardType='numeric' fs={11} w={100} placeholder='تا' value={p.ramFilterTo} onChangeText={(text) => { p.setramFilterTo(text) }} />
               <Span mr={3} ai='center' jc='center' >گیگابایت</Span>
             </Span>
           </Span>
-
-          <Span ai='flex-start' w={270}>
-            <Span f={1} mt={5}><P textAlign='right' >رم</P></Span>
-            <Span w='100%' fd='row' >
-              <Input fs={11} w={100} placeholder='از' value={p.ramFilter} onChangeText={(text) => { p.setramFilter(text) }} />
-              <Input fs={11} w={100} placeholder='تا' value={p.ramFilterTo} onChangeText={(text) => { p.setramFilterTo(text) }} />
-              <Span mr={3} ai='center' jc='center' >گیگابایت</Span>
-            </Span>
           </Span>
 
+
+          <Span id='4'>
           <Span ai='flex-start' w={270}>
-            <Span f={1} mt={5}><P textAlign='right' >cpu</P></Span>
+            <Span f={1} mt={15}><P textAlign='right' >cpu</P></Span>
             <Span w='100%' fd='row'>
-              <Input fs={11} w={100} placeholder='از' value={p.cpuCoreFilter} onChangeText={(text) => { p.setcpuCoreFilter(text) }} />
-              <Input fs={11} w={100} placeholder='تا' value={p.cpuCoreFilterTo} onChangeText={(text) => { p.setcpuCoreFilterTo(text) }} />
+            <Dropdown
+          onClick={()=>{let arrayId = ['1','2','3','4','5']; arrayId.map((id)=>p.$.id(id) && p.$.id(id).$({zIndex:1}));p.$.id('4').$({zIndex:10})}}
+              show={p.showDropdownFilter}
+              setshow={p.setshowDropdownFilter}
+              style={{marginTop:'auto'}}
+            >
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+            </Dropdown>
+              <Input keyboardType='numeric' fs={11} w={100} placeholder='از' value={p.cpuCoreFilter} onChangeText={(text) => { p.setcpuCoreFilter(text) }} />
+              <Input keyboardType='numeric' fs={11} w={100} placeholder='تا' value={p.cpuCoreFilterTo} onChangeText={(text) => { p.setcpuCoreFilterTo(text) }} />
               <Span mr={3} ai='center' jc='center' >هسته</Span>
             </Span>
           </Span>
+          </Span>
 
+
+          <Span id='5'>
           <Span ai='flex-start' w={270}>
-            <Span f={1} mt={5}><P textAlign='right' >دوربین</P></Span>
+            <Span f={1} mt={15}><P textAlign='right' >دوربین</P></Span>
             <Span w='100%' fd='row' >
-              <Input fs={11} w={100} placeholder='از' value={p.cameraFilter} onChangeText={(text) => { p.setcameraFilter(text) }} />
-              <Input fs={11} w={100} placeholder='تا' value={p.cameraFilterTo} onChangeText={(text) => { p.setcameraFilterTo(text) }} />
+            <Dropdown
+          onClick={()=>{let arrayId = ['1','2','3','4','5']; arrayId.map((id)=>p.$.id(id) && p.$.id(id).$({zIndex:1}));p.$.id('5').$({zIndex:10})}}
+              show={p.showDropdownFilter}
+              setshow={p.setshowDropdownFilter}
+              style={{marginTop:'auto'}}
+            >
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+              <Span>efefe</Span>
+            </Dropdown>
+              <Input keyboardType='numeric' fs={11} w={100} placeholder='از' value={p.cameraFilter} onChangeText={(text) => { p.setcameraFilter(text) }} />
+              <Input keyboardType='numeric' fs={11} w={100} placeholder='تا' value={p.cameraFilterTo} onChangeText={(text) => { p.setcameraFilterTo(text) }} />
               <Span mr={3} ai='center' jc='center' >مگاپیکسل</Span>
             </Span>
+          </Span>
           </Span>
 
           {/* //! کادر اول رو که وارد میکنه تشخیص بده که کادر دوم رو گزینه هایی که میاره بالا تر از اون باشه */}
 
-          <Span ai='flex-start' w={270} jc='center ai=' center>
-            <Span f={1} mt={5}><P textAlign='right' >نوع شبکه اینترنت</P></Span>
+          <Span ai='flex-start' w={270} mr={30}>
+            <Span f={1} mt={15}><P textAlign='right' >نوع شبکه اینترنت</P></Span>
             <Span fd='row' w={200} jc='center'>
               <Press border={[1, 'silver']} w={60} h={60} br={4} ai='center' jc='center' bgcolor={p.fourG ? '#0de' : 'white'} onClick={() => p.setfourG(!p.fourG)} >4G</Press>
               <Press border={[1, 'silver']} w={60} h={60} br={4} mr={10} ai='center' jc='center' bgcolor={p.fiveG ? '#0de' : 'white'} onClick={() => p.setfiveG(!p.fiveG)} >5G</Press>
@@ -145,19 +260,20 @@ function SearchInput({ /* array, setarray, */ Allarray, Register, icon, src, ico
           </Span>
 
 
-          <Span ai='flex-start' w={270} jc='center ai=' center>
+          <Span ai='flex-start' w={270} mr={30}>
             <Span fd='row' w={200} jc='center'>
               <Button mt={10} w={100}
                 onClick={() => {
                   const filterArray = array.filter((f) =>
-                    ((f.price >= p.priceFilter) && (f.price <= p.priceFilterTo)) &&
-                    ((f.sdCard >= p.sdCardFilter) && (f.sdCard <= p.sdCardFilterTo)) &&
-                    ((f.ram >= p.ramFilter) && (f.ram <= p.ramFilterTo)) &&
-                    ((f.cpuCore >= p.cpuCoreFilter) && (f.cpuCore <= p.cpuCoreFilterTo)) &&
-                    ((f.camera >= p.cameraFilter) && (f.camera <= p.cameraFilterTo)) &&
-                    ((p.fourG && f.network === '4G') || (p.fiveG && f.network === '5G'))
+                    ((f.price >= p.priceFilter) && (p.priceFilterTo ? (f.price <= p.priceFilterTo) : f.price <= 9999999999999999)) &&
+                    ((f.sdCard >= p.sdCardFilter) && (p.sdCardFilterTo ? f.sdCard <= p.sdCardFilterTo : f.sdCard <= 9999999999999999)) &&
+                    ((f.ram >= p.ramFilter) && (p.ramFilterTo ? f.ram <= p.ramFilterTo : f.ram <= 9999999999999999)) &&
+                    ((f.cpuCore >= p.cpuCoreFilter) && (p.cpuCoreFilterTo ? f.cpuCore <= p.cpuCoreFilterTo : f.cpuCore <= 9999999999999999)) &&
+                    ((f.camera >= p.cameraFilter) && (p.cameraFilterTo ? f.camera <= p.cameraFilterTo : f.camera <= 9999999999999999)) &&
+                    ((!p.fourG && !p.fiveG) ? f.network : (p.fourG && f.network === '4G') || (p.fiveG && f.network === '5G'))
                   )
                   console.log(filterArray);
+                  p.setshowFilterModal(false)
                 }}
               >تایید</Button>
             </Span>

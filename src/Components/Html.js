@@ -21,7 +21,9 @@ export { default as Table } from './components/Table'
 export { default as Slider } from './components/Slider'
 export { default as ScrollSlider } from './components/ScrollSlider'
 export { default as SearchBar } from './components/SearchBar'
-export { Textarea, Input, CheckBox } from './formComponent/FormComponent'
+export { Textarea, CheckBox } from './formComponent/FormComponent'
+import { Input as _Input } from './formComponent/FormComponent'
+
 import setStyleRef from './classToStyle/setClassToStyle';
 
 export const Component = React.forwardRef((props, ref) => {
@@ -82,7 +84,7 @@ export const Component = React.forwardRef((props, ref) => {
 });
 
 export const _text = React.forwardRef((props, ref) => {
-  const { land, port, col1, col2, col3, col4, e, tsh = {}, p, pt, pb, pl, pr, pv, ph, h, w, m, mt, mb, ml, mr, mv, mh, color, bgcolor, border = [], fg, f, ta, as, fm, fs, bbc, btc, blc, brc, btw, bbw, blw, brw, btr, bbr, blr, brr, minw, maxw, minh, maxh, wb, ovflw, ovfl, ovflx, ovfly, lh, d, opc, pos, z, t, b, r, l, fw, tdl, tds, tdc, shc, sho, shr, shoff, tshc, tsho, tshr, tshoff, scale = null, rotate = null } = props;
+  const { land, port, col1, col2, col3, col4, e, tsh = {}, p, pt, pb, pl, pr, pv, ph, h, w, m, mt, mb, ml, mr, mv, mh, color, bgcolor, border = [], fg, f, ta, as, fm, fs=13, bbc, btc, blc, brc, btw, bbw, blw, brw, btr, bbr, blr, brr, minw, maxw, minh, maxh, wb, ovflw, ovfl, ovflx, ovfly, lh, d, opc, pos, z, t, b, r, l, fw, tdl, tds, tdc, shc, sho, shr, shoff, tshc, tsho, tshr, tshoff, scale = null, rotate = null } = props;
   const [innerHTML, setinnerHTML] = React.useState(null);
   let stl,
   _col ={},
@@ -132,6 +134,11 @@ export const _text = React.forwardRef((props, ref) => {
 export const Init = React.forwardRef((props, ref) => {
   return <_text ref={ref} style={{ width: 0, height: 0, padding: 0, margin: 0 }} />
 })
+
+
+
+export const Input = (props) => <Component {...props} Component={_Input} />
+
 
 export const Container = (props) => <Component initalClass={Platform.OS === 'web' ? s.ContainerWeb : s.Container} {...props} Component={View} />
 

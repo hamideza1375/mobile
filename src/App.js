@@ -1,6 +1,6 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import React from "react";
+import React, { useEffect } from "react";
 import { View, Platform } from "react-native";
 import { Button, Div, Form, Icon, Init, P, SearchBar, Span } from "./Components/Html";
 import _404 from "./other/404";
@@ -33,8 +33,29 @@ const Food = () => {
 
   const _children = (Component, key) => ({ children: (props) => <Layout _key={key} {...props} {...p}><Component {...props} {...p} {...reducer(props)} /></Layout> })
 
+
+
+  useEffect(() => {
+     p.$input.set('a', 'a');
+  }, [])
+  
+
+
   return (
-    <Span h={'100vh'} w='100%' bgcolor='red'>
+    <Span h={'100vh'} w='100%' >
+
+
+      {/* <input list="browsers" name="browser" />
+
+      <datalist id="browsers">
+        <option value="Microsoft Edge" />
+        <option value="Mozilla Firefox" />
+        <option value="Google Chrome" />
+        <option value="Opera" />
+        <option value="Safari" />
+      </datalist> */}
+
+
       <contextStates.Provider value={p}>
         <Init ref={(e) => allState.set$(e)} id={'s'} />
         <ToastProvider {...p} />

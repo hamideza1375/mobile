@@ -7,7 +7,7 @@ function _Dropdown() {
 
   return (
     <Div style={{ width: 500, height: 500, alignSelf: 'center', alignItems: 'center', justifyContent: 'center', borderWidth: 1 }}
-      onClick={() => { setshow(setshow(!show)); }}
+      onClick={() => { setshow(setshow(!show)); /* setTimeout(() => {p.setshowDropdownFilter(false);}, 200);  */ }}
     >
 
       <Span mb={30} >
