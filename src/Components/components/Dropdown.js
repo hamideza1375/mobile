@@ -6,7 +6,7 @@ import M_icon from 'react-native-vector-icons/dist/MaterialIcons';
 
 const Dropdown = (props) => {
 
-  const { child, border = [.5, 'silver'], show, setshow, children, icon, a_icon, m_icon, color = '#aaa', showBgcolor = '#fff', style, iconFalse, top, onClick } = props
+  const {h, child, border = [.5, 'silver'], show, setshow, children, icon, a_icon, m_icon, color = '#aaa', showBgcolor = '#fff', style, iconFalse, top, onClick } = props
 
   const ref = useRef()
 
@@ -29,7 +29,7 @@ const Dropdown = (props) => {
           }, 5);
         }}
 
-        style={[{ flexDirection: 'row', padding: 2, position: 'relative' }, style]} >
+        style={[{ flexDirection: 'row', padding: 2, position: 'relative', height:h }, style]} >
         {!iconFalse && <Icon color={color} name={top ? 'caret-up' : 'caret-down'} style={[{ top: 3, position: 'relative', right: 1 }, { fontSize: 22.5 }]}></Icon>}
 
         {icon && <Icon color={color} name={icon ? icon : 'trash'} style={[{ fontSize: 22.5 }]}></Icon> ||

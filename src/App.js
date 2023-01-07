@@ -40,9 +40,9 @@ const Food = () => {
   }, [])
   
 
-
+const height = Platform.OS === 'web'?'100vh':'100%'
   return (
-    <Span h={'100vh'} w='100%' >
+    <Span h={height} w='100%' >
 
 
       {/* <input list="browsers" name="browser" />
@@ -71,7 +71,7 @@ const Food = () => {
 }
 
 
-propTypes(Home)
+// propTypes(Home)
 
 const linking = {
   prefixes: ['localhost:3000://', 'http://localhost:3000'],

@@ -21,8 +21,8 @@ export { default as Table } from './components/Table'
 export { default as Slider } from './components/Slider'
 export { default as ScrollSlider } from './components/ScrollSlider'
 export { default as SearchBar } from './components/SearchBar'
-export { Textarea, CheckBox } from './formComponent/FormComponent'
-import { Input as _Input } from './formComponent/FormComponent'
+export { Textarea,Input, CheckBox } from './formComponent/FormComponent'
+// import { Input as _Input } from './formComponent/FormComponent'
 
 import setStyleRef from './classToStyle/setClassToStyle';
 
@@ -137,7 +137,7 @@ export const Init = React.forwardRef((props, ref) => {
 
 
 
-export const Input = (props) => <Component {...props} Component={_Input} />
+// export const Input = (props) => <Component {...props} Component={_Input} />
 
 
 export const Container = (props) => <Component initalClass={Platform.OS === 'web' ? s.ContainerWeb : s.Container} {...props} Component={View} />
@@ -148,7 +148,7 @@ export const Row = (props) => <Component initalClass={s.row} {...props} Componen
 
 export const Span = (props) => <Component {...props} Component={View} />
 
-export const Press = (props) => <Component onPress={props.onClick} {...props} Component={Pressable} />
+export const Press = (props) => <Component onPress={props.onClick} {...props} style={[props.onClick && Platform.OS === 'web' && { cursor: 'pointer' }, props.style]} Component={Pressable} />
 
 export const ImgBackground = (props) => <Component source={props.src} {...props} Component={ImageBackground} />
 

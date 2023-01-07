@@ -23,6 +23,7 @@ function _Dropdown() {
           showBgcolor="#07a"
           show={show}
           setshow={setshow}
+          h={45}
         // style={{  }}
 
         >

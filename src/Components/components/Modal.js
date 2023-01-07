@@ -1,14 +1,14 @@
 import React from "react";
-import { Modal as _Modal, Pressable, StyleSheet, View } from "react-native";
+import { Modal as _Modal, Platform, Pressable, StyleSheet, View } from "react-native";
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 
 
 export default function Modal({style, children, setshow, show, onClick, onHide }) {
   return (
     <Pressable style={[styles.centeredView]}>
-      <_Modal onStartShouldSetResponder={onClick} supportedOrientations={['portrait', 'landscape']}
+      <_Modal supportedOrientations={['portrait', 'landscape']}
        animationType="fade" transparent={true} visible={show}>
-        <View style={[styles.centeredView, ,{backgroundColor: '#6669'}]}>
+        <View onTouchEnd={onClick} onStartShouldSetResponder={Platform.OS === 'web' ?onClick:()=>{}} style={[styles.centeredView, ,{backgroundColor: '#6669'}]}>
           <View style={[styles.modalView,style]}>
             <Icon onPress={() => setshow(false)} name={"remove"} size={22} color="#f55" style={{ position: 'absolute', left: 9, top: 9, zIndex:111 }} />
             {children}
