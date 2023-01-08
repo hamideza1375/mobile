@@ -70,7 +70,8 @@ function SearchInput({ array, setarray, Allarray, Register, icon, src, iconPress
         {Register && <Span style={[styles.containAscDesc, { minWidth: 100, maxWidth: 130 }]}>
           <Span w={'100%'} h={40} br={5} mt={3} bgcolor="#fff" border={[1, 'silver']} jc='center' ai='center' scale={.9} ><P ff='IRANSansWeb-light'>ورود | ثبت نام</P></Span>
         </Span>}
-
+ 
+  
       </Span>
       <Modal
         onClick={() => { p.setshowDropdownFilter(!p.showDropdownFilter); /* setTimeout(() => {p.setshowDropdownFilter(false);}, 200);  */ }}
