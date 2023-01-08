@@ -27,7 +27,7 @@ export { Textarea,Input, CheckBox } from './formComponent/FormComponent'
 import setStyleRef from './classToStyle/setClassToStyle';
 
 export const Component = React.forwardRef((props, ref) => {
-  const { jc,ai,flatlist = false, land, port, col1, col2, col3, col4, sh = {}, scale = 1, rotate = 0, br, fd, Component, p, pt, pb, pl, pr, pv, ph, h, w, m, mt, mb, ml, mr, mv, mh, color, bgcolor, border = [], fg, f, ta, as, fm, fs, bbc, btc, blc, brc, btw, bbw, blw, brw, btr, bbr, blr, brr, minw, maxw, minh, maxh, wb, ovflw, ovfl, ovflx, ovfly, lh, d, opc, pos, z, t, b, r, l, fw, tdl, tds, tdc, shc, sho, shr, shoff, tshc, tsho, tshr, tshoff } = props;
+  const { jc,ai,flatlist = false, land, port, col1, col2, col3, col4, sh = {}, scale = 1, rotate = 0, br, fd, Component, p, pt, pb, pl, pr, pv, ph, h, w, m, mt, mb, ml, mr, mv, mh, color, bgcolor, border = [],bb,bt, fg, f, ta, as, fm, fs, bbc, btc, blc, brc, btw, bbw, blw, brw, btr, bbr, blr, brr, minw, maxw, minh, maxh, wb, ovflw, ovfl, ovflx, ovfly, lh, d, opc, pos, z, t, b, r, l, fw, tdl, tds, tdc, shc, sho, shr, shoff, tshc, tsho, tshr, tshoff } = props;
   const [innerHTML, setinnerHTML] = React.useState(null);
   const [uri, seturi] = React.useState(null)
   let stl, stl2,
@@ -84,7 +84,7 @@ export const Component = React.forwardRef((props, ref) => {
 });
 
 export const _text = React.forwardRef((props, ref) => {
-  const { land, port, col1, col2, col3, col4, e, tsh = {}, p, pt, pb, pl, pr, pv, ph, h, w, m, mt, mb, ml, mr, mv, mh, color, bgcolor, border = [], fg, f, ta, as, fm, fs=13, bbc, btc, blc, brc, btw, bbw, blw, brw, btr, bbr, blr, brr, minw, maxw, minh, maxh, wb, ovflw, ovfl, ovflx, ovfly, lh, d, opc, pos, z, t, b, r, l, fw, tdl, tds, tdc, shc, sho, shr, shoff, tshc, tsho, tshr, tshoff, scale = null, rotate = null } = props;
+  const { land, port, col1, col2, col3, col4, e, tsh = {}, p, pt, pb, pl, pr, pv, ph, h, w, m, mt, mb, ml, mr, mv, mh, color, bgcolor, border = [], fg, f, ta, as, fm, fs=13, bbc, btc, blc, brc, btw, bbw, blw, brw, btr, bbr, blr, brr, minw, maxw, minh, maxh, wb, ovflw, ovfl, ovflx, ovfly, lh, d, opc, pos, z, t, b, r, l, fw, ff='IRANSansWeb', tdl, tds, tdc, shc, sho, shr, shoff, tshc, tsho, tshr, tshoff, scale = null, rotate = null } = props;
   const [innerHTML, setinnerHTML] = React.useState(null);
   let stl,
   _col ={},
@@ -122,7 +122,7 @@ export const _text = React.forwardRef((props, ref) => {
       marginVertical: mv, margin: m, marginTop: mt, marginBottom: mb,
       marginLeft: ml, marginRight: mr, marginHorizontal: mh,
       backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1],
-      height: h, width: w, fontFamily: fm, fontSize: fs, fontWeight: fw, color,
+      height: h, width: w, fontFamily: ff, fontSize: fs, fontWeight: fw, color,
     },
       stl, col, orientation
     ]}

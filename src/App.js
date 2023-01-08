@@ -14,6 +14,7 @@ import { rtl } from "./other/rtl"
 import { LogBox } from 'react-native';
 
 import Home from './screens/mobile/Home'
+import ChildBobile from './screens/mobile/ChildBobile'
 rtl()
 LogBox.ignoreAllLogs();
 
@@ -36,32 +37,20 @@ const Food = () => {
 
 
   useEffect(() => {
-     p.$input.set('a', 'a');
+    p.$input.set('a', 'a');
   }, [])
-  
 
-const height = Platform.OS === 'web'?'100vh':'100%'
+
+  const height = Platform.OS === 'web' ? '100vh' : '100%'
   return (
     <Span h={height} w='100%' >
-
-
-      {/* <input list="browsers" name="browser" />
-
-      <datalist id="browsers">
-        <option value="Microsoft Edge" />
-        <option value="Mozilla Firefox" />
-        <option value="Google Chrome" />
-        <option value="Opera" />
-        <option value="Safari" />
-      </datalist> */}
-
-
       <contextStates.Provider value={p}>
         <Init ref={(e) => allState.set$(e)} id={'s'} />
         <ToastProvider {...p} />
         <Tab.Navigator screenOptions={() => { return { headerTitleStyle: { color: 'transparent' }, headerTitleAlign: 'center', ...icon } }} >
           <Tab.Group>
-            <Tab.Screen initialParams={{ key: '' }} name="Home" options={{ title: 'home', headerShown: false, header: () => <SearchBar src={require('./assets/images/logo.png')} Register /> }} {..._children(Home)} />
+            <Tab.Screen name="Home" options={{ title: 'home', headerShown: false }} {..._children(Home)} />
+            <Tab.Screen name="ChildBobile" options={{ title: 'home', headerShown: false }} {..._children(ChildBobile)} />
           </Tab.Group>
           <Tab.Screen name="NotFound" options={{ title: '404', headerShown: false }} {..._children(_404)} />
         </Tab.Navigator >
@@ -78,7 +67,7 @@ const linking = {
   config: {
     screens: {
       Home: '/Home',
-      ChildFood: 'Secend',
+      ChildBobile: '/ChildBobile:id',
       NotFound: '*'
     },
   },

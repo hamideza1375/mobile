@@ -3,7 +3,7 @@ import { StyleSheet, TextInput, View } from 'react-native';
 import { Button, Div, Dropdown, Icon, Img, Input, Modal, P, Press, Scroll, Span } from '../Html'
 import { context } from '../../utils/context/contexts'
 
-function SearchInput({ array, setarray, Allarray, Register, icon, src, iconPress, sort, setshowFilterModal, showFilterModal }) {
+function SearchInput({ array, setarray, Allarray, Register, icon, src, iconPress, sort, setshowFilterModal, showFilterModal,bgcolor }) {
 
 
   const p = context()
@@ -57,7 +57,7 @@ function SearchInput({ array, setarray, Allarray, Register, icon, src, iconPress
 
   return (
     <Span h={57} pt={2} w={'100%'} as='center' >
-      <Span style={[styles.containHead]}>
+      <Span bgcolor={bgcolor} style={[styles.containHead]}>
         {src && <Span /* onClick={iconPress} */ mr={10} ml={5} ><Img w={50} h={45} mt={3} br={4} src={src} /></Span>}
         {icon && <Icon size={26} style={styles.iconHome} name={icon} onPress={iconPress} />}
         <Input w='60%' fg={1} icon="search" pColor={'#777'} border={[1, '#ccc']} autoCapitalize='none' autoCorrect={false} spellCheck={true} value={textSearch} onChangeText={text => { settextSearch(text.toLowerCase()); searcher(text.toLowerCase()) }} placeholder="جستجو" mh={8} h={'85%'} mt={6} dr='rtl' />
@@ -68,7 +68,7 @@ function SearchInput({ array, setarray, Allarray, Register, icon, src, iconPress
         </Span>}
 
         {Register && <Span style={[styles.containAscDesc, { minWidth: 100, maxWidth: 130 }]}>
-          <Span w={'100%'} h={40} br={5} mt={3} bgcolor="#fff" border={[1, 'silver']} jc='center' ai='center' scale={.9} >ورود | ثبت نام</Span>
+          <Span w={'100%'} h={40} br={5} mt={3} bgcolor="#fff" border={[1, 'silver']} jc='center' ai='center' scale={.9} ><P ff='IRANSansWeb-light'>ورود | ثبت نام</P></Span>
         </Span>}
 
       </Span>
@@ -114,7 +114,6 @@ function SearchInput({ array, setarray, Allarray, Register, icon, src, iconPress
                       <Span style={{ padding: 5, borderBottomWidth: 1, borderColor: 'silver' }} >
                         <P onClick={() => { p.setpriceFilter(8000000); p.setpriceFilterTo(16000000); p.setshowDropdownFilter(!p.showDropdownFilter); }} fs={12} >از 8 ملیون تا 16 ملیون</P >
                       </Span>
-
 
                       <Span style={{ padding: 5, borderBottomWidth: 1, borderColor: 'silver' }} >
                         <P onClick={() => { p.setpriceFilter(16000000); p.setpriceFilterTo(9999999999); p.setshowDropdownFilter(!p.showDropdownFilter); }} fs={12} >از 16 ملیون به بالا</P >
@@ -396,7 +395,6 @@ const styles = StyleSheet.create({
     height: '10%',
     minHeight: 55,
     maxHeight: 60,
-    backgroundColor: '#fff',
     borderWidth: 1,
     borderColor: 'rgb(222, 221, 221)',
     borderTopWidth: 0,
