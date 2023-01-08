@@ -273,7 +273,7 @@ function Home(p) {
 
       <Span>
 
-        <Span jc='space-between' fd='row-reverse' h={30}>
+        <Span jc='space-between' fd='row-reverse' h={30} mb={9} >
           <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505']} style={{ width: '50%', height: 2, flexGrow: 1, marginTop: 28, marginHorizontal: 35 }} ></LinearGradient>
           <P fs={16} mt={17} mr={9} ml='auto' >فیلتر ها بر اساس بهترین عملکرد</P>
         </Span>

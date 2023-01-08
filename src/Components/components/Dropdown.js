@@ -6,13 +6,15 @@ import M_icon from 'react-native-vector-icons/dist/MaterialIcons';
 
 const Dropdown = (props) => {
 
-  const {h, child, border = [.5, 'silver'], show, setshow, children, icon, a_icon, m_icon, color = '#aaa', showBgcolor = '#fff', style, iconFalse, top, onClick } = props
+  const {$input,textId,h, child, border = [.5, 'silver'], show, setshow, children, icon, a_icon, m_icon, color = '#aaa', showBgcolor = '#fff', style, iconFalse, top, onClick } = props
 
   const ref = useRef()
 
   useEffect(() => {
     ref?.current && ref.current.setNativeProps({ style: { transform: [{ scale: 0 }] } })
   }, [show])
+
+
 
 
   return (
@@ -41,6 +43,7 @@ const Dropdown = (props) => {
 
       <Pressable
         ref={ref}
+        onLayout={()=>{$input?.set(textId, ref);}}
         style={[{
           alignSelf: 'center', borderWidth: border[0], borderColor: border[1], borderRadius: 3, padding: 3, zIndex: 10, position: 'absolute',
           transform: [{ scale: 0 }], backgroundColor: showBgcolor, minWidth: 100

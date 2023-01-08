@@ -3,7 +3,7 @@ import { StyleSheet, TextInput, View } from 'react-native';
 import { Button, Div, Dropdown, Icon, Img, Input, Modal, P, Press, Scroll, Span } from '../Html'
 import { context } from '../../utils/context/contexts'
 
-function SearchInput({ array, setarray, Allarray, Register, icon, src, iconPress, sort, setshowFilterModal, showFilterModal,bgcolor }) {
+function SearchInput({ array, setarray, Allarray, Register, icon, src, iconPress, sort, setshowFilterModal, showFilterModal, bgcolor }) {
 
 
   const p = context()
@@ -60,7 +60,24 @@ function SearchInput({ array, setarray, Allarray, Register, icon, src, iconPress
       <Span bgcolor={bgcolor} style={[styles.containHead]}>
         {src && <Span /* onClick={iconPress} */ mr={10} ml={5} ><Img w={50} h={45} mt={3} br={4} src={src} /></Span>}
         {icon && <Icon size={26} style={styles.iconHome} name={icon} onPress={iconPress} />}
-        <Input w='60%' fg={1} icon="search" pColor={'#777'} border={[1, '#ccc']} autoCapitalize='none' autoCorrect={false} spellCheck={true} value={textSearch} onChangeText={text => { settextSearch(text.toLowerCase()); searcher(text.toLowerCase()) }} placeholder="جستجو" mh={8} h={'85%'} mt={6} dr='rtl' />
+
+
+        <Span mt='auto' t={24} z={-1} pos='absolute' >
+          <Dropdown
+            $input={p.$input}
+            textId='dropdownDrawer'
+            show={p.showDropdownFilter}
+            setshow={p.setshowDropdownFilter}
+          >
+            <Span ph={9} w={150}>
+              <Span style={{ padding: 5, borderBottomWidth: 1, borderColor: 'silver' }} >
+                <P onClick={() => { settextSearch('phone2'); p.setshowDropdownFilter(!p.showDropdownFilter); /* p.$input.get('inputSearch')?.value && searcher(p.$input.get('inputSearch').value.toLowerCase()) */ }} fs={12}>phone2</P >
+              </Span>
+            </Span>
+          </Dropdown>
+        </Span>
+
+        <Input $input={p.$input} textId='inputSearch' onClick={() => { p.$input.get('dropdownDrawer')?.current.setNativeProps({ style: { transform: [{ scale: 1 }] } }) }} w='60%' fg={1} icon="search" pColor={'#777'} border={[1, '#ccc']} autoCapitalize='none' autoCorrect={false} spellCheck={true} value={textSearch} onChange={e => { settextSearch(e.nativeEvent.text.toLowerCase()); searcher(e.nativeEvent.text.toLowerCase()) }} iconPress={() => { searcher(textSearch.toLowerCase()) }} placeholder="جستجو" mh={8} h={'85%'} mt={6} dr='rtl' />
         {sort && <Span style={styles.containAscDesc}>
           <Icon onPress={foodAsc} size={21} style={{ padding: 4 }} name="arrow-down" color='#555' />
           <Span ph={6}></Span>
@@ -70,8 +87,7 @@ function SearchInput({ array, setarray, Allarray, Register, icon, src, iconPress
         {Register && <Span style={[styles.containAscDesc, { minWidth: 100, maxWidth: 130 }]}>
           <Span w={'100%'} h={40} br={5} mt={3} bgcolor="#fff" border={[1, 'silver']} jc='center' ai='center' scale={.9} ><P ff='IRANSansWeb-light'>ورود | ثبت نام</P></Span>
         </Span>}
- 
-  
+
       </Span>
       <Modal
         onClick={() => { p.setshowDropdownFilter(!p.showDropdownFilter); /* setTimeout(() => {p.setshowDropdownFilter(false);}, 200);  */ }}

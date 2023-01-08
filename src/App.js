@@ -43,7 +43,7 @@ const Food = () => {
 
   const height = Platform.OS === 'web' ? '100vh' : '100%'
   return (
-    <Span h={height} w='100%' >
+    <Span h={height} w='100%' onClick={()=>{p.$input.get('dropdownDrawer')?.current.setNativeProps({ style: { transform: [{ scale: 0 }] } })}}>
       <contextStates.Provider value={p}>
         <Init ref={(e) => allState.set$(e)} id={'s'} />
         <ToastProvider {...p} />

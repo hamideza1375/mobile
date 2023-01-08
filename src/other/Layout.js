@@ -81,7 +81,7 @@ export const Layout = (p) => {
           </BottomTab>:<View onLayout={()=> Platform.OS === 'web' && p.navigation.navigate('Home')} ></View>)
           ||
           p.route.name === 'Home' &&
-          <Drawer header={<SearchBar bgcolor='#f9f' Register={p.width > 395 ?true:false} icon={'filter'} src={p.width > 460 ?require('../assets/images/logo.png'):false} iconPress={()=>{p.setshowFilterModal(true)}} array={p.array} setarray={p.setarray}{...p}/>}
+          <Drawer header={<SearchBar bgcolor='#f9f' Register={p.width > 395 ?true:false} icon={'filter'} src={p.width > 460 ?require('../assets/images/logo.png'):false} iconPress={()=>{p.setshowFilterModal(true)}} array={p.array} setarray={p.setarray} Allarray={p.array} {...p}/>}
           name={'Home'} group={bottom} bgcolor='#f9f' color='#000' activeColor='#3bf' style={{boxShadow:'1px 1px 8px #a80'}} >
             {p.children}
           </Drawer>
