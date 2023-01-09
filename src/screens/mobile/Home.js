@@ -1,10 +1,12 @@
 import React from 'react'
-import { ScrollView } from 'react-native'
+import { Platform, ScrollView } from 'react-native'
 import { Span, Slider, Press, ScrollSlider, Icon, M_icon, Scroll, B_icon, Img, P, Card2, Div } from '../../Components/Html'
 import LinearGradient from '../../Components/other/LinearGradient'
 
 function Home(p) {
   return (
+    <Span f={1} >
+
     <Scroll id='containScroll' onLayout={() => { /* if (p.$?.id('containScroll')) { p.$.id('containScroll').scrollTo({ x: 0, y: 20, animated: true }) }*/ }}  >
 
       <Slider id='slider' {...p} onClick={() => { alert(8) }}
@@ -21,7 +23,7 @@ function Home(p) {
 
       <Span>
         <Span fd='row' ai='center' >
-          <P mr={15} mt={12} fs={15} mb={-15} >دسته ها</P>
+          <P mr={15} mt={12} fs={15} mb={-15} color='#444' >دسته ها</P>
           <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505']} style={{ width: '50%', height: 2, flexGrow: 1, marginTop: 28, marginHorizontal: 35 }} ></LinearGradient>
         </Span>
 
@@ -179,80 +181,80 @@ function Home(p) {
 
       <Span bgcolor='#e5e' br={2} w='100%' as='center' mt={10} >
 
-        <Span jc='space-between' fd='row-reverse' h={30}>
+        <Span jc='space-between' fd='row-reverse' >
           {/* <Icon name='percent' size={32} style={{marginTop:10,marginLeft:12}} /> */}
           <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505']} style={{ width: '50%', height: 2, flexGrow: 1, marginTop: 28, marginHorizontal: 35 }} ></LinearGradient>
           <P fs={16} mt={15} mr={9} ml='auto' color='#fff' >تخفیف ها</P>
           <Icon name='percent' size={30} color='#fff' style={{ marginTop: 10, marginRight: 12, fontWeight: '100' }} />
         </Span>
 
-        <ScrollSlider  {...p} id='scrollCard1' h={210} style={{ width: '99%', alignSelf: 'center' }} ccStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', height: 150 }} >
+        <ScrollSlider  {...p} id='scrollCard1' h={210} style={{ width: '99%', alignSelf: 'center' }} ccStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', height: 180 }} >
 
           <Span w={160} ai='center' jc='center' >
-            <Card2 h={170} w={150} style={{ borderColor: 'silver', backgroundColor: 'white' }} src={require('../../assets/images/a1.jpg')}
+            <Card2 h={170} w={150} mt={25} style={{ borderColor: 'silver', backgroundColor: 'white' }} src={require('../../assets/images/a1.jpg')}
               coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
               coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
             />
           </Span>
 
           <Span w={160} ai='center' jc='center' >
-            <Card2 h={170} w={150} style={{ borderColor: 'silver', backgroundColor: 'white' }} src={require('../../assets/images/a1.jpg')}
+            <Card2 h={170} w={150} mt={25} style={{ borderColor: 'silver', backgroundColor: 'white' }} src={require('../../assets/images/a1.jpg')}
               coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
               coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
             />
           </Span>
 
           <Span w={160} ai='center' jc='center' >
-            <Card2 h={170} w={150} style={{ borderColor: 'silver', backgroundColor: 'white' }} src={require('../../assets/images/a1.jpg')}
+            <Card2 h={170} w={150} mt={25} style={{ borderColor: 'silver', backgroundColor: 'white' }} src={require('../../assets/images/a1.jpg')}
               coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
               coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
             />
           </Span>
 
           <Span w={160} ai='center' jc='center' >
-            <Card2 h={170} w={150} style={{ borderColor: 'silver', backgroundColor: 'white' }} src={require('../../assets/images/a1.jpg')}
+            <Card2 h={170} w={150} mt={25} style={{ borderColor: 'silver', backgroundColor: 'white' }} src={require('../../assets/images/a1.jpg')}
               coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
               coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
             />
           </Span>
 
           <Span w={160} ai='center' jc='center' >
-            <Card2 h={170} w={150} style={{ borderColor: 'silver', backgroundColor: 'white' }} src={require('../../assets/images/a1.jpg')}
+            <Card2 h={170} w={150} mt={25} style={{ borderColor: 'silver', backgroundColor: 'white' }} src={require('../../assets/images/a1.jpg')}
               coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
               coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
             />
           </Span>
 
           <Span w={160} ai='center' jc='center' >
-            <Card2 h={170} w={150} style={{ borderColor: 'silver', backgroundColor: 'white' }} src={require('../../assets/images/a1.jpg')}
+            <Card2 h={170} w={150} mt={25} style={{ borderColor: 'silver', backgroundColor: 'white' }} src={require('../../assets/images/a1.jpg')}
               coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
               coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
             />
           </Span>
 
           <Span w={160} ai='center' jc='center' >
-            <Card2 h={170} w={150} style={{ borderColor: 'silver', backgroundColor: 'white' }} src={require('../../assets/images/a1.jpg')}
+            <Card2 h={170} w={150} mt={25} style={{ borderColor: 'silver', backgroundColor: 'white' }} src={require('../../assets/images/a1.jpg')}
               coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
               coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
             />
           </Span>
 
           <Span w={160} ai='center' jc='center' >
-            <Card2 h={170} w={150} style={{ borderColor: 'silver', backgroundColor: 'white' }} src={require('../../assets/images/a1.jpg')}
+            <Card2 h={170} w={150} mt={25} style={{ borderColor: 'silver', backgroundColor: 'white' }} src={require('../../assets/images/a1.jpg')}
               coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
               coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
             />
           </Span>
 
           <Span w={160} ai='center' jc='center' >
-            <Card2 h={170} w={150} style={{ borderColor: 'silver', backgroundColor: 'white' }} src={require('../../assets/images/a1.jpg')}
+            <Card2 h={170} w={150} mt={25} style={{ borderColor: 'silver', backgroundColor: 'white' }} src={require('../../assets/images/a1.jpg')}
               coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
               coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
             />
           </Span>
 
           <Span w={160} ai='center' jc='center' >
-            <Card2 h={170} w={150} style={{ borderColor: 'silver', backgroundColor: 'white' }} src={require('../../assets/images/a1.jpg')}
+            <Card2 h={170} w={150} mt={25} style={{ borderColor: 'silver', backgroundColor: 'white' }} src={require('../../assets/images/a1.jpg')}
               coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
               coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
             />
@@ -275,7 +277,7 @@ function Home(p) {
 
         <Span jc='space-between' fd='row-reverse' h={30} mb={9} >
           <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505']} style={{ width: '50%', height: 2, flexGrow: 1, marginTop: 28, marginHorizontal: 35 }} ></LinearGradient>
-          <P fs={16} mt={17} mr={9} ml='auto' >فیلتر ها بر اساس بهترین عملکرد</P>
+          <P fs={16} mt={17} mr={9} ml='auto' color='#444'>فیلتر ها بر اساس بهترین عملکرد</P>
         </Span>
 
 
@@ -360,17 +362,17 @@ function Home(p) {
 
       <Span border={[0]} bgcolor='#ede' >
 
-        <Span jc='space-between' fd='row-reverse' h={30} mb={10} >
+        <Span jc='space-between' fd='row-reverse' mb={10} >
           <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505']} style={{ width: '50%', height: 2, flexGrow: 1, marginTop: 28, marginHorizontal: 35 }} ></LinearGradient>
-          <P fs={16} mt={17} mr={9} ml='auto' >منتخب ها</P>
+          <P fs={16} mt={17} mr={9} ml='auto' color='#444'>منتخب ها</P>
         </Span>
 
-        <ScrollSlider {...p} id='scrollCard' h={250} mb={10} pb={77} ccStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', height: 180 }} >
+        <ScrollSlider {...p} id='scrollCard' h={250} mb={10} pb={77} ccStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', height: 195 }} >
 
 
 
           <Span w={230} ai='center' jc='center' >
-            <Card2 h={200} w={200} sh={{ r: 8, o: 1, c: 'blue', of: { width: 0, height: 1 } }} style={{ borderColor: 'red' }} src={require('../../assets/images/a1.jpg')}
+            <Card2 h={200} w={200}  mt={25} sh={{ r: 7, o: .5, c: 'blue', of: { width: 0, height: 2 } }} style={{ borderColor: 'red' }} src={require('../../assets/images/a1.jpg')}
               coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
               coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
               coulumn3={<Span fd='row' jc='space-around' w={'100%'}><P>3333</P><P>3333</P></Span>}
@@ -379,7 +381,7 @@ function Home(p) {
           </Span>
 
           <Span w={230} ai='center' jc='center' >
-            <Card2 h={200} w={200} sh={{ r: 8, o: 1, c: 'blue', of: { width: 0, height: 1 } }} style={{ borderColor: 'red' }} src={require('../../assets/images/a1.jpg')}
+            <Card2 h={200} w={200}  mt={25} sh={{ r: 7, o: .5, c: 'blue', of: { width: 0, height: 2 } }} style={{ borderColor: 'red' }} src={require('../../assets/images/a1.jpg')}
               coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
               coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
               coulumn3={<Span fd='row' jc='space-around' w={'100%'}><P>3333</P><P>3333</P></Span>}
@@ -388,7 +390,7 @@ function Home(p) {
           </Span>
 
           <Span w={230} ai='center' jc='center' >
-            <Card2 h={200} w={200} sh={{ r: 8, o: 1, c: 'blue', of: { width: 0, height: 1 } }} style={{ borderColor: 'red' }} src={require('../../assets/images/a1.jpg')}
+            <Card2 h={200} w={200}  mt={25} sh={{ r: 7, o: .5, c: 'blue', of: { width: 0, height: 2 } }} style={{ borderColor: 'red' }} src={require('../../assets/images/a1.jpg')}
               coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
               coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
               coulumn3={<Span fd='row' jc='space-around' w={'100%'}><P>3333</P><P>3333</P></Span>}
@@ -397,7 +399,7 @@ function Home(p) {
           </Span>
 
           <Span w={230} ai='center' jc='center' >
-            <Card2 h={200} w={200} sh={{ r: 8, o: 1, c: 'blue', of: { width: 0, height: 1 } }} style={{ borderColor: 'red' }} src={require('../../assets/images/a1.jpg')}
+            <Card2 h={200} w={200}  mt={25} sh={{ r: 7, o: .5, c: 'blue', of: { width: 0, height: 2 } }} style={{ borderColor: 'red' }} src={require('../../assets/images/a1.jpg')}
               coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
               coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
               coulumn3={<Span fd='row' jc='space-around' w={'100%'}><P>3333</P><P>3333</P></Span>}
@@ -406,7 +408,7 @@ function Home(p) {
           </Span>
 
           <Span w={230} ai='center' jc='center' >
-            <Card2 h={200} w={200} sh={{ r: 8, o: 1, c: 'blue', of: { width: 0, height: 1 } }} style={{ borderColor: 'red' }} src={require('../../assets/images/a1.jpg')}
+            <Card2 h={200} w={200}  mt={25} sh={{ r: 7, o: .5, c: 'blue', of: { width: 0, height: 2 } }} style={{ borderColor: 'red' }} src={require('../../assets/images/a1.jpg')}
               coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
               coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
               coulumn3={<Span fd='row' jc='space-around' w={'100%'}><P>3333</P><P>3333</P></Span>}
@@ -415,7 +417,7 @@ function Home(p) {
           </Span>
 
           <Span w={230} ai='center' jc='center' >
-            <Card2 h={200} w={200} sh={{ r: 8, o: 1, c: 'blue', of: { width: 0, height: 1 } }} style={{ borderColor: 'red' }} src={require('../../assets/images/a1.jpg')}
+            <Card2 h={200} w={200}  mt={25} sh={{ r: 7, o: .5, c: 'blue', of: { width: 0, height: 2 } }} style={{ borderColor: 'red' }} src={require('../../assets/images/a1.jpg')}
               coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
               coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
               coulumn3={<Span fd='row' jc='space-around' w={'100%'}><P>3333</P><P>3333</P></Span>}
@@ -424,7 +426,7 @@ function Home(p) {
           </Span>
 
           <Span w={230} ai='center' jc='center' >
-            <Card2 h={200} w={200} sh={{ r: 8, o: 1, c: 'blue', of: { width: 0, height: 1 } }} style={{ borderColor: 'red' }} src={require('../../assets/images/a1.jpg')}
+            <Card2 h={200} w={200}  mt={25} sh={{ r: 7, o: .5, c: 'blue', of: { width: 0, height: 2 } }} style={{ borderColor: 'red' }} src={require('../../assets/images/a1.jpg')}
               coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
               coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
               coulumn3={<Span fd='row' jc='space-around' w={'100%'}><P>3333</P><P>3333</P></Span>}
@@ -458,6 +460,8 @@ function Home(p) {
 
 
     </Scroll>
+      <Span sh={{r:6,o:.5}} jc='center' ai='center' br={70} bgcolor='#909' h={50} w={50} pos='absolute' b={30} r={40} > <M_icon color='#fff' name='chat' size={30} /></Span>
+      </Span>
 
   )
 }

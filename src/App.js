@@ -67,7 +67,8 @@ const linking = {
   config: {
     screens: {
       Home: '/Home',
-      ChildBobile: '/ChildBobile:id',
+      ChildBobile: '/ChildBobile',
+      // ChildBobile: '/ChildBobile:id',
       NotFound: '*'
     },
   },
