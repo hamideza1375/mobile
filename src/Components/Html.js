@@ -179,6 +179,8 @@ export const FlatList = (props) => {
 
 export const FlatListHorizontal = (props) => <Component flatlist={true} {...props} horizontal={true} Component={_FlatList} />
 
+export const Vlist = (props) => <VirtualizedList keyExtractor={item => item.id} getItemCount={(data) => data.length} getItem={(data, index) => (data[index])} {...props}/>
+
 export const H1 = (props) => <_text {...props} initalClass={s.h1} />
 
 export const H2 = (props) => <_text {...props} initalClass={s.h2} />
