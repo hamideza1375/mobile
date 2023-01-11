@@ -3,7 +3,7 @@ import { StyleSheet, TextInput, View } from 'react-native';
 import { Button, Div, Dropdown, Icon, Img, Input, Modal, P, Press, Scroll, Span } from '../Html'
 import { context } from '../../utils/context/contexts'
 
-function SearchInput({ array, setarray, Allarray, Register, icon, src, iconPress, sort, setshowFilterModal, showFilterModal, bgcolor }) {
+function SearchInput({ logoPress, row, array, setarray, Register, icon, src, iconPress, sort, setshowFilterModal, showFilterModal, bgcolor }) {
 
 
   const p = context()
@@ -32,9 +32,9 @@ function SearchInput({ array, setarray, Allarray, Register, icon, src, iconPress
   const searcher = (textSearch) => {
     console.log(textSearch);
     const f = []
-    let fd1 = Allarray.filter((f) => f.title.toLowerCase().includes(textSearch))
+    let fd1 = array.filter((f) => f.title.toLowerCase().includes(textSearch))
     f.push(...fd1)
-    let fd2 = Allarray.filter((f) => (f.title.toLowerCase().includes(textSearch[0]) && f.title.toLowerCase().includes(textSearch[1])) || (f.title.toLowerCase().includes(textSearch[1]) && f.title.toLowerCase().includes(textSearch[2])) || (f.title.toLowerCase().includes(textSearch[2]) && f.title.toLowerCase().includes(textSearch[3])) || (f.title.toLowerCase().includes(textSearch[3]) && f.title.toLowerCase().includes(textSearch[4])) || (f.title.toLowerCase().includes(textSearch[4]) && f.title.toLowerCase().includes(textSearch[5])) || (f.title.toLowerCase().includes(textSearch[5]) && f.title.toLowerCase().includes(textSearch[6])) || (f.title.toLowerCase().includes(textSearch[6]) && f.title.toLowerCase().includes(textSearch[7])) || (f.title.toLowerCase().includes(textSearch[7]) && f.title.toLowerCase().includes(textSearch[8])) || (f.title.toLowerCase().includes(textSearch[8]) && f.title.toLowerCase().includes(textSearch[9])) || (f.title.toLowerCase().includes(textSearch[9]) && f.title.toLowerCase().includes(textSearch[10])) || (f.title.toLowerCase().includes(textSearch[10]) && f.title.toLowerCase().includes(textSearch[11])))
+    let fd2 = array.filter((f) => (f.title.toLowerCase().includes(textSearch[0]) && f.title.toLowerCase().includes(textSearch[1])) || (f.title.toLowerCase().includes(textSearch[1]) && f.title.toLowerCase().includes(textSearch[2])) || (f.title.toLowerCase().includes(textSearch[2]) && f.title.toLowerCase().includes(textSearch[3])) || (f.title.toLowerCase().includes(textSearch[3]) && f.title.toLowerCase().includes(textSearch[4])) || (f.title.toLowerCase().includes(textSearch[4]) && f.title.toLowerCase().includes(textSearch[5])) || (f.title.toLowerCase().includes(textSearch[5]) && f.title.toLowerCase().includes(textSearch[6])) || (f.title.toLowerCase().includes(textSearch[6]) && f.title.toLowerCase().includes(textSearch[7])) || (f.title.toLowerCase().includes(textSearch[7]) && f.title.toLowerCase().includes(textSearch[8])) || (f.title.toLowerCase().includes(textSearch[8]) && f.title.toLowerCase().includes(textSearch[9])) || (f.title.toLowerCase().includes(textSearch[9]) && f.title.toLowerCase().includes(textSearch[10])) || (f.title.toLowerCase().includes(textSearch[10]) && f.title.toLowerCase().includes(textSearch[11])))
     for (let i in fd1) {
       for (let n in fd2) {
         if (fd1[i]._id !== fd2[n]._id) {
@@ -58,26 +58,35 @@ function SearchInput({ array, setarray, Allarray, Register, icon, src, iconPress
   return (
     <Span h={57} pt={2} w={'100%'} as='center' >
       <Span bgcolor={bgcolor} style={[styles.containHead]}>
-        {src && <Span /* onClick={iconPress} */ mr={10} ml={5} ><Img w={50} h={45} mt={3} br={4} src={src} /></Span>}
+        {src && <Press onClick={logoPress} mr={10} ml={5} ><Img w={50} h={45} mt={3} br={4} src={src} /></Press>}
         {icon && <Icon size={26} style={styles.iconHome} name={icon} onPress={iconPress} />}
+        {row && <Span mr={10} ml={5} >{row}</Span>}
 
 
-        <Span mt='auto' t={24} z={-1} pos='absolute' >
-          <Dropdown
-            $input={p.$input}
-            textId='dropdownDrawer'
-            show={p.showDropdownFilter}
-            setshow={p.setshowDropdownFilter}
-          >
-            <Span ph={9} w={150}>
-              <Span style={{ padding: 5, borderBottomWidth: 1, borderColor: 'silver' }} >
-                <P onClick={() => { settextSearch('phone2'); p.setshowDropdownFilter(!p.showDropdownFilter); /* p.$input.get('inputSearch')?.value && searcher(p.$input.get('inputSearch').value.toLowerCase()) */ }} fs={12}>phone2</P >
-              </Span>
+        <Input
+        
+        dropdown={
+          
+        <Dropdown
+          displayFlex
+          $input={p.$input}
+          textId='dropdownDrawer'
+          show={p.showDropdownFilter}
+          setshow={p.setshowDropdownFilter}
+          iconFalse
+        >
+          <Span ph={9} w={150}>
+            <Span style={{ padding: 5, borderBottomWidth: 1, borderColor: 'silver' }} >
+              <P onClick={() => { settextSearch('phone2'); p.setshowDropdownFilter(!p.showDropdownFilter); /* p.$input.get('inputSearch')?.value && searcher(p.$input.get('inputSearch').value.toLowerCase()) */ }} fs={12}>phone2</P >
             </Span>
-          </Dropdown>
-        </Span>
+          </Span>
+        </Dropdown>
+        }
 
-        <Input $input={p.$input} textId='inputSearch' onClick={() => { p.$input.get('dropdownDrawer')?.current.setNativeProps({ style: { transform: [{ scale: 1 }] } }) }} w='60%' fg={1} icon="search" pColor={'#777'} border={[1, '#ccc']} autoCapitalize='none' autoCorrect={false} spellCheck={true} value={textSearch} onChange={e => { settextSearch(e.nativeEvent.text.toLowerCase()); searcher(e.nativeEvent.text.toLowerCase()) }} iconPress={() => { searcher(textSearch.toLowerCase()) }} placeholder="جستجو" mh={8} h={'85%'} mt={6} dr='rtl' />
+        $input={p.$input} textId='inputSearch' onFocus={() => { p.$input.get('dropdownDrawer')?.current.setNativeProps({ style: { display: 'flex', transform: [{ scale: 1 }] } }) }} w='30%' fg={1} icon="search" pColor={'#777'} border={[1, '#ccc']} autoCapitalize='none' autoCorrect={false} spellCheck={true} value={textSearch} onChange={e => { settextSearch(e.nativeEvent.text.toLowerCase()); searcher(e.nativeEvent.text.toLowerCase()) }} iconPress={() => { searcher(textSearch.toLowerCase()) }} placeholder="جستجو" mh={8} h={'85%'} mt={6} dr='rtl' style={{ minWidth: 140 }} >
+
+
+        </Input>
         {sort && <Span style={styles.containAscDesc}>
           <Icon onPress={foodAsc} size={21} style={{ padding: 4 }} name="arrow-down" color='#555' />
           <Span ph={6}></Span>
@@ -101,7 +110,7 @@ function SearchInput({ array, setarray, Allarray, Register, icon, src, iconPress
               <Span w='100%' fd='row'  >
 
 
-                <Span h={30} mt='auto' mb={-5} >
+                <Span h={30} mt='auto' mb={-5} ml={5}>
 
                   <Dropdown
                     onClick={() => { let arrayId = ['1', '2', '3', '4', '5']; arrayId.map((id) => p.$.id(id) && p.$.id(id).$({ zIndex: 1 })); p.$.id('1').$({ zIndex: 10 }) }}
@@ -159,12 +168,12 @@ function SearchInput({ array, setarray, Allarray, Register, icon, src, iconPress
               <Span><P textAlign='right' >فضای حافظه</P></Span>
               <Span w='100%' fd='row' jc='flex-start' >
 
-                <Span h={30} mt='auto' mb={-5} >
+                <Span h={30} mt='auto' mb={-5} ml={5} >
                   <Dropdown h={25}
                     onClick={() => { let arrayId = ['1', '2', '3', '4', '5']; arrayId.map((id) => p.$.id(id) && p.$.id(id).$({ zIndex: 1 })); p.$.id('2').$({ zIndex: 10 }) }}
                     show={p.showDropdownFilter}
                     setshow={p.setshowDropdownFilter}
-
+                    bodyStyle={{right:20}}
                   >
                     <Span ph={9} w={150}>
 
@@ -212,7 +221,7 @@ function SearchInput({ array, setarray, Allarray, Register, icon, src, iconPress
               <Span><P textAlign='right' >رم</P></Span>
               <Span w='100%' fd='row' >
 
-                <Span h={30} mt='auto' mb={-5} >
+                <Span h={30} mt='auto' mb={-5} ml={5}>
                   <Dropdown h={25}
                     onClick={() => { let arrayId = ['1', '2', '3', '4', '5']; arrayId.map((id) => p.$.id(id) && p.$.id(id).$({ zIndex: 1 })); p.$.id('3').$({ zIndex: 10 }) }}
                     show={p.showDropdownFilter}
@@ -261,7 +270,7 @@ function SearchInput({ array, setarray, Allarray, Register, icon, src, iconPress
               <Span><P textAlign='right' >cpu</P></Span>
               <Span w='100%' fd='row'>
 
-                <Span h={30} mt='auto' mb={-5} >
+                <Span h={30} mt='auto' mb={-5} ml={5}>
 
                   <Dropdown h={25}
                     onClick={() => { let arrayId = ['1', '2', '3', '4', '5']; arrayId.map((id) => p.$.id(id) && p.$.id(id).$({ zIndex: 1 })); p.$.id('4').$({ zIndex: 10 }) }}
@@ -311,7 +320,7 @@ function SearchInput({ array, setarray, Allarray, Register, icon, src, iconPress
               <Span><P textAlign='right' >دوربین</P></Span>
               <Span w='100%' fd='row' >
 
-                <Span h={30} mt='auto' mb={-5} >
+                <Span h={30} mt='auto' mb={-5} ml={5}>
 
                   <Dropdown h={25}
                     onClick={() => { let arrayId = ['1', '2', '3', '4', '5']; arrayId.map((id) => p.$.id(id) && p.$.id(id).$({ zIndex: 1 })); p.$.id('5').$({ zIndex: 10 }) }}

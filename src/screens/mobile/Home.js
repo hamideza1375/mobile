@@ -24,155 +24,154 @@ function Home(p) {
       <Span>
         <Span fd='row' ai='center' >
           <P mr={15} mt={12} fs={15} mb={-15} color='#444' >دسته ها</P>
-          <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505']} style={{ width: '50%', height: 2, flexGrow: 1, marginTop: 28, marginHorizontal: 35 }} ></LinearGradient>
+          <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505']} style={{ width: '50%', height: 1, flexGrow: 1, marginTop: 28, marginHorizontal: 25 }} ></LinearGradient>
         </Span>
 
-        <ScrollSlider {...p} id='scrollGradient' h={180} pb={77} ccStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', height: 180 }} >
+        <ScrollSlider {...p} id='scrollGradient' h={180} ccStyle={{ height: 180 }} style={Platform.OS !== 'web' ?{paddingRight:290}:{paddingRight:10}} >
 
 
           <Span w={120} h={130} as='center' >
-            <Span w={110} h={100} as='center'>
-              <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505', '#f5f']} style={{ borderRadius: 100, width: 106.5, height: 105 }} >
-              </LinearGradient>
-              <Span w={100} h={100} style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, right: 7, top: 2, zIndex: 10, backgroundColor: 'white', position: 'absolute' }} >
+            <Span w={110} h={110} as='center'>
+              <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505', '#f5f']} style={{ borderRadius: 100, width: 107, height:104, maxHeight: 105 }} >
+              <Span w={100} h={98} style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, right: 3.5, top: 3, backgroundColor: 'white', position: 'absolute' }} >
                 <Img w={97} h={97} br={80} src={require('../../assets/images/a1.jpg')} />
               </Span>
+              </LinearGradient>
             </Span>
-            <P as='center' mt='auto' fs={15} fw='bold' color='#229b' >قطعات موبایل</P>
+            <P as='center' mt='auto' fs={15} fw='bold' color='#229b' >3قطعات موبایل</P>
           </Span>
 
           <Span w={120} h={130} as='center' >
-            <Span w={110} h={100} as='center'>
-              <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505', '#f5f']} style={{ borderRadius: 100, width: 106.5, height: 105 }} >
-              </LinearGradient>
-              <Span w={100} h={100} style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, right: 7, top: 2, zIndex: 10, backgroundColor: 'white', position: 'absolute' }} >
-                <Img w={97} h={97} br={80} src={require('../../assets/images/a2.jpg')} />
-              </Span>
-            </Span>
-            <P as='center' mt='auto' fs={15} fw='bold' color='#229b' >قطعات موبایل</P>
-          </Span>
-
-          <Span w={120} h={130} as='center' >
-            <Span w={110} h={100} as='center'>
-              <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505', '#f5f']} style={{ borderRadius: 100, width: 106.5, height: 105 }} >
-              </LinearGradient>
-              <Span w={100} h={100} style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, right: 7, top: 2, zIndex: 10, backgroundColor: 'white', position: 'absolute' }} >
-                <Img w={97} h={97} br={80} src={require('../../assets/images/a3.jpg')} />
-              </Span>
-            </Span>
-            <P as='center' mt='auto' fs={15} fw='bold' color='#229b' >قطعات موبایل</P>
-          </Span>
-
-          <Span w={120} h={130} as='center' >
-            <Span w={110} h={100} as='center'>
-              <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505', '#f5f']} style={{ borderRadius: 100, width: 106.5, height: 105 }} >
-              </LinearGradient>
-              <Span w={100} h={100} style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, right: 7, top: 2, zIndex: 10, backgroundColor: 'white', position: 'absolute' }} >
+            <Span w={110} h={110} as='center'>
+              <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505', '#f5f']} style={{ borderRadius: 100, width: 107, height:104, maxHeight: 105 }} >
+              <Span w={100} h={98} style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, right: 3.5, top: 3, backgroundColor: 'white', position: 'absolute' }} >
                 <Img w={97} h={97} br={80} src={require('../../assets/images/a1.jpg')} />
               </Span>
+              </LinearGradient>
             </Span>
             <P as='center' mt='auto' fs={15} fw='bold' color='#229b' >قطعات موبایل</P>
           </Span>
 
           <Span w={120} h={130} as='center' >
-            <Span w={110} h={100} as='center'>
-              <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505', '#f5f']} style={{ borderRadius: 100, width: 106.5, height: 105 }} >
-              </LinearGradient>
-              <Span w={100} h={100} style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, right: 7, top: 2, zIndex: 10, backgroundColor: 'white', position: 'absolute' }} >
-                <Img w={97} h={97} br={80} src={require('../../assets/images/a7.jpg')} />
-              </Span>
-            </Span>
-            <P as='center' mt='auto' fs={15} fw='bold' color='#229b' >قطعات موبایل</P>
-          </Span>
-
-          <Span w={120} h={130} as='center' >
-            <Span w={110} h={100} as='center'>
-              <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505', '#f5f']} style={{ borderRadius: 100, width: 106.5, height: 105 }} >
-              </LinearGradient>
-              <Span w={100} h={100} style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, right: 7, top: 2, zIndex: 10, backgroundColor: 'white', position: 'absolute' }} >
+            <Span w={110} h={110} as='center'>
+              <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505', '#f5f']} style={{ borderRadius: 100, width: 107, height:104, maxHeight: 105 }} >
+              <Span w={100} h={98} style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, right: 3.5, top: 3, backgroundColor: 'white', position: 'absolute' }} >
                 <Img w={97} h={97} br={80} src={require('../../assets/images/a1.jpg')} />
               </Span>
+              </LinearGradient>
             </Span>
             <P as='center' mt='auto' fs={15} fw='bold' color='#229b' >قطعات موبایل</P>
           </Span>
 
           <Span w={120} h={130} as='center' >
-            <Span w={110} h={100} as='center'>
-              <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505', '#f5f']} style={{ borderRadius: 100, width: 106.5, height: 105 }} >
-              </LinearGradient>
-              <Span w={100} h={100} style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, right: 7, top: 2, zIndex: 10, backgroundColor: 'white', position: 'absolute' }} >
-                <Img w={97} h={97} br={80} src={require('../../assets/images/a2.jpg')} />
-              </Span>
-            </Span>
-            <P as='center' mt='auto' fs={15} fw='bold' color='#229b' >قطعات موبایل</P>
-          </Span>
-
-          <Span w={120} h={130} as='center' >
-            <Span w={110} h={100} as='center'>
-              <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505', '#f5f']} style={{ borderRadius: 100, width: 106.5, height: 105 }} >
-              </LinearGradient>
-              <Span w={100} h={100} style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, right: 7, top: 2, zIndex: 10, backgroundColor: 'white', position: 'absolute' }} >
-                <Img w={97} h={97} br={80} src={require('../../assets/images/a3.jpg')} />
-              </Span>
-            </Span>
-            <P as='center' mt='auto' fs={15} fw='bold' color='#229b' >قطعات موبایل</P>
-          </Span>
-
-          <Span w={120} h={130} as='center' >
-            <Span w={110} h={100} as='center'>
-              <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505', '#f5f']} style={{ borderRadius: 100, width: 106.5, height: 105 }} >
-              </LinearGradient>
-              <Span w={100} h={100} style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, right: 7, top: 2, zIndex: 10, backgroundColor: 'white', position: 'absolute' }} >
+            <Span w={110} h={110} as='center'>
+              <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505', '#f5f']} style={{ borderRadius: 100, width: 107, height:104, maxHeight: 105 }} >
+              <Span w={100} h={98} style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, right: 3.5, top: 3, backgroundColor: 'white', position: 'absolute' }} >
                 <Img w={97} h={97} br={80} src={require('../../assets/images/a1.jpg')} />
               </Span>
+              </LinearGradient>
             </Span>
             <P as='center' mt='auto' fs={15} fw='bold' color='#229b' >قطعات موبایل</P>
           </Span>
 
           <Span w={120} h={130} as='center' >
-            <Span w={110} h={100} as='center'>
-              <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505', '#f5f']} style={{ borderRadius: 100, width: 106.5, height: 105 }} >
-              </LinearGradient>
-              <Span w={100} h={100} style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, right: 7, top: 2, zIndex: 10, backgroundColor: 'white', position: 'absolute' }} >
-                <Img w={97} h={97} br={80} src={require('../../assets/images/a7.jpg')} />
-              </Span>
-            </Span>
-            <P as='center' mt='auto' fs={15} fw='bold' color='#229b' >قطعات موبایل</P>
-          </Span>
-
-          <Span w={120} h={130} as='center' >
-            <Span w={110} h={100} as='center'>
-              <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505', '#f5f']} style={{ borderRadius: 100, width: 106.5, height: 105 }} >
-              </LinearGradient>
-              <Span w={100} h={100} style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, right: 7, top: 2, zIndex: 10, backgroundColor: 'white', position: 'absolute' }} >
+            <Span w={110} h={110} as='center'>
+              <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505', '#f5f']} style={{ borderRadius: 100, width: 107, height:104, maxHeight: 105 }} >
+              <Span w={100} h={98} style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, right: 3.5, top: 3, backgroundColor: 'white', position: 'absolute' }} >
                 <Img w={97} h={97} br={80} src={require('../../assets/images/a1.jpg')} />
               </Span>
+              </LinearGradient>
             </Span>
             <P as='center' mt='auto' fs={15} fw='bold' color='#229b' >قطعات موبایل</P>
           </Span>
 
           <Span w={120} h={130} as='center' >
-            <Span w={110} h={100} as='center'>
-              <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505', '#f5f']} style={{ borderRadius: 100, width: 106.5, height: 105 }} >
-              </LinearGradient>
-              <Span w={100} h={100} style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, right: 7, top: 2, zIndex: 10, backgroundColor: 'white', position: 'absolute' }} >
-                <Img w={97} h={97} br={80} src={require('../../assets/images/a2.jpg')} />
+            <Span w={110} h={110} as='center'>
+              <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505', '#f5f']} style={{ borderRadius: 100, width: 107, height:104, maxHeight: 105 }} >
+              <Span w={100} h={98} style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, right: 3.5, top: 3, backgroundColor: 'white', position: 'absolute' }} >
+                <Img w={97} h={97} br={80} src={require('../../assets/images/a1.jpg')} />
               </Span>
+              </LinearGradient>
             </Span>
             <P as='center' mt='auto' fs={15} fw='bold' color='#229b' >قطعات موبایل</P>
           </Span>
 
           <Span w={120} h={130} as='center' >
-            <Span w={110} h={100} as='center'>
-              <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505', '#f5f']} style={{ borderRadius: 100, width: 106.5, height: 105 }} >
-              </LinearGradient>
-              <Span w={100} h={100} style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, right: 7, top: 2, zIndex: 10, backgroundColor: 'white', position: 'absolute' }} >
-                <Img w={97} h={97} br={80} src={require('../../assets/images/a3.jpg')} />
+            <Span w={110} h={110} as='center'>
+              <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505', '#f5f']} style={{ borderRadius: 100, width: 107, height:104, maxHeight: 105 }} >
+              <Span w={100} h={98} style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, right: 3.5, top: 3, backgroundColor: 'white', position: 'absolute' }} >
+                <Img w={97} h={97} br={80} src={require('../../assets/images/a1.jpg')} />
               </Span>
+              </LinearGradient>
             </Span>
             <P as='center' mt='auto' fs={15} fw='bold' color='#229b' >قطعات موبایل</P>
           </Span>
 
+          <Span w={120} h={130} as='center' >
+            <Span w={110} h={110} as='center'>
+              <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505', '#f5f']} style={{ borderRadius: 100, width: 107, height:104, maxHeight: 105 }} >
+              <Span w={100} h={98} style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, right: 3.5, top: 3, backgroundColor: 'white', position: 'absolute' }} >
+                <Img w={97} h={97} br={80} src={require('../../assets/images/a1.jpg')} />
+              </Span>
+              </LinearGradient>
+            </Span>
+            <P as='center' mt='auto' fs={15} fw='bold' color='#229b' >قطعات موبایل</P>
+          </Span>
+
+          <Span w={120} h={130} as='center' >
+            <Span w={110} h={110} as='center'>
+              <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505', '#f5f']} style={{ borderRadius: 100, width: 107, height:104, maxHeight: 105 }} >
+              <Span w={100} h={98} style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, right: 3.5, top: 3, backgroundColor: 'white', position: 'absolute' }} >
+                <Img w={97} h={97} br={80} src={require('../../assets/images/a1.jpg')} />
+              </Span>
+              </LinearGradient>
+            </Span>
+            <P as='center' mt='auto' fs={15} fw='bold' color='#229b' >قطعات موبایل</P>
+          </Span>
+
+          <Span w={120} h={130} as='center' >
+            <Span w={110} h={110} as='center'>
+              <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505', '#f5f']} style={{ borderRadius: 100, width: 107, height:104, maxHeight: 105 }} >
+              <Span w={100} h={98} style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, right: 3.5, top: 3, backgroundColor: 'white', position: 'absolute' }} >
+                <Img w={97} h={97} br={80} src={require('../../assets/images/a1.jpg')} />
+              </Span>
+              </LinearGradient>
+            </Span>
+            <P as='center' mt='auto' fs={15} fw='bold' color='#229b' >قطعات موبایل</P>
+          </Span>
+
+          <Span w={120} h={130} as='center' >
+            <Span w={110} h={110} as='center'>
+              <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505', '#f5f']} style={{ borderRadius: 100, width: 107, height:104, maxHeight: 105 }} >
+              <Span w={100} h={98} style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, right: 3.5, top: 3, backgroundColor: 'white', position: 'absolute' }} >
+                <Img w={97} h={97} br={80} src={require('../../assets/images/a1.jpg')} />
+              </Span>
+              </LinearGradient>
+            </Span>
+            <P as='center' mt='auto' fs={15} fw='bold' color='#229b' >قطعات موبایل</P>
+          </Span>
+
+          <Span w={120} h={130} as='center' >
+            <Span w={110} h={110} as='center'>
+              <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505', '#f5f']} style={{ borderRadius: 100, width: 107, height:104, maxHeight: 105 }} >
+              <Span w={100} h={98} style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, right: 3.5, top: 3, backgroundColor: 'white', position: 'absolute' }} >
+                <Img w={97} h={97} br={80} src={require('../../assets/images/a1.jpg')} />
+              </Span>
+              </LinearGradient>
+            </Span>
+            <P as='center' mt='auto' fs={15} fw='bold' color='#229b' >قطعات موبایل</P>
+          </Span>
+
+          <Span w={120} h={130} as='center' >
+            <Span w={110} h={110} as='center'>
+              <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505', '#f5f']} style={{ borderRadius: 100, width: 107, height:104, maxHeight: 105 }} >
+              <Span w={100} h={98} style={{ alignItems: 'center', justifyContent: 'center', borderRadius: 100, right: 3.5, top: 3, backgroundColor: 'white', position: 'absolute' }} >
+                <Img w={97} h={97} br={80} src={require('../../assets/images/a1.jpg')} />
+              </Span>
+              </LinearGradient>
+            </Span>
+            <P as='center' mt='auto' fs={15} fw='bold' color='#229b' >44قطعات موبایل</P>
+          </Span>
         </ScrollSlider>
       </Span>
 
@@ -183,12 +182,12 @@ function Home(p) {
 
         <Span jc='space-between' fd='row-reverse' >
           {/* <Icon name='percent' size={32} style={{marginTop:10,marginLeft:12}} /> */}
-          <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505']} style={{ width: '50%', height: 2, flexGrow: 1, marginTop: 28, marginHorizontal: 35 }} ></LinearGradient>
+          <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505']} style={{ width: '50%', height: 1, flexGrow: 1, marginTop: 29, marginHorizontal: 25 }} ></LinearGradient>
           <P fs={16} mt={15} mr={9} ml='auto' color='#fff' >تخفیف ها</P>
           <Icon name='percent' size={30} color='#fff' style={{ marginTop: 10, marginRight: 12, fontWeight: '100' }} />
         </Span>
 
-        <ScrollSlider  {...p} id='scrollCard1' h={210} style={{ width: '99%', alignSelf: 'center' }} ccStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', height: 180 }} >
+        <ScrollSlider  {...p} id='scrollCard1' h={210} style={{ width: '99%', alignSelf: 'center' }} ccStyle={{ height: 180 }} >
 
           <Span w={160} ai='center' jc='center' >
             <Card2 h={170} w={150} mt={25} style={{ borderColor: 'silver', backgroundColor: 'white' }} src={require('../../assets/images/a1.jpg')}
@@ -262,7 +261,7 @@ function Home(p) {
 
         </ScrollSlider>
 
-        <P fs={14} mr='auto' ml={12} mb={12} mt={-3} color='#fff' >مشاهده ی همه ی تخفیف ها ></P>
+        <P fs={14} mr='auto' ml={12} mb={12} mt={-3} color='#fff' >مشاهده ی همه ی تخفیف ها ↫</P>
 
 
       </Span>
@@ -275,80 +274,80 @@ function Home(p) {
 
       <Span>
 
-        <Span jc='space-between' fd='row-reverse' h={30} mb={9} >
-          <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505']} style={{ width: '50%', height: 2, flexGrow: 1, marginTop: 28, marginHorizontal: 35 }} ></LinearGradient>
+        <Span jc='space-between' fd='row-reverse' mb={9} >
+          <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505']} style={{ width: '50%', height: 1, flexGrow: 1, marginTop: 31, marginHorizontal: 15 }} ></LinearGradient>
           <P fs={16} mt={17} mr={9} ml='auto' color='#444'>فیلتر ها بر اساس بهترین عملکرد</P>
         </Span>
 
 
-        <ScrollSlider {...p} id='scrollIcon' h={180} mb={10} pb={77} ccStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', height: 180 }} >
+        <ScrollSlider {...p} id='scrollIcon' h={170} mb={10} ccStyle={{ height: 170 }} >
 
-          <Span w={150} h={160} ai='center' jc='center'>
-            <Span w={150} h={140} ai='center' jc='center'>
-              <B_icon scale={1.7} iconSize={32} color="white" bgcolor="red" icon='mobile' />
+          <Span w={130} h={120} ai='center' jc='center'>
+            <Span w={130} h={120} ai='center' jc='center'>
+              <B_icon scale={1.4} iconSize={32} style={{opacity:.9}} bgcolor="black" icon='mobile' />
             </Span>
             <P color='#229b' fw='bold' >دوربین قدرتمند</P>
           </Span>
 
-          <Span w={150} h={160} ai='center' jc='center'>
-          <Span w={150} h={140} ai='center' jc='center'>
-            <B_icon scale={1.7} color="white" bgcolor="green" m_icon='phonelink-setup' />
+          <Span w={130} h={120} ai='center' jc='center'>
+          <Span w={130} h={120} ai='center' jc='center'>
+            <B_icon scale={1.4} color="white" bgcolor="black" style={{opacity:.9}} m_icon='phonelink-setup' />
           </Span>
           <P color='#229b' fw='bold' >ا Ram بالا</P>
           </Span>
 
-          <Span w={150} h={160} ai='center' jc='center'>
-          <Span w={150} h={140} ai='center' jc='center'>
-            <B_icon scale={1.7} color="white" bgcolor="blue" icon='headphones' />
+          <Span w={130} h={120} ai='center' jc='center'>
+          <Span w={130} h={120} ai='center' jc='center'>
+            <B_icon scale={1.4} color="white" bgcolor="black" style={{opacity:.9}} icon='headphones' />
           </Span>
           <P color='#229b' fw='bold' >حافظه ی داخلی بالا</P>
           </Span>
 
-          <Span w={150} h={160} ai='center' jc='center'>
-          <Span w={150} h={140} ai='center' jc='center'>
-            <B_icon scale={1.7} color="white" bgcolor="yellow" icon='tablet' />
+          <Span w={130} h={120} ai='center' jc='center'>
+          <Span w={130} h={120} ai='center' jc='center'>
+            <B_icon scale={1.4} color="white" bgcolor="black" style={{opacity:.9}} icon='tablet' />
           </Span>
           <P color='#229b' fw='bold' >ا cpu قوی</P>
           </Span>
 
-          <Span w={150} h={160} ai='center' jc='center'>
-          <Span w={150} h={140} ai='center' jc='center'>
-            <B_icon scale={1.7} color="white" bgcolor="silver" icon='shopping-cart' />
+          <Span w={130} h={120} ai='center' jc='center'>
+          <Span w={130} h={120} ai='center' jc='center'>
+            <B_icon scale={1.4} color="white" bgcolor="black" style={{opacity:.9}} icon='shopping-cart' />
           </Span>
           <P color='#229b' fw='bold' >صفحه نمایش بزرگ</P>
           </Span>
 
-          <Span w={150} h={160} ai='center' jc='center'>
-          <Span w={150} h={140} ai='center' jc='center'>
-            <B_icon scale={1.7} iconSize={32} color="white" bgcolor="red" icon='mobile' />
+          <Span w={130} h={120} ai='center' jc='center'>
+          <Span w={130} h={120} ai='center' jc='center'>
+            <B_icon scale={1.4} iconSize={32} style={{opacity:.9}} bgcolor="black" icon='mobile' />
           </Span>
           <P color='#229b' fw='bold' >دو سیم</P>
           </Span>
 
-          <Span w={150} h={160} ai='center' jc='center'>
-          <Span w={150} h={140} ai='center' jc='center'>
-            <B_icon scale={1.7} color="white" bgcolor="green" m_icon='phonelink-setup' />
+          <Span w={130} h={120} ai='center' jc='center'>
+          <Span w={130} h={120} ai='center' jc='center'>
+            <B_icon scale={1.4} color="white" bgcolor="black" style={{opacity:.9}} m_icon='phonelink-setup' />
           </Span>
           <P color='#229b' fw='bold' >کیفیت صدا</P>
           </Span>
 
-          <Span w={150} h={160} ai='center' jc='center'>
-          <Span w={150} h={140} ai='center' jc='center'>
-            <B_icon scale={1.7} color="white" bgcolor="blue" icon='headphones' />
+          <Span w={130} h={120} ai='center' jc='center'>
+          <Span w={130} h={120} ai='center' jc='center'>
+            <B_icon scale={1.4} color="white" bgcolor="black" style={{opacity:.9}} icon='headphones' />
           </Span>
           <P color='#229b' fw='bold' >5G</P>
           </Span>
 
-          <Span w={150} h={160} ai='center' jc='center'>
-          <Span w={150} h={140} ai='center' jc='center'>
-            <B_icon scale={1.7} color="white" bgcolor="yellow" icon='tablet' />
+          <Span w={130} h={120} ai='center' jc='center'>
+          <Span w={130} h={120} ai='center' jc='center'>
+            <B_icon scale={1.4} color="white" bgcolor="black" style={{opacity:.9}} icon='tablet' />
           </Span>
           <P color='#229b' fw='bold' >4G</P>
           </Span>
 
-          <Span w={150} h={160} ai='center' jc='center'>
-          <Span w={150} h={140} ai='center' jc='center'>
-            <B_icon scale={1.7} color="white" bgcolor="silver" icon='shopping-cart' />
+          <Span w={130} h={120} ai='center' jc='center'>
+          <Span w={130} h={120} ai='center' jc='center'>
+            <B_icon scale={1.4} color="white" bgcolor="black" style={{opacity:.9}} icon='shopping-cart' />
           </Span>
           <P color='#229b' fw='bold' > قدرتمند</P>
           </Span>
@@ -363,11 +362,11 @@ function Home(p) {
       <Span border={[0]} bgcolor='#ede' >
 
         <Span jc='space-between' fd='row-reverse' mb={10} >
-          <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505']} style={{ width: '50%', height: 2, flexGrow: 1, marginTop: 28, marginHorizontal: 35 }} ></LinearGradient>
+          <LinearGradient nativeStart={{ x: 1.5, y: 1.5 }} webStart={{ x: 7 }} colors={['#f5f', '#505']} style={{ width: '50%', height: 1, flexGrow: 1, marginTop: 32, marginHorizontal: 25 }} ></LinearGradient>
           <P fs={16} mt={17} mr={9} ml='auto' color='#444'>منتخب ها</P>
         </Span>
 
-        <ScrollSlider {...p} id='scrollCard' h={250} mb={10} pb={77} ccStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', height: 195 }} >
+        <ScrollSlider {...p} id='scrollCard' h={250} mb={10} ccStyle={{ height: 195 }} >
 
 
 
@@ -460,7 +459,9 @@ function Home(p) {
 
 
     </Scroll>
-      <Span sh={{r:6,o:.5}} jc='center' ai='center' br={70} bgcolor='#909' h={50} w={50} pos='absolute' b={30} r={40} > <M_icon color='#fff' name='chat' size={30} /></Span>
+      <Span sh={{r:6,o:.5}} jc='center' ai='center' br={70} bgcolor='#909' h={50} w={50} pos='absolute' b={30} l={40} > 
+      <M_icon color='#fff' name='chat' size={30} />
+      </Span>
       </Span>
 
   )

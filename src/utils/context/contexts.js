@@ -88,16 +88,16 @@ function State() {
 
 
   const [array, setarray] = useState([
-    { id: '1', title:'phone1', price: 2000000, sdCard: 16, ram: 3, cpuCore: 4, camera: 13, network: '4G', availabel:50 },
-    { id: '2', title:'phone2', price: 4500000, sdCard: 64, ram: 6, cpuCore: 8, camera: 64, network: '5G', availabel:30 },
-    { id: '3', title:'phone3', price: 4800000, sdCard: 128, ram: 4, cpuCore: 6, camera: 32, network: '5G', availabel:40 },
-    { id: '4', title:'phone4', price: 3500000, sdCard: 64, ram: 3, cpuCore: 4, camera: 32, network: '4G', availabel:150 },
-    { id: '5', title:'phone5', price: 2800000, sdCard: 32, ram: 3, cpuCore: 4, camera: 16, network: '4G', availabel:10 },
-    { id: '6', title:'phone6', price: 4000000, sdCard: 128, ram: 4, cpuCore: 8, camera: 64, network: '5G', availabel:50 },
-    { id: '7', title:'phone7', price: 900000, sdCard: 4, ram: 1, cpuCore: 2, camera: 5, network: '3G', availabel:0 },
-    { id: '8', title:'phone8', price: 8500000, sdCard: 128, ram: 8, cpuCore: 8, camera: 108, network: '5G', availabel:8 },
-    { id: '9', title:'phone9', price: 2000000, sdCard: 32, ram: 3, cpuCore: 4, camera: 32, network: '4G', availabel:1 },
-    { id: '10', title:'phone10', price: 1000000, sdCard: 8, ram: 2, cpuCore: 2, camera: 8, network: '3G', availabel:0 },
+    { id: '1', title:'phone1', price: 2000000, sdCard: 16, ram: 3, cpuCore: 4, camera: 13, network: '4G', availabel:50 , color:['red','blue'], guarantee :'guarantee '},
+    { id: '2', title:'phone2', price: 4500000, sdCard: 64, ram: 6, cpuCore: 8, camera: 64, network: '5G', availabel:30, color:['red','blue'], guarantee :'guarantee ' },
+    { id: '3', title:'phone3', price: 4800000, sdCard: 128, ram: 4, cpuCore: 6, camera: 32, network: '5G', availabel:40, color:['red','blue'], guarantee :'guarantee ' },
+    { id: '4', title:'phone4', price: 3500000, sdCard: 64, ram: 3, cpuCore: 4, camera: 32, network: '4G', availabel:150, color:['red','blue'], guarantee :'guarantee ' },
+    { id: '5', title:'phone5', price: 2800000, sdCard: 32, ram: 3, cpuCore: 4, camera: 16, network: '4G', availabel:10, color:['red','blue'], guarantee :'guarantee ' },
+    { id: '6', title:'phone6', price: 4000000, sdCard: 128, ram: 4, cpuCore: 8, camera: 64, network: '5G', availabel:50, color:['red','blue'], guarantee :'guarantee ' },
+    { id: '7', title:'phone7', price: 900000, sdCard: 4, ram: 1, cpuCore: 2, camera: 5, network: '3G', availabel:0, color:['red','blue'], guarantee :'guarantee ' },
+    { id: '8', title:'phone8', price: 8500000, sdCard: 128, ram: 8, cpuCore: 8, camera: 108, network: '5G', availabel:8, color:['red','blue'], guarantee :'guarantee ' },
+    { id: '9', title:'phone9', price: 2000000, sdCard: 32, ram: 3, cpuCore: 4, camera: 32, network: '4G', availabel:1, color:['red','blue'], guarantee :'guarantee ' },
+    { id: '10', title:'phone10', price: 1000000, sdCard: 8, ram: 2, cpuCore: 2, camera: 8, network: '3G', availabel:0, color:['red','blue'], guarantee :'guarantee ' },
   ])
 
 

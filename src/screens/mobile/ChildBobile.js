@@ -4,15 +4,12 @@ import { A_icon, Badge, Button, Card, Card2, Icon, Img, M_icon, P, Press, Scroll
 
 const ChildBobile = (p) => {
   return (
-    <Span f={1} style={{ maxHeight: Platform.OS === 'web' ? '100vh' : '100%' }} >
+    <Span f={1} style={{ maxHeight: Platform.OS === 'web' ? 'calc(100vh - 57px)' : '100%' }} >
       <Scroll >
 
-        <Span>
-          <P mt={25} fw='bold' mr={14} >گوشی موبایل شیایومی مدل 12</P>
-        </Span>
 
-        <Span fd='row-reverse' w='100%' jc='space-between' bgcolor='#fff' ai='center' p={15} mt={25} >
-          <Span w={400} as='flex-end' ai='center' jc='center' >
+        <Span fd='row-reverse' w='100%' jc='space-between' bgcolor='#fff' p={15} >
+          <Span w={400} ai='center' jc='center' >
             <Card2 h={400} w={400} style={{ borderColor: 'silver', backgroundColor: 'white' }}
               coulumn1={
                 <Span w={'100%'} f={1} >
@@ -34,19 +31,22 @@ const ChildBobile = (p) => {
                 <Span w={'100%'} f={1}>
 
 
-                  <Span fg={1} border={[1]} >
+                  <Span fg={1} fd='row' >
+                    <P mb={-6}>گارانتی: </P>
                     <P mb={-6}>گارانتی</P>
                   </Span >
 
-                  <Span fg={1} border={[1]} >
+                  <Span fg={1} fd='row' >
+                    <P mb={-6}>موجود در انبار: </P>
                     <P mb={-6}>موجود در انبار</P>
                   </Span >
 
-                  <Span fg={1} border={[1]} >
+                  <Span fg={1} fd='row' >
+                    <P mb={-6}>انتخاب رنگ: </P>
                     <P mb={-6}>انتخاب رنگ</P>
                   </Span >
 
-                  <Span fg={1} border={[1]} mb={10}  >
+                  <Span fg={1} fd='row' mb={10}  >
                     <Button w='70%' bgcolor='#909' style={{ alignSelf: 'center', position: 'absolute', bottom: 5 }} >افزودن به سبد خرید</Button>
                   </Span >
 
@@ -60,7 +60,7 @@ const ChildBobile = (p) => {
 
 
 
-          <Span w={300} as='flex-end' ai='center' jc='center' >
+          <Span w={300} ai='center' jc='center' >
 
             <Card2 h={400} w={300} style={{ borderColor: 'silver', backgroundColor: 'white' }}
 
@@ -103,7 +103,11 @@ const ChildBobile = (p) => {
 
           <Span w={300} as='flex-end' ai='center' jc='center' >
 
-            <Span as='flex-start' >
+            <Span as='flex-start'>
+              <P mt={10} fw='bold' >گوشی موبایل شیایومی مدل 12</P>
+            </Span>
+
+            <Span mt={12} as='flex-start' >
               <P>مشخصات</P>
             </Span>
 
@@ -111,28 +115,32 @@ const ChildBobile = (p) => {
 
               coulumn1={
                 <Span mt={10} >
-                  <Span mr={12} >
+                  <Span mr={12} fd='row' >
+                    <P>نوع پردازنده cpu: </P>
                     <P>نوع پردازنده cpu:</P>
                   </Span>
                 </Span>
               }
               coulumn2={
                 <Span>
-                  <Span mr={12} >
+                  <Span mr={12} fd='row' >
+                    <P>رم:</P>
                     <P>رم:</P>
                   </Span>
                 </Span>
               }
               coulumn3={
                 <Span>
-                  <Span mr={12} >
+                  <Span mr={12} fd='row' >
+                    <P>حافظه ی داخلی: </P>
                     <P>حافظه ی داخلی:</P>
                   </Span>
                 </Span>
               }
               coulumn4={
                 <Span>
-                  <Span mr={12} >
+                  <Span mr={12} fd='row' >
+                    <P>دوربین: </P>
                     <P>دوربین:</P>
                   </Span>
                 </Span>
@@ -141,7 +149,7 @@ const ChildBobile = (p) => {
               c5={.5} coulumn5={
                 <Span f={.8} jc='center'>
                   <Span ml={12} as='flex-end'>
-                    <P >نمایش مشخصات کامل کلیک کنید ></P>
+                    <P >نمایش مشخصات کامل کلیک کنید »</P>
                   </Span>
                 </Span>
               }
@@ -156,48 +164,45 @@ const ChildBobile = (p) => {
 
 
 
-            <Span fd='row' mt={10}>
-              <Span f={1}>
-                <Card2 h={'auto'}
+            <Span fd='row' mt={10} ai='center'  >
+              <Span f={1} mh={6} h={60} mt={4} ai='center' jc='flex-start' >
+                <Card2 h={'auto'} border={[0]}
                   coulumn1={
-                    <Span jc='center' ai='center' ><Icon name='eye' size={30} /></Span>
+                    <Span h={'100%'} w={'100%'} jc='center' ai='center' ><Img bgcolor='white' w={40} h={30} src={require('../../assets/images/payPostMethod.png')} size={30} /></Span>
                   }
                   coulumn2={
-                    <P ta='center' fs={9}>هفت روز فرصت بازگشت کالا</P>
+                    <Span w='100%' h={30} >
+                      <P ta='center' mt={5} fs={9}>پرداخت در محل</P>
+                    </Span>
                   }
                 />
               </Span>
-              <Span f={1}>
-                <Card2 h={'auto'}
+              <Span f={1} mh={6} h={60} ai='center' jc='flex-start' >
+                <Card2 h={'auto'} border={[0]}
                   coulumn1={
-                    <Span jc='center' ai='center' ><Icon name='eye' size={30} /></Span>
+                    <Span h={'100%'} w={'100%'} jc='center' ai='center' ><Img bgcolor='white' w={40} h={30} src={require('../../assets/images/originalPostMethod.png')} size={30} /></Span>
                   }
                   coulumn2={
-                    <P fs={9} ta='center'>هفت روز فرصت بازگشت کالا</P>
-                  }
-                />
-              </Span>
-              <Span f={1}>
-                <Card2 h={'auto'}
-                  coulumn1={
-                    <Span jc='center' ai='center' ><Icon name='eye' size={30} /></Span>
-                  }
-                  coulumn2={
-                    <P fs={9} ta='center'>هفت روز فرصت بازگشت کالا</P>
-                  }
-                />
-              </Span>
-              <Span f={1}>
-                <Card2 h={'auto'}
-                  coulumn1={
-                    <Span jc='center' ai='center' ><Icon name='eye' size={30} /></Span>
-                  }
-                  coulumn2={
-                    <P fs={9} ta='center'>هفت روز فرصت بازگشت کالا</P>
-                  }
-                />
-              </Span>
+                    <Span w='100%' h={30} >
 
+                      <P ta='center' mt={4} fs={9} >ضمانت اصالت کالا</P>
+                    </Span>
+                  }
+                />
+              </Span>
+              <Span f={1} mh={6} h={60} ai='center' jc='flex-start' >
+                <Card2 h={'auto'} border={[0]}
+                  coulumn1={
+                    <Span h={'100%'} w={'100%'} jc='center' ai='center' ><Img bgcolor='white' w={40} h={30} src={require('../../assets/images/7dayPostMethod.png')} size={30} /></Span>
+                  }
+                  coulumn2={
+                    <Span w='100%' h={30} >
+
+                      <P ta='center' mt={4} fs={9} >هفت روز فرصت بازگشت کالا</P>
+                    </Span>
+                  }
+                />
+              </Span>
             </Span>
           </Span>
 
@@ -215,70 +220,34 @@ const ChildBobile = (p) => {
 
           <Span>
 
-            <ScrollSlider {...p} id='scrollCard' h={250} mb={10} pb={77} ccStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', height: 230 }} >
+            <ScrollSlider {...p} id='scrollCard' h={270} mb={10} pb={77} ccStyle={{ height: 230 }} >
 
 
-
-              <Span w={230} ai='center' jc='center' >
-                <Card2 h={200} w={200} bgcolor={'#fff'} sh={{ r: 8, o: .5 }} style={{ borderColor: 'red' }} src={require('../../assets/images/a1.jpg')}
-                  coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
-                  coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
-                  coulumn3={<Span fd='row' jc='space-around' w={'100%'}><P>3333</P><P>3333</P></Span>}
-                  coulumn4={<Span fd='row' jc='space-evenly' w={'100%'}><P>4444</P><P>4444</P></Span>}
-                />
-              </Span>
-
-              <Span w={230} ai='center' jc='center' >
-                <Card2 h={200} w={200} bgcolor={'#fff'} sh={{ r: 8, o: .5 }} style={{ borderColor: 'red' }} src={require('../../assets/images/a1.jpg')}
-                  coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
-                  coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
-                  coulumn3={<Span fd='row' jc='space-around' w={'100%'}><P>3333</P><P>3333</P></Span>}
-                  coulumn4={<Span fd='row' jc='space-evenly' w={'100%'}><P>4444</P><P>4444</P></Span>}
-                />
-              </Span>
-
-              <Span w={230} ai='center' jc='center' >
-                <Card2 h={200} w={200} bgcolor={'#fff'} sh={{ r: 8, o: .5 }} style={{ borderColor: 'red' }} src={require('../../assets/images/a1.jpg')}
-                  coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
-                  coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
-                  coulumn3={<Span fd='row' jc='space-around' w={'100%'}><P>3333</P><P>3333</P></Span>}
-                  coulumn4={<Span fd='row' jc='space-evenly' w={'100%'}><P>4444</P><P>4444</P></Span>}
-                />
-              </Span>
-
-              <Span w={230} ai='center' jc='center' >
-                <Card2 h={200} w={200} bgcolor={'#fff'} sh={{ r: 8, o: .5 }} style={{ borderColor: 'red' }} src={require('../../assets/images/a1.jpg')}
-                  coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
-                  coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
-                  coulumn3={<Span fd='row' jc='space-around' w={'100%'}><P>3333</P><P>3333</P></Span>}
-                  coulumn4={<Span fd='row' jc='space-evenly' w={'100%'}><P>4444</P><P>4444</P></Span>}
-                />
-              </Span>
-
-              <Span w={230} ai='center' jc='center' >
-                <Card2 h={200} w={200} bgcolor={'#fff'} sh={{ r: 8, o: .5 }} style={{ borderColor: 'red' }} src={require('../../assets/images/a1.jpg')}
-                  coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
-                  coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
-                  coulumn3={<Span fd='row' jc='space-around' w={'100%'}><P>3333</P><P>3333</P></Span>}
-                  coulumn4={<Span fd='row' jc='space-evenly' w={'100%'}><P>4444</P><P>4444</P></Span>}
-                />
-              </Span>
-
-              <Span w={230} ai='center' jc='center' >
-                <Card2 h={200} w={200} bgcolor={'#fff'} sh={{ r: 8, o: .5 }} style={{ borderColor: 'red' }} src={require('../../assets/images/a1.jpg')}
-                  coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
-                  coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
-                  coulumn3={<Span fd='row' jc='space-around' w={'100%'}><P>3333</P><P>3333</P></Span>}
-                  coulumn4={<Span fd='row' jc='space-evenly' w={'100%'}><P>4444</P><P>4444</P></Span>}
-                />
-              </Span>
-
-              <Span w={230} ai='center' jc='center' >
-                <Card2 mt={0} h={200} w={200} sh={{ r: 8, o: .5 }} style={{ borderColor: 'red' }} src={require('../../assets/images/a1.jpg')}
-                  coulumn1={<Span fd='row' jc='space-between' w={'100%'}><P>111</P><P>1111</P></Span>}
-                  coulumn2={<Span fd='row' jc='center' w={'100%'}><P> 2222 </P><P> 2222 </P></Span>}
-                  coulumn3={<Span fd='row' jc='space-around' w={'100%'}><P>3333</P><P>3333</P></Span>}
-                  coulumn4={<Span fd='row' jc='space-evenly' w={'100%'}><P>4444</P><P>4444</P></Span>}
+              {/* //!Feather */}
+              <Span h={260} w={230} ai='center' jc='flex-end' >
+                <Card2 h={240} w={200} bgcolor={'#fff'} sh={{ r: 8, o: .4, of: { width: 0, height: 2 } }} style={{ borderColor: 'red' }} src={require('../../assets/images/a1.jpg')}
+                  coulumn1={<Span mt={8} w={'100%'}><P fs={11} ta='center' as='center' >گوشی k22 سالاری مدل h3 سه</P></Span>}
+                  coulumn2={<Span bgcolor='#eee' fd='row' h={35} jc='center' w={'100%'}>
+                    <Span ai='center' w={'25%'} h={35} brw={1} border={[0, 'silver']} pt={1} >
+                      <Icon name='microchip' size={16} style={{ transform: [{ scaleY: .6 }] }} />
+                      <P fs={9} ta='center' >8 هسته</P>
+                    </Span>
+                    <Span ai='center' w={'25%'} h={35} brw={1} border={[0, 'silver']} pt={1}>
+                      <A_icon name='hdd' size={16} />
+                      <P fs={9} ta='center' >126 گیگ </P>
+                    </Span>
+                    <Span ai='center' w={'25%'} h={35} brw={1} border={[0, 'silver']} pt={1} >
+                      <P >Ram</P>
+                      <P fs={9} ta='center' >8 گیگ</P>
+                    </Span>
+                    <Span ai='center' w={'25%'} h={35} pt={1} >
+                      <A_icon name='camera' size={16} />
+                      <P fs={9} ta='center' >64 پیکسل</P>
+                    </Span>
+                  </Span>
+                  }
+                  coulumn3={<Span mt={8} fd='row' jc='space-evenly' w={'100%'}><P>6000000 تومان</P></Span>}
+                  coulumn4={<Span fd='row' jc='space-around' w={'100%'}></Span>}
                 />
               </Span>
 
@@ -290,30 +259,36 @@ const ChildBobile = (p) => {
 
 
 
-        <Span>
+        <Span bgcolor='#fff' border={[1, 'silver']} >
           <Span mt={15} mr={12} >
             <P>نظر ها</P>
             <Span />
           </Span>
 
-          <Scroll h={500} >
+          <Scroll style={{ maxHeight: 500 }} >
 
             <Span flex={1} mv={8} >
               <Card dr='rtl' headerRow={
                 <Span fd='row-reverse' w='100%' >
-                  <Span  ><P>2/5/33</P></Span>
+                  <Span ><P>2/5/33</P></Span>
                   <Span><P> | </P></Span>
                   <Span><P> 4 ستاره </P></Span>
-                  <Span mt={-4} ><Icon name='star' color='orange' size={27} /></Span>
-
-
-                  <Span ml='auto' > <P>محمد جعفر ساتر</P> </Span>
+                  <Span mt={-4} >
+                    <Icon name='star' color='orange' size={27} />
+                  </Span>
+                  <Span ml='auto' >
+                    <P>محمد جعفر ساتر</P>
+                  </Span>
 
                 </Span>
               } body={<P>jj</P>} footerRow={
                 <Span fd='row-reverse' >
-                  <Span bgcolor='silver' p={7} pv={4} pl={2} w={50} mh={2} br={5} jc='center' ai='center' fd='row' ><Badge bgcolor='gray' text={0} top={8} right={1} scale={.5}  /><A_icon name='dislike2' size={23} /></Span>
-                  <Span bgcolor='silver' p={7} pv={4} pl={2} w={50} mh={2} br={5} jc='center' ai='center' fd='row' ><Badge bgcolor='gray' text={1} top={8} right={1} scale={.5} /><A_icon name='like2' size={23} /></Span>
+                  <Span bgcolor='silver' p={7} pv={4} pl={2} w={50} mh={2} br={5} jc='center' ai='center' fd='row' >
+                    <Badge bgcolor='gray' text={0} top={8} right={1} scale={.5} />
+                    <A_icon name='dislike2' size={23} /></Span>
+                  <Span bgcolor='silver' p={7} pv={4} pl={2} w={50} mh={2} br={5} jc='center' ai='center' fd='row' >
+                    <Badge bgcolor='gray' text={1} top={8} right={1} scale={.5} />
+                    <A_icon name='like2' size={23} /></Span>
                   <Span bgcolor='silver' p={7} pv={4} mh={2} br={5} jc='center' ai='center' ><P fs={12} >پاسخ »</P></Span>
                 </Span>
               } />
@@ -325,8 +300,9 @@ const ChildBobile = (p) => {
 
 
       </Scroll>
-
-      <Span sh={{ r: 6, o: .5 }} jc='center' ai='center' br={70} bgcolor='#909' h={50} w={50} pos='absolute' b={30} r={40} > <M_icon color='#fff' name='chat' size={30} /></Span>
+      <Span sh={{ r: 6, o: .5 }} jc='center' ai='center' br={70} bgcolor='#909' h={50} w={50} pos='absolute' b={30} l={40} >
+        <M_icon color='#fff' name='chat' size={30} />
+      </Span>
     </Span>
   )
 }

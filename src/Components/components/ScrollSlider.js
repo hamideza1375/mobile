@@ -18,11 +18,11 @@ function ScrollSlider(p) {
   const open = () => {
     if (scroll2) {
       { p.$?.id(p.id) && p.$.id(p.id).scrollTo({ x: count, y: 0, animated: true }); }
-      count += 150
+      count += 100
     }
   };
 
-  if (scrollWidth && (scroll + scrollWidth + 200) >= contentSize) { clearInterval(interval) }
+  if (scrollWidth && (scroll + scrollWidth + 160) >= contentSize) { clearInterval(interval) }
   if (!scroll2) { clearInterval(interval) }
 
   if (p.width !== width) {
@@ -45,6 +45,7 @@ function ScrollSlider(p) {
 
       onMouseUp={() => { setscroll2(false); setTimeout(() => { das = [] }, 10) }} >
       <View
+      // style={{width:p.width - 200, alignItems:'center', justifyContent:'center'}}
         // onStartShouldSetResponder={()=>{ if (Platform.OS === 'web') p.$.id(p.id).setNativeProps({ style: { overflow: 'auto' } });}}
         onMoveShouldSetResponderCapture={(e) => {
           setscroll2(false)
@@ -63,8 +64,8 @@ function ScrollSlider(p) {
       >
         <ScrollHorizontal
           {...p}
-          contentContainerStyle={p.ccStyle}
-          onLayout={(e) => { setscrollWidth(e.nativeEvent.layout.width); width = p.width; let int = setInterval(sum, 4000); function sum() { if (scroll2) open() } setinterval(int) }}
+          contentContainerStyle={[{flexGrow: 1, alignItems: 'center',},p.ccStyle]}
+          onLayout={(e) => { let layoutWidth = e.nativeEvent.layout.width; setTimeout(()=>{setscrollWidth(layoutWidth);},2000); width = p.width; let int = setInterval(sum, 4000); function sum() { if (scroll2) open() } setinterval(int) }}
           onContentSizeChange={(e) => { setcontentSize(e); }}
           scrollEventThrottle={0}
           alwaysBounceHorizontal={false}
@@ -73,7 +74,7 @@ function ScrollSlider(p) {
           onScroll={(e) => { setscroll(e.nativeEvent.contentOffset.x) }}
           dir='ltr' id={p.id}
           webStyle={(navigator.userAgent?.split('(')[1]?.slice(0, 7) === 'Windows') && { overflow: 'hidden' }}
-          style={[{ height: p.h ? p.h : 150, width: p.width - 4, marginTop: 2, alignSelf: 'center', borderRadius: 5, flexWrap: 'wrap' }, p.style]} >
+          style={[{ height: p.h ? p.h : 150, width: '99%',alignSelf:'center', marginTop: 2, alignSelf: 'center', borderRadius: 5, flexWrap: 'wrap'}, p.style]} >
           {p.children}
         </ScrollHorizontal>
       </View>

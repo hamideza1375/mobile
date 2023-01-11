@@ -6,12 +6,12 @@ import M_icon from 'react-native-vector-icons/dist/MaterialIcons';
 
 const Dropdown = (props) => {
 
-  const {$input,textId,h, child, border = [.5, 'silver'], show, setshow, children, icon, a_icon, m_icon, color = '#aaa', showBgcolor = '#fff', style, iconFalse, top, onClick } = props
+  const {bodyStyle,displayFlex,$input,textId,h, child, border = [.5, 'silver'], show, setshow, children, icon, a_icon, m_icon, color = '#aaa', showBgcolor = '#fff', style, iconFalse, top, onClick } = props
 
   const ref = useRef()
 
   useEffect(() => {
-    ref?.current && ref.current.setNativeProps({ style: { transform: [{ scale: 0 }] } })
+    ref?.current && ref.current.setNativeProps({ style: {display:displayFlex?'flex':'none', transform: [{ scale: 0 }] } })
   }, [show])
 
 
@@ -21,17 +21,17 @@ const Dropdown = (props) => {
     <>
       <Pressable
         onPressIn={() => { 
-          onClick()
+          onClick && onClick()
           setshow(!show); setTimeout(() => { setshow(!show) }, 1) }}
 
         onPress={() => {
           () => { setshow(!show); setTimeout(() => { setshow(!show) }, 2) };
           setTimeout(() => {
-            ref?.current && ref.current.setNativeProps({ style: { transform: [{ scale: 1 }] } })
+            ref?.current && ref.current.setNativeProps({ style: { display:'flex',transform: [{ scale: 1 }] } })
           }, 5);
         }}
 
-        style={[{ flexDirection: 'row', padding: 2, position: 'relative', height:h }, style]} >
+        style={[{ flexDirection: 'row', padding: 2, position: 'relative',paddingHorizontal:5, height:h }, style]} >
         {!iconFalse && <Icon color={color} name={top ? 'caret-up' : 'caret-down'} style={[{ top: 3, position: 'relative', right: 1 }, { fontSize: 22.5 }]}></Icon>}
 
         {icon && <Icon color={color} name={icon ? icon : 'trash'} style={[{ fontSize: 22.5 }]}></Icon> ||
@@ -45,9 +45,10 @@ const Dropdown = (props) => {
         ref={ref}
         onLayout={()=>{$input?.set(textId, ref);}}
         style={[{
+
           alignSelf: 'center', borderWidth: border[0], borderColor: border[1], borderRadius: 3, padding: 3, zIndex: 10, position: 'absolute',
-          transform: [{ scale: 0 }], backgroundColor: showBgcolor, minWidth: 100
-        }, top ? { bottom: 20 } : { top: 20 }]}>
+          display:'none',transform: [{ scale: 0 }], backgroundColor: showBgcolor, minWidth: 100
+        },bodyStyle, top ? { bottom: 20 } : { top: 20 }]}>
         {children}
       </Pressable>
     </>
